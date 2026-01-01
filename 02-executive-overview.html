@@ -3,148 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Executive Overview</title>
+<title>Urban Cinematic Media – Executive Overview</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat+Condensed:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap');
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Montserrat Condensed', sans-serif;
-        background: linear-gradient(to bottom, #1a0033 0%, #4b007f 70%, #ffadd6 100%);
-        color: #F5F5F5;
-        overflow-x: hidden;
-        position: relative;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #0a0d25 0%, #3a0d59 50%, #5e0c4a 95%);
+    color: #F5F5F5;
+    position: relative;
+  }
 
-    /* Subtle stars effect */
-    body::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: radial-gradient(white, rgba(255,255,255,0) 70%);
-        background-size: 2px 2px;
-        pointer-events: none;
-    }
+  .page {
+    width: 8.5in;
+    height: 11in;
+    padding: 1in;
+    box-sizing: border-box;
+    position: relative;
+  }
 
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 50px 30px 100px 30px;
-        position: relative;
-        z-index: 1;
-    }
+  /* Executive Overview Top Panel */
+  .exec-panel {
+    width: 100%;
+    padding: 30px;
+    background: rgba(20, 10, 40, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    margin-bottom: 40px;
+  }
 
-    .header {
-        font-family: 'Playfair Display', serif;
-        font-weight: 900;
-        font-size: 50px;
-        text-align: center;
-        color: #FFD700;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-        margin-bottom: 40px;
-    }
+  .exec-panel h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #C5A400;
+    text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.6);
+    margin: 0 0 20px 0;
+  }
 
-    .panel {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        padding: 30px;
-        margin-bottom: 40px;
-        border-radius: 15px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
+  .exec-panel p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 
-    .panel h2 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #FFD700;
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    }
+  /* Bottom Panels Side by Side */
+  .bottom-panels {
+    display: flex;
+    gap: 20px;
+  }
 
-    .panel p, .panel ul {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 0;
-    }
+  .panel {
+    flex: 1;
+    padding: 20px;
+    background: rgba(30, 10, 45, 0.6);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
 
-    .divider {
-        height: 2px;
-        background: rgba(255, 215, 0, 0.3);
-        margin: 40px 0;
-        border-radius: 2px;
-    }
+  .panel h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #C5A400;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #C5A400;
+    padding-bottom: 5px;
+  }
 
-    .included-highlights {
-        background: rgba(255,255,255,0.08);
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-    }
+  .panel ul {
+    margin: 0;
+    padding-left: 20px;
+  }
 
-    .included-highlights h3 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 22px;
-        margin-bottom: 15px;
-        color: #FFD700;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-    }
+  .panel li {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
 
-    .included-highlights ul {
-        padding-left: 20px;
-    }
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    font-size: 12px;
+    color: #F5F5F5;
+  }
 
-    footer {
-        text-align: center;
-        margin-top: 60px;
-        font-size: 14px;
-        color: rgba(255,255,255,0.6);
-    }
-
+  /* Subtle starlight effect */
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="white" opacity="0.05"/></svg>') repeat;
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">Executive Overview</div>
+<div class="page">
+  <div class="stars"></div>
 
-        <div class="panel">
-            <h2>About Urban Cinematic Media</h2>
-            <p>Urban Cinematic Media (UCM) curates immersive drive-in cinema experiences across Columbus, MS and surrounding communities, blending high-quality film screenings with modular culinary and entertainment assets designed for maximum scalability and revenue generation.</p>
-            <p>Our mission is to merge community-centric entertainment with operational excellence, ensuring unforgettable experiences while providing transparent, measurable returns for investors.</p>
-        </div>
+  <!-- Top Executive Overview Panel -->
+  <div class="exec-panel">
+    <h1>Executive Overview</h1>
+    <p>
+      Urban Cinematic Media proudly presents a comprehensive dossier of our flagship event portfolio. This document outlines a dynamic, high-caliber drive-in cinema experience, detailing every facet from operational logistics to revenue architecture, community engagement, and strategic marketing plans. It serves as both a narrative introduction and a full overview, guiding investors through the pilot event, full-scale deployment, and scalable growth opportunities. The packet includes detailed financial projections, equipment procurement and specifications, menu design, operational flowcharts, marketing strategy, risk management, and community impact. Each page has been meticulously designed to reflect the cinematic, luxurious, and professional nature of the event while demonstrating the lucrative potential and operational precision. This executive overview sets the stage for a maximalist, immersive presentation of Urban Cinematic Media’s business acumen, creativity, and vision.
+    </p>
+  </div>
 
-        <div class="divider"></div>
-
-        <div class="panel">
-            <h2>Operational Scope</h2>
-            <p>The pilot event infrastructure is fully modular, reusable, and equipped with high-end audio-visual assets including:</p>
-            <ul>
-                <li>20-foot inflatable projector screen</li>
-                <li>Dual-range long-distance walkie talkies for operational coordination</li>
-                <li>Wireless plug-in microphone systems for hands-free communication</li>
-                <li>Concession stands with pre-packaged food assets and optimized inventory management</li>
-                <li>Full event flow documented from setup to teardown</li>
-            </ul>
-            <p>This allows rapid scaling for future events, while maintaining high operational fidelity and minimal overhead.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="panel included-highlights">
-            <h3>Included Highlights</h3>
-            <ul>
-                <li>Community engagement metrics and projected attendance growth</li>
-                <li>Revenue streams including ticket sales, VIP upsells, concessions, and sponsorship opportunities</li>
-                <li>Detailed financial breakdowns including equipment costs, supply chains, and margin projections</li>
-                <li>Comprehensive risk management and operational blueprints</li>
-                <li>Audit-ready documentation of pilot and projected full-scale event</li>
-            </ul>
-        </div>
-
-        <footer>Page 2</footer>
+  <!-- Bottom Panels -->
+  <div class="bottom-panels">
+    <!-- Operational Scope Panel -->
+    <div class="panel">
+      <h2>Operational Scope</h2>
+      <ul>
+        <li>Pilot event infrastructure and modular equipment deployment.</li>
+        <li>Full food and beverage operations from procurement to service.</li>
+        <li>Drive-in projector setup and audiovisual coordination.</li>
+        <li>Logistics planning: parking, crowd flow, and guest experience.</li>
+        <li>Staff training protocols and operational contingencies.</li>
+      </ul>
     </div>
+
+    <!-- Included Highlights Panel -->
+    <div class="panel">
+      <h2>Included Highlights</h2>
+      <ul>
+        <li>Revenue projections with month-by-month breakdowns.</li>
+        <li>Community engagement and marketing footprint.</li>
+        <li>Pilot event results and lessons for scaling.</li>
+        <li>Detailed equipment lists with costs, SKUs, and specifications.</li>
+        <li>Menu architecture: snack, savory, sweets, and beverages fully optimized.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Urban Cinematic Media – Executive Overview – Page 2</div>
+</div>
 </body>
 </html>
