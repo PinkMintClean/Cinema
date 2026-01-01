@@ -4,14 +4,26 @@
 <meta charset="UTF-8">
 <title>Urban Cinematic Media - Executive Overview</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat+Condensed:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat+Condensed:wght@400;700&display=swap');
 
     body {
         margin: 0;
         padding: 0;
-        background: linear-gradient(160deg, #2B0050 0%, #2B0050 70%, #B868A0 100%);
+        background: linear-gradient(180deg, #0D0B2A 0%, #3C0B5C 50%, #B85C94 100%);
         font-family: 'Montserrat Condensed', sans-serif;
         color: #F5F5F5;
+    }
+
+    /* Subtle twinkle stars */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: radial-gradient(white 1px, transparent 1px);
+        background-size: 15px 15px;
+        opacity: 0.08;
+        pointer-events: none;
     }
 
     .container {
@@ -20,7 +32,7 @@
         padding: 40px;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     /* Cinematic top divider line */
@@ -33,20 +45,23 @@
     }
 
     .headline {
-        font-family: 'Bungee Shade', cursive;
-        font-size: 48px;
+        font-family: 'Playfair Display', serif;
+        font-size: 56px;
         color: #F5C243;
         text-align: center;
-        margin-bottom: 30px;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+        margin-bottom: 40px;
+        text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+        background: linear-gradient(180deg, #FFF9D6, #F5C243);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .glass-panel {
-        backdrop-filter: blur(10px);
-        background: rgba(40, 20, 60, 0.6);
-        border-radius: 12px;
-        padding: 30px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        backdrop-filter: blur(12px);
+        background: rgba(40, 20, 60, 0.65);
+        border-radius: 14px;
+        padding: 40px;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.6);
     }
 
     .glass-panel h2 {
@@ -58,31 +73,34 @@
 
     .glass-panel ul {
         margin-left: 20px;
-        line-height: 1.8;
+        line-height: 1.9;
     }
 
     .glass-panel li {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
     }
 
-    .highlight-table {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 20px;
+    .highlight-panel {
+        background: rgba(255,255,255,0.06);
+        border-radius: 12px;
+        padding: 25px;
+        margin-top: 25px;
+        box-shadow: inset 0 0 12px rgba(255,255,255,0.05);
     }
 
-    .highlight-table h3 {
+    .highlight-panel h3 {
         font-family: 'Playfair Display', serif;
         color: #F5C243;
-        font-size: 22px;
-        margin-bottom: 10px;
+        font-size: 24px;
+        margin-bottom: 12px;
+        border-bottom: 2px solid rgba(245, 194, 67,0.6);
+        padding-bottom: 6px;
     }
 
-    .highlight-table ul {
+    .highlight-panel ul {
         list-style-type: disc;
         padding-left: 20px;
-        line-height: 1.7;
+        line-height: 1.8;
     }
 
     .footer {
@@ -102,22 +120,22 @@
 
         <div class="glass-panel">
             <h2>Urban Cinematic Media</h2>
-            <p>Urban Cinematic Media (UCM) is a premier outdoor cinematic experience company, delivering immersive, community-driven drive-in movie events, coupled with gourmet festival-style concessions. This document outlines our business model, operational strategy, financials, and growth plan for investors.</p>
+            <p>Urban Cinematic Media (UCM) delivers immersive, community-focused outdoor cinematic experiences. Our events combine gourmet festival-style concessions, premium audiovisual production, and scalable event infrastructure to maximize audience engagement and revenue potential. This Executive Overview provides a high-level preview of the complete investor packet.</p>
             
-            <p>The Executive Overview captures the entirety of what is included in this dossier:</p>
+            <p>Included in this document:</p>
             <ul>
                 <li>Company Vision, Mission, and Management Bios</li>
-                <li>Pilot Event Plan & Scaled Event Strategy</li>
-                <li>Revenue Streams including concessions, ticketing, and sponsorships</li>
-                <li>Full Menu Architecture with food sourcing, preparation, and packaging logistics</li>
-                <li>Technical Infrastructure: long-range transmitters, audio systems, projectors, and lighting</li>
-                <li>Financial Breakdown: Costs, Margins, Loan Allocation, Quarterly Revenue Projections</li>
-                <li>Marketing & Community Engagement Strategy</li>
-                <li>Risk Mitigation, Legal Compliance, and Operational Flowcharts</li>
+                <li>Pilot Event & Full Scale Expansion Strategy</li>
+                <li>Revenue Streams: Concessions, Admissions, Sponsorships, and Promotional Opportunities</li>
+                <li>Full Menu Architecture with Preparation, Sourcing, and Packaging Logistics</li>
+                <li>Technical Infrastructure: Audio, Projection, Lighting, and Transmitter Systems</li>
+                <li>Detailed Financials: Cost Breakdown, Margins, Loan Allocation, and Quarterly Revenue Forecasts</li>
+                <li>Marketing Strategy: Community Outreach, Social Media, and Promotional Footwork</li>
+                <li>Operational & Risk Management Flowcharts</li>
             </ul>
         </div>
 
-        <div class="highlight-table">
+        <div class="highlight-panel">
             <h3>Included Highlights</h3>
             <ul>
                 <li>Pilot Event Launch and Modular Infrastructure</li>
