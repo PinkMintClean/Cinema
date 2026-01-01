@@ -1,34 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Pilot Menu</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilot Menu Overview - Page 4</title>
 <style>
-@page { size: letter; margin: 0.5in; }
-body { background:#060A17; color:#F5F5F5; font-family:'Montserrat Condensed'; }
-.container { padding:40px; background:rgba(10,17,40,0.95); }
-h1 { font-family:'Playfair Display'; color:#C5A400; }
-table { width:100%; font-size:11px; border-collapse:collapse; }
-th,td { padding:6px; border-bottom:1px solid rgba(255,255,255,0.1); }
-th { color:#C5A400; }
-.page { text-align:right; font-size:10px; color:#C5A400; }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #F5F5F5;
+        background: linear-gradient(to bottom, #0A0F1F 0%, #3B0066 70%, #9B1E73 95%, #0A0F1F 100%);
+    }
+    .container {
+        width: 90%;
+        margin: auto;
+        padding: 40px 0;
+    }
+    .header {
+        font-family: 'Playfair Display', serif;
+        font-size: 3em;
+        font-weight: bold;
+        color: #FFD700;
+        text-align: center;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+    }
+    .glass-panel {
+        background: rgba(15,15,20,0.6);
+        backdrop-filter: blur(12px);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        border-left: 3px solid #FFD700;
+        border-top: 2px solid #FFD700;
+    }
+    .section-header {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #FFD700;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #FFD700;
+        padding-bottom: 8px;
+    }
+    .section-content {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+    .flex-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .flex-column {
+        flex: 1 1 48%;
+    }
+    .bullet-list {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .image-placeholder {
+        background: rgba(255,255,255,0.05);
+        height: 120px;
+        border-radius: 10px;
+        border: 2px dashed rgba(255,255,255,0.3);
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        color: rgba(255,255,255,0.4);
+    }
+    .footer {
+        text-align: right;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #F5F5F5;
+    }
+    .footer span {
+        font-weight: bold;
+        color: #FFD700;
+    }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>Pilot Menu & Pricing</h1>
+    <!-- Page Header -->
+    <div class="header">Pilot Menu Overview</div>
 
-<table>
-<tr><th>Item</th><th>Size</th><th>Price</th></tr>
-<tr><td>Popcorn</td><td>Regular</td><td>$5</td></tr>
-<tr><td>Popcorn</td><td>Family</td><td>$10–$12</td></tr>
-<tr><td>Slushies</td><td>Standard</td><td>$5</td></tr>
-<tr><td>Slushies</td><td>Super Size</td><td>$10</td></tr>
-<tr><td>Hot Dogs</td><td>Single</td><td>$4</td></tr>
-<tr><td>Funnel Cake Fries</td><td>Boat</td><td>$6</td></tr>
-</table>
+    <!-- Top Full-Width Panel: Introduction -->
+    <div class="glass-panel">
+        <div class="section-header">Introduction</div>
+        <div class="section-content">
+            This page provides a comprehensive overview of the **Pilot Day Food & Beverage offerings** for the inaugural event.  
+            It outlines the full range of items that will be served, the presentation and service methodology, and highlights the careful planning behind every menu selection.  
+            While this page summarizes the menu, full **unit pricing, revenue projections, and logistical details** will be presented in a dedicated Pilot Menu & Revenue Analysis page later in this packet.  
+            The menu has been curated to deliver a cinematic, drive-in movie theater experience while maintaining operational efficiency and maximum guest satisfaction.
+        </div>
+    </div>
 
-<div class="page">04</div>
+    <!-- Bottom Side-by-Side Panels -->
+    <div class="flex-row">
+        <!-- Operational Scope Panel -->
+        <div class="glass-panel flex-column">
+            <div class="section-header">Operational Scope</div>
+            <div class="section-content">
+                The pilot menu is designed to be fully **modular and scalable**, ensuring a seamless food & beverage experience.  
+                <ul class="bullet-list">
+                    <li>Wings: Properly portioned and served in eco-friendly food boats.</li>
+                    <li>Okra & Corn: Individually plated, maintaining freshness and temperature.</li>
+                    <li>Belgian Waffles: Served with toppings like chocolate drizzle, whipped cream, and fresh fruit.</li>
+                    <li>Popcorn & Cotton Candy: Classic drive-in snacks in custom branded packaging.</li>
+                    <li>Pretzels & Nachos: Pre-assembled and portion-controlled for fast service.</li>
+                    <li>Beverages: Slushies and drinks served in clear branded cups with lids.</li>
+                </ul>
+                All pilot menu items are designed for efficiency in preparation, serving, and cleanup, while maximizing the guest experience.
+            </div>
+        </div>
+
+        <!-- Included Highlights Panel -->
+        <div class="glass-panel flex-column">
+            <div class="section-header">Included Serving Elements</div>
+            <div class="section-content">
+                To ensure a professional and complete experience, the following **serving elements** will be included:
+                <ul class="bullet-list">
+                    <li>Custom branded food boats for wings, nachos, pretzels, and okra.</li>
+                    <li>Condiment cups for sauces, dips, and toppings.</li>
+                    <li>Eco-friendly napkins and utensils where required.</li>
+                    <li>Slushy and drink cups with lids and straws.</li>
+                    <li>Small side trays for sauces and toppings at beverage stations.</li>
+                </ul>
+                These items ensure every guest receives a **complete, enjoyable, and hygienic food experience** while maintaining brand consistency.
+            </div>
+        </div>
+    </div>
+
+    <!-- Placeholder Images -->
+    <div class="image-placeholder">Placeholder: Wings setup</div>
+    <div class="image-placeholder">Placeholder: Beverage station</div>
+    <div class="image-placeholder">Placeholder: Concession layout</div>
+
+    <!-- Footer -->
+    <div class="footer">Urban Cinematic Media – Pilot Menu Overview – Page 4</div>
 </div>
 </body>
 </html>
