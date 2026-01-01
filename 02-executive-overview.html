@@ -1,65 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Executive Overview</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Urban Cinematic Media — Executive Overview</title>
 <style>
-@page { size: letter; margin: 0.5in; }
+@page {
+  size: letter;
+  margin: 0.5in;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  background: linear-gradient(180deg,#060A17,#0A1128);
-  color:#F5F5F5;
-  font-family:'Montserrat Condensed',Arial,sans-serif;
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(180deg, #050814 0%, #0b1024 45%, #120a18 100%);
+  color: #f5f5f5;
 }
-.container {
-  min-height:10in;
-  padding:42px;
-  background:rgba(10,17,40,0.92);
+
+.page {
+  width: 100%;
+  min-height: 10.5in;
+  padding: 40px 48px;
+  position: relative;
 }
-.header {
-  border-bottom:2px solid rgba(197,164,0,0.85);
-  margin-bottom:20px;
+
+/* Glass Panels */
+.panel {
+  background: rgba(18, 22, 45, 0.82);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 26px 28px;
+  margin-bottom: 22px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
-.header h1 {
-  font-family:'Playfair Display',serif;
-  color:#C5A400;
+
+/* Typography */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.5px;
 }
-.section { margin-bottom:18px; }
-.section-title {
-  font-family:'Playfair Display',serif;
-  color:#C5A400;
-  font-size:18px;
-  margin-bottom:8px;
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 0 0 10px 0;
 }
-.page { position:absolute; bottom:18px; right:30px; font-size:10px; color:#C5A400; }
+
+h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0 0 10px 0;
+}
+
+ul {
+  padding-left: 16px;
+  margin: 6px 0 0 0;
+}
+
+li {
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+/* Layout Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.metric {
+  background: rgba(255,255,255,0.04);
+  padding: 14px;
+  border-radius: 10px;
+}
+
+.metric strong {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.placeholder {
+  height: 140px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+}
+
+.footer {
+  position: absolute;
+  bottom: 18px;
+  right: 40px;
+  font-size: 11px;
+  opacity: 0.6;
+}
 </style>
 </head>
+
 <body>
-<div class="container">
-  <div class="header">
+<div class="page">
+
+  <!-- HEADER PANEL -->
+  <div class="panel">
     <h1>Executive Overview</h1>
+    <p>
+      <strong>Urban Cinematic Media (UCM)</strong> is a modular, revenue-dense, outdoor cinematic entertainment company designed to transform underutilized land into high-performing, multi-stream income experiences. This lender packet documents the <em>pilot launch</em> and the <em>fully scaled expansion model</em>, engineered for fast deployment, controlled risk, and aggressive scalability.
+    </p>
+    <p>
+      This document is intentionally exhaustive. It is designed not merely to justify a loan request, but to demonstrate operational mastery, liquidation clarity, and long-term revenue certainty through diversified income architecture.
+    </p>
   </div>
 
-  <div class="section">
-    Urban Cinematic Media (UCM) is a modular, scalable outdoor cinema
-    and culinary experience designed to operate profitably at low
-    attendance thresholds while offering rapid expansion through
-    menu density, sponsorships, and experiential upgrades.
-  </div>
-
-  <div class="section">
-    <div class="section-title">Loan Ask</div>
-    Requested Capital: <strong>$3,000</strong><br>
-    Purpose: Pilot Activation, Inventory, Licensing, Infrastructure
-  </div>
-
-  <div class="section">
-    <div class="section-title">Liquidation Strategy</div>
-    Loan recoverability demonstrated at 40% capacity through
-    admissions, concessions, and on-screen advertising.
-  </div>
-
-  <div class="page">02</div>
-</div>
-</body>
-</html>
+  <!-- CORE VISION + EXPERIENCE -->
+  <div class="grid-2">
+    <div class="panel">
+      <h2>The Experience Being Financed</h2>
+      <p>
+        Urban Cinematic Media is not a “
