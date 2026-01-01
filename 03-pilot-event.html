@@ -1,49 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Pilot Event Scope</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Pilot Event Configuration – Page 3</title>
 <style>
-@page { size: letter; margin: 0.5in; }
-body {
-  background:#060A17;
-  color:#F5F5F5;
-  font-family:'Montserrat Condensed',Arial,sans-serif;
-}
-.container {
-  padding:40px;
-  background:rgba(10,17,40,0.95);
-}
-h1 {
-  font-family:'Playfair Display',serif;
-  color:#C5A400;
-  border-bottom:2px solid rgba(197,164,0,0.6);
-  padding-bottom:12px;
-}
-ul { margin-top:12px; }
-.page { text-align:right; font-size:10px; color:#C5A400; }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat+Condensed:wght@400;700&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat Condensed', sans-serif;
+        color: #F5F5F5;
+        background: linear-gradient(to bottom, #0A1030 0%, #3B1E54 60%, #2A1B3F 95%, #10132B 100%);
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section {
+        background: rgba(20, 20, 30, 0.75);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .section-header {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        font-weight: 900;
+        color: #C5A400;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        margin-bottom: 20px;
+    }
+
+    .section-content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #F5F5F5;
+    }
+
+    .subsection {
+        margin-bottom: 20px;
+    }
+
+    .subsection h3 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: #FFD700;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .subsection ul {
+        margin-left: 20px;
+        list-style-type: disc;
+        line-height: 1.5;
+    }
+
+    .placeholder-images {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    .placeholder {
+        background: #10132B;
+        border-radius: 8px;
+        width: 32%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #555;
+        border: 1px dashed #444;
+    }
+
+    .bottom-panels {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .panel {
+        flex: 1;
+        background: rgba(20, 20, 30, 0.75);
+        border-radius: 10px;
+        padding: 20px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+
+    .panel h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #FFD700;
+        margin-bottom: 10px;
+    }
+
+    .panel ul {
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+
+    .page-footer {
+        text-align: right;
+        font-size: 14px;
+        color: #C5A400;
+        margin-top: 40px;
+    }
+
+    /* Quick gradient for subtle pink peek at bottom */
+    .page-bottom-gradient {
+        height: 30px;
+        background: linear-gradient(to bottom, transparent, #6A0D5C);
+    }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>Pilot Event Configuration</h1>
 
-<ul>
-  <li>20-Foot Inflatable Projector Screen</li>
-  <li>Long-Range FM Transmitter (Vehicle Audio)</li>
-  <li>Audio Mixer + Wireless Mic System (Two-Pack)</li>
-  <li>Power Source On-Site (Pasture)</li>
-  <li>Port-a-Potty Rental</li>
-  <li>Solar & Worker Parking Lights</li>
-  <li>Walkie-Talkies for Staff</li>
-</ul>
+    <!-- Top Executive Overview Panel for Pilot -->
+    <div class="section">
+        <div class="section-header">Pilot Event Configuration Overview</div>
+        <div class="section-content">
+            This panel outlines the complete configuration required for our initial pilot event. Each component listed below is integral to delivering a seamless drive-in cinematic experience, from setup to operation. The pilot configuration focuses exclusively on the essentials, enabling us to test event logistics, operational flow, and attendee satisfaction while keeping scalability in mind.
+        </div>
+    </div>
 
-<p>
-All pilot infrastructure is modular and reusable,
-creating asset retention beyond the pilot date.
-</p>
+    <!-- Pilot Configuration Items -->
+    <div class="section">
+        <div class="subsection">
+            <h3>20 ft Inflatable Projector Screen</h3>
+            <ul>
+                <li>Provides a cinematic viewing experience suitable for 50–75 attendees.</li>
+                <li>Modular and portable for rapid setup and breakdown within one hour.</li>
+                <li>Integrated anchor points for safety and stability in outdoor conditions.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>FM Transmitter & Audio Distribution</h3>
+            <ul>
+                <li>Delivers synchronized audio to attendees' vehicles via radio frequency.</li>
+                <li>Ensures high-fidelity sound without disturbing surrounding neighborhoods.</li>
+                <li>Portable and scalable for future expansion in larger venues.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Lighting & Ambient Fixtures</h3>
+            <ul>
+                <li>String lights and portable LED uplighting to enhance ambiance without interfering with projection.</li>
+                <li>Adjustable dimming options for optimal visual and atmospheric balance.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Operational Logistics</h3>
+            <ul>
+                <li>Staging areas, ticketing, and parking workflow pre-planned for efficiency.</li>
+                <li>Staff deployment for concessions, security, and technical support included.</li>
+                <li>Clear signage and wayfinding for optimal attendee experience.</li>
+            </ul>
+        </div>
+    </div>
 
-<div class="page">03</div>
+    <!-- Placeholder Images Section -->
+    <div class="placeholder-images">
+        <div class="placeholder">Projector Placeholder</div>
+        <div class="placeholder">FM Transmitter Placeholder</div>
+        <div class="placeholder">Lighting Placeholder</div>
+    </div>
+
+    <!-- Bottom Side-by-Side Panels -->
+    <div class="bottom-panels">
+        <div class="panel">
+            <h4>Operational Scope</h4>
+            <ul>
+                <li>All pilot logistics, staffing, and operational processes fully detailed.</li>
+                <li>Setup, test, and teardown protocols included for consistency.</li>
+                <li>Modular design ensures smooth integration into future full-scale events.</li>
+            </ul>
+        </div>
+        <div class="panel">
+            <h4>Included Highlights</h4>
+            <ul>
+                <li>Event essentials only: projector, FM transmitter, basic lighting.</li>
+                <li>Attendee experience prioritized within pilot-scale limits.</li>
+                <li>Supports data collection for margin calculations and feedback analysis.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="page-bottom-gradient"></div>
+
+<div class="page-footer">
+    Urban Cinematic Media – Pilot Event Configuration – Page 3
 </div>
 </body>
 </html>
