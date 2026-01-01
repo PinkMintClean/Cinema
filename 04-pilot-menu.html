@@ -2,150 +2,158 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pilot Menu Overview - Page 4</title>
+<title>Pilot Food & Beverage Overview - Page 4</title>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Montserrat', sans-serif;
-        color: #F5F5F5;
-        background: linear-gradient(to bottom, #0A0F1F 0%, #3B0066 70%, #9B1E73 95%, #0A0F1F 100%);
-    }
-    .container {
-        width: 90%;
-        margin: auto;
-        padding: 40px 0;
-    }
-    .header {
-        font-family: 'Playfair Display', serif;
-        font-size: 3em;
-        font-weight: bold;
-        color: #FFD700;
-        text-align: center;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-        margin-bottom: 40px;
-        letter-spacing: 2px;
-    }
-    .glass-panel {
-        background: rgba(15,15,20,0.6);
-        backdrop-filter: blur(12px);
-        border-radius: 15px;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-        border-left: 3px solid #FFD700;
-        border-top: 2px solid #FFD700;
-    }
-    .section-header {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.8em;
-        font-weight: bold;
-        color: #FFD700;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #FFD700;
-        padding-bottom: 8px;
-    }
-    .section-content {
-        font-size: 1em;
-        line-height: 1.6;
-    }
-    .flex-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    .flex-column {
-        flex: 1 1 48%;
-    }
-    .bullet-list {
-        list-style-type: disc;
-        padding-left: 20px;
-    }
-    .image-placeholder {
-        background: rgba(255,255,255,0.05);
-        height: 120px;
-        border-radius: 10px;
-        border: 2px dashed rgba(255,255,255,0.3);
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.9em;
-        color: rgba(255,255,255,0.4);
-    }
-    .footer {
-        text-align: right;
-        margin-top: 40px;
-        font-size: 0.9em;
-        color: #F5F5F5;
-    }
-    .footer span {
-        font-weight: bold;
-        color: #FFD700;
-    }
+  body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to bottom, #0a1035, #3b1f55 50%, #4b1f3c 95%);
+    color: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+  }
+
+  /* Top Executive Panel */
+  .executive-panel {
+    background: rgba(20, 20, 30, 0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+  .executive-panel h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #c5a400;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    margin-bottom: 20px;
+  }
+  .executive-panel p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f5f5f5;
+  }
+
+  /* Bottom Side-by-Side Panels */
+  .bottom-panels {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .panel {
+    flex: 1 1 45%;
+    background: rgba(20,20,30,0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  }
+  .panel h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c5a400;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #c5a400;
+    padding-bottom: 5px;
+  }
+  .panel ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f5f5f5;
+  }
+  .panel li {
+    margin-bottom: 10px;
+  }
+
+  /* Placeholder Images */
+  .image-placeholders {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .image-placeholder {
+    flex: 1 1 30%;
+    height: 140px;
+    background: rgba(80,80,100,0.4);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: right;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    color: #f5f5f5;
+  }
 </style>
 </head>
 <body>
-<div class="container">
-    <!-- Page Header -->
-    <div class="header">Pilot Menu Overview</div>
+  <div class="container">
 
-    <!-- Top Full-Width Panel: Introduction -->
-    <div class="glass-panel">
-        <div class="section-header">Introduction</div>
-        <div class="section-content">
-            This page provides a comprehensive overview of the **Pilot Day Food & Beverage offerings** for the inaugural event.  
-            It outlines the full range of items that will be served, the presentation and service methodology, and highlights the careful planning behind every menu selection.  
-            While this page summarizes the menu, full **unit pricing, revenue projections, and logistical details** will be presented in a dedicated Pilot Menu & Revenue Analysis page later in this packet.  
-            The menu has been curated to deliver a cinematic, drive-in movie theater experience while maintaining operational efficiency and maximum guest satisfaction.
-        </div>
+    <!-- Executive Overview Panel -->
+    <div class="executive-panel">
+      <h1>Pilot Food & Beverage Overview</h1>
+      <p>
+        This page provides a comprehensive overview of the Pilot Day Food and Beverage offerings for the inaugural event. It outlines all items that will be served, the methodology for presentation and service, and highlights the operational planning behind each selection. While this page summarizes the menu, detailed pricing, revenue projections, and logistical information are presented in a dedicated Pilot Menu and Revenue Analysis page later in this packet. The menu has been curated to deliver a cinematic, drive-in movie theater experience while maintaining operational efficiency and maximum guest satisfaction.
+      </p>
     </div>
 
     <!-- Bottom Side-by-Side Panels -->
-    <div class="flex-row">
-        <!-- Operational Scope Panel -->
-        <div class="glass-panel flex-column">
-            <div class="section-header">Operational Scope</div>
-            <div class="section-content">
-                The pilot menu is designed to be fully **modular and scalable**, ensuring a seamless food & beverage experience.  
-                <ul class="bullet-list">
-                    <li>Wings: Properly portioned and served in eco-friendly food boats.</li>
-                    <li>Okra & Corn: Individually plated, maintaining freshness and temperature.</li>
-                    <li>Belgian Waffles: Served with toppings like chocolate drizzle, whipped cream, and fresh fruit.</li>
-                    <li>Popcorn & Cotton Candy: Classic drive-in snacks in custom branded packaging.</li>
-                    <li>Pretzels & Nachos: Pre-assembled and portion-controlled for fast service.</li>
-                    <li>Beverages: Slushies and drinks served in clear branded cups with lids.</li>
-                </ul>
-                All pilot menu items are designed for efficiency in preparation, serving, and cleanup, while maximizing the guest experience.
-            </div>
-        </div>
+    <div class="bottom-panels">
 
-        <!-- Included Highlights Panel -->
-        <div class="glass-panel flex-column">
-            <div class="section-header">Included Serving Elements</div>
-            <div class="section-content">
-                To ensure a professional and complete experience, the following **serving elements** will be included:
-                <ul class="bullet-list">
-                    <li>Custom branded food boats for wings, nachos, pretzels, and okra.</li>
-                    <li>Condiment cups for sauces, dips, and toppings.</li>
-                    <li>Eco-friendly napkins and utensils where required.</li>
-                    <li>Slushy and drink cups with lids and straws.</li>
-                    <li>Small side trays for sauces and toppings at beverage stations.</li>
-                </ul>
-                These items ensure every guest receives a **complete, enjoyable, and hygienic food experience** while maintaining brand consistency.
-            </div>
-        </div>
+      <!-- Operational Scope Panel -->
+      <div class="panel">
+        <h2>Operational Scope</h2>
+        <ul>
+          <li>Wings: Properly portioned and served in eco-friendly food boats.</li>
+          <li>Okra and Corn: Individually plated to preserve freshness and optimal temperature.</li>
+          <li>Belgian Waffles: Served with toppings such as chocolate drizzle, whipped cream, and fresh fruit.</li>
+          <li>Popcorn and Cotton Candy: Served in custom branded packaging to reinforce the thematic experience.</li>
+          <li>Pretzels and Nachos: Pre-assembled and portion-controlled for efficient service.</li>
+          <li>Beverages: Slushies and other drinks provided in clear branded cups with lids.</li>
+        </ul>
+      </div>
+
+      <!-- Included Serving Elements Panel -->
+      <div class="panel">
+        <h2>Included Serving Elements</h2>
+        <ul>
+          <li>Branded food boats for wings, nachos, pretzels, and okra.</li>
+          <li>Condiment cups for sauces, dips, and toppings.</li>
+          <li>Eco-friendly napkins and utensils where required.</li>
+          <li>Slushy and beverage cups with lids and straws.</li>
+          <li>Small side trays for sauces and toppings at beverage stations.</li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- Placeholder Images -->
-    <div class="image-placeholder">Placeholder: Wings setup</div>
-    <div class="image-placeholder">Placeholder: Beverage station</div>
-    <div class="image-placeholder">Placeholder: Concession layout</div>
+    <div class="image-placeholders">
+      <div class="image-placeholder">Placeholder Image 1</div>
+      <div class="image-placeholder">Placeholder Image 2</div>
+      <div class="image-placeholder">Placeholder Image 3</div>
+    </div>
 
     <!-- Footer -->
-    <div class="footer">Urban Cinematic Media – Pilot Menu Overview – Page 4</div>
-</div>
+    <div class="footer">Urban Cinematic Media – Pilot Food Overview – Page 4</div>
+
+  </div>
 </body>
 </html>
