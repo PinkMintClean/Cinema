@@ -8,10 +8,7 @@
   size: letter;
   margin: 0.5in;
 }
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -23,71 +20,94 @@ body {
 .page {
   width: 100%;
   min-height: 10.5in;
-  padding: 0;
-  position: relative;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 /* Background image placeholder */
 .bg-image {
   width: 100%;
-  height: 50%;
-  background: rgba(0,0,0,0.4);
+  height: 45%;
+  background: rgba(0,0,0,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   color: rgba(255,255,255,0.6);
   text-transform: uppercase;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  text-align: center;
 }
 
-/* Overlay panel for text at bottom */
+/* Overlay Panel */
 .overlay-panel {
-  background: rgba(18,22,45,0.85);
-  backdrop-filter: blur(8px);
-  border-radius: 14px 14px 0 0;
-  padding: 32px 40px;
-  margin-top: -20px;
-  box-shadow: 0 -15px 40px rgba(0,0,0,0.55);
   flex: 1;
+  background: rgba(18,22,45,0.88);
+  backdrop-filter: blur(10px);
+  padding: 40px 50px;
+  margin-top: -30px;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -15px 40px rgba(0,0,0,0.55);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
+/* Headers */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 32px;
-  margin: 0 0 12px 0;
+  margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 20px;
-  margin: 0 0 10px 0;
+  margin: 18px 0 12px 0;
+  border-bottom: 1px solid #666666;
+  padding-bottom: 4px;
 }
 
+/* Paragraphs */
 p {
   font-size: 13px;
   line-height: 1.55;
-  margin: 0 0 10px 0;
+  margin-bottom: 12px;
 }
 
+/* List styling */
 ul {
   padding-left: 18px;
-  margin: 6px 0 0 0;
+  margin: 8px 0;
 }
 
 li {
   font-size: 12.5px;
-  line-height: 1.45;
+  line-height: 1.5;
   margin-bottom: 6px;
+  position: relative;
 }
 
-/* Footer for page numbering */
+li::before {
+  content: "•";
+  color: #C5A400; /* Liquid Gold */
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Divider styling */
+.divider {
+  height: 2px;
+  background: #44475A;
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+/* Footer */
 .footer {
   font-size: 11px;
   opacity: 0.6;
@@ -95,42 +115,60 @@ li {
   text-align: right;
   padding-top: 12px;
 }
+
+/* Glass Panels / shadows for sections */
+.glass-panel {
+  background: rgba(25,30,50,0.7);
+  backdrop-filter: blur(8px);
+  padding: 18px 20px;
+  margin: 12px 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
 </style>
 </head>
 <body>
 
 <div class="page">
 
-  <!-- TOP IMAGE PLACEHOLDER -->
+  <!-- Background image placeholder -->
   <div class="bg-image">
-    Placeholder: Background Cinematic Image Here
+    Cinematic Campfire & Projector Scene Placeholder
   </div>
 
-  <!-- BOTTOM OVERLAY PANEL -->
+  <!-- Overlay Panel -->
   <div class="overlay-panel">
-    <h1>Executive Overview</h1>
-    <p>
-      Urban Cinematic Media (UCM) is a multi-stream outdoor entertainment company built for modular scalability, operational efficiency, and high-density revenue generation. This lender packet provides a full breakdown of the pilot launch and the fully scaled event model, demonstrating both immediate revenue potential and long-term growth strategies.
-    </p>
-    <p>
-      The document includes: complete event configuration, technical and logistical infrastructure, concessions planning, procurement and SKU-level tracking, detailed revenue projections, marketing and footwork strategies, operational flow, and risk mitigation.
-    </p>
-    <p>
-      The pilot event is designed to demonstrate: optimized food and beverage upselling, multimedia engagement, vehicle-based experience, and repeatable logistics. The fully scaled model expands upon these elements to include additional revenue streams, a diverse menu, enhanced technological infrastructure, and regional expansion strategies.
-    </p>
-    <p>
-      This Executive Overview is intentionally comprehensive yet positioned professionally to provide a high-level orientation to the document contents. Further sections will detail precise data, visualizations, and operational frameworks to ensure lenders can assess viability and confidence in the venture.
-    </p>
 
-    <h2>Included Highlights:</h2>
+    <h1>Executive Overview</h1>
+
+    <div class="glass-panel">
+      <p>
+        Urban Cinematic Media (UCM) is a multi-stream outdoor entertainment company designed for **scalable events, operational efficiency, and dense revenue streams**. This lender packet demonstrates the **pilot event and the fully scaled model**, illustrating immediate profits, operational integrity, and long-term expansion strategy.
+      </p>
+    </div>
+
+    <div class="glass-panel">
+      <p>
+        The document covers: event configuration, technical and logistical infrastructure, concessions and menu strategy, procurement and SKU-level tracking, detailed revenue projections, marketing and footwork strategies, operational flow, and risk mitigation.
+      </p>
+    </div>
+
+    <div class="glass-panel">
+      <p>
+        The **pilot event** highlights: optimized upselling, multimedia engagement, vehicle-based experience, and repeatable logistics. The **fully scaled event** expands these elements, adding diverse menu items, enhanced technology, regional reach, and multi-tier revenue streams.
+      </p>
+    </div>
+
+    <h2>Included Highlights</h2>
+    <div class="divider"></div>
     <ul>
       <li>Pilot & Fully Scaled Event Configuration (Food, Tech, Flow)</li>
       <li>Procurement Strategy with SKU-Level Inventory</li>
       <li>Concessions & Menu Revenue Architecture</li>
-      <li>Logistics from Sourcing → Cooking → Serving → Disposal</li>
+      <li>Logistics: Sourcing → Cooking → Serving → Disposal</li>
       <li>Financial & Revenue Forecasts (Break-Even, Margins, Capacity Scenarios)</li>
       <li>Marketing Footwork & Regional Expansion Plan</li>
-      <li>Legal Compliance, Insurance, Licensing, and Sanitation</li>
+      <li>Legal Compliance, Insurance, Licensing, Sanitation</li>
       <li>Loan Liquidation Options & Multi-Tier Repayment Strategy</li>
     </ul>
 
