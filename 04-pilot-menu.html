@@ -2,158 +2,159 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pilot Food & Beverage Overview - Page 4</title>
+<title>Pilot Food Overview - Page 4</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat+Condensed:wght@400;700&display=swap');
+
   body {
     margin: 0;
-    font-family: "Montserrat", sans-serif;
-    background: linear-gradient(to bottom, #0a1035, #3b1f55 50%, #4b1f3c 95%);
-    color: #f5f5f5;
-    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    font-family: 'Montserrat Condensed', sans-serif;
+    color: #F5F5F5;
+    background: linear-gradient(to bottom, #0B0D2B 0%, #3B0A52 65%, #5A1F45 98%, #5A1F45 100%);
+    overflow-x: hidden;
   }
 
   .container {
     width: 90%;
     margin: auto;
-    padding: 40px 0;
+    padding: 50px 0;
   }
 
-  /* Top Executive Panel */
-  .executive-panel {
-    background: rgba(20, 20, 30, 0.85);
-    backdrop-filter: blur(6px);
-    border-radius: 15px;
-    padding: 35px;
-    margin-bottom: 40px;
+  /* Floating Glass Panels */
+  .glass-panel {
+    background: rgba(30,30,30,0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  }
-  .executive-panel h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #c5a400;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-    margin-bottom: 20px;
-  }
-  .executive-panel p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #f5f5f5;
+    position: relative;
   }
 
-  /* Bottom Side-by-Side Panels */
-  .bottom-panels {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .panel {
-    flex: 1 1 45%;
-    background: rgba(20,20,30,0.85);
-    backdrop-filter: blur(6px);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-  }
-  .panel h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #c5a400;
+  /* Golden Headers */
+  .gold-header {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #C5A400;
+    text-shadow: 1px 1px 8px rgba(197,164,0,0.6);
+    position: relative;
+    display: inline-block;
     margin-bottom: 15px;
-    border-bottom: 2px solid #c5a400;
-    padding-bottom: 5px;
-  }
-  .panel ul {
-    margin: 0;
-    padding-left: 20px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #f5f5f5;
-  }
-  .panel li {
-    margin-bottom: 10px;
   }
 
-  /* Placeholder Images */
-  .image-placeholders {
+  .gold-header::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: rgba(197,164,0,0.6);
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #C5A400;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 6px rgba(197,164,0,0.5);
+  }
+
+  ul {
+    margin-left: 20px;
+    line-height: 1.8;
+  }
+
+  .side-by-side {
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
     margin-top: 40px;
   }
-  .image-placeholder {
-    flex: 1 1 30%;
-    height: 140px;
-    background: rgba(80,80,100,0.4);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ccc;
-    font-size: 0.9rem;
-    font-style: italic;
+
+  .side-by-side .panel {
+    flex: 1;
   }
 
-  /* Footer */
-  .footer {
-    text-align: right;
-    font-size: 0.9rem;
+  .placeholder-img {
+    width: 32%;
+    height: 100px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 1%;
+    margin-top: 30px;
+  }
+
+  footer {
     margin-top: 60px;
-    color: #f5f5f5;
+    text-align: right;
+    font-family: 'Montserrat Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #F5F5F5;
+    opacity: 0.8;
   }
 </style>
 </head>
 <body>
-  <div class="container">
-
-    <!-- Executive Overview Panel -->
-    <div class="executive-panel">
-      <h1>Pilot Food & Beverage Overview</h1>
-      <p>
-        This page provides a comprehensive overview of the Pilot Day Food and Beverage offerings for the inaugural event. It outlines all items that will be served, the methodology for presentation and service, and highlights the operational planning behind each selection. While this page summarizes the menu, detailed pricing, revenue projections, and logistical information are presented in a dedicated Pilot Menu and Revenue Analysis page later in this packet. The menu has been curated to deliver a cinematic, drive-in movie theater experience while maintaining operational efficiency and maximum guest satisfaction.
-      </p>
-    </div>
-
-    <!-- Bottom Side-by-Side Panels -->
-    <div class="bottom-panels">
-
-      <!-- Operational Scope Panel -->
-      <div class="panel">
-        <h2>Operational Scope</h2>
-        <ul>
-          <li>Wings: Properly portioned and served in eco-friendly food boats.</li>
-          <li>Okra and Corn: Individually plated to preserve freshness and optimal temperature.</li>
-          <li>Belgian Waffles: Served with toppings such as chocolate drizzle, whipped cream, and fresh fruit.</li>
-          <li>Popcorn and Cotton Candy: Served in custom branded packaging to reinforce the thematic experience.</li>
-          <li>Pretzels and Nachos: Pre-assembled and portion-controlled for efficient service.</li>
-          <li>Beverages: Slushies and other drinks provided in clear branded cups with lids.</li>
-        </ul>
-      </div>
-
-      <!-- Included Serving Elements Panel -->
-      <div class="panel">
-        <h2>Included Serving Elements</h2>
-        <ul>
-          <li>Branded food boats for wings, nachos, pretzels, and okra.</li>
-          <li>Condiment cups for sauces, dips, and toppings.</li>
-          <li>Eco-friendly napkins and utensils where required.</li>
-          <li>Slushy and beverage cups with lids and straws.</li>
-          <li>Small side trays for sauces and toppings at beverage stations.</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Placeholder Images -->
-    <div class="image-placeholders">
-      <div class="image-placeholder">Placeholder Image 1</div>
-      <div class="image-placeholder">Placeholder Image 2</div>
-      <div class="image-placeholder">Placeholder Image 3</div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">Urban Cinematic Media – Pilot Food Overview – Page 4</div>
-
+<div class="container">
+  <!-- Top Executive Overview Section -->
+  <div class="glass-panel">
+    <div class="gold-header">Pilot Food Overview</div>
+    <p>
+      This page outlines the complete food and beverage offerings for the Pilot Day Event. 
+      The menu has been curated to provide a high-quality, hygienic, and fully enjoyable tasting experience, 
+      highlighting both savory and sweet options. Each item has been carefully selected for preparation efficiency, 
+      service logistics, and presentation quality. The Pilot Food Overview sets the stage for subsequent in-depth financial 
+      projections, operational flow diagrams, and full menu allocation.
+    </p>
+    <p>
+      Included on this page are all pilot day items: finger foods, snacks, beverages, dessert offerings, and the associated 
+      serving vessels and accessories. This ensures a comprehensive understanding of the pilot configuration and assists 
+      in evaluating projected costs, margins, and operational efficiency.
+    </p>
   </div>
+
+  <!-- Bottom Side-by-Side Panels -->
+  <div class="side-by-side">
+    <!-- Operational Scope Panel -->
+    <div class="panel glass-panel">
+      <h2 class="section-title">Operational Scope</h2>
+      <ul>
+        <li>Food Stations: Centralized preparation and serving points to optimize flow.</li>
+        <li>Serving Vessels: Food boats, napkins, condiment cups, and slushy cups prepared in advance.</li>
+        <li>Sanitation: Hygienic prep surfaces, gloves, and safe handling protocols implemented throughout.</li>
+        <li>Temperature Control: Hot and cold holding equipment ensures all items served at ideal temperatures.</li>
+        <li>Workflow: Sequential assembly of menu items from prep to service, minimizing wait time.</li>
+      </ul>
+    </div>
+
+    <!-- Included Elements Panel -->
+    <div class="panel glass-panel">
+      <h2 class="section-title">Included Elements</h2>
+      <ul>
+        <li>Menu Items: Wings, okra, corn, Belgian waffles with toppings, popcorn, cotton candy.</li>
+        <li>Beverages: Soft drinks, water, and pilot day specialty slushies.</li>
+        <li>Serving Supplies: Clear food boats, slushy cups, napkins, condiment cups.</li>
+        <li>Minimal Presentation Aids: Decorative trays, signage, and condiment stations for presentation.</li>
+        <li>Setup Imagery: Placeholder images provided at the bottom of this page for future visual reference.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Minimal Placeholder Images -->
+  <div>
+    <div class="placeholder-img"></div>
+    <div class="placeholder-img"></div>
+    <div class="placeholder-img"></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>Urban Cinematic Media – Pilot Food Overview – Page 4</footer>
 </body>
 </html>
