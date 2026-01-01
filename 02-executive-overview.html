@@ -2,126 +2,136 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Urban Cinematic Media — Executive Overview</title>
+<title>Urban Cinematic Media - Executive Overview</title>
 <style>
-@page { size: letter; margin: 0.5in; }
-body { margin:0; font-family:'Montserrat',Arial,sans-serif; background:#1B0A2C; color:#F5F5F5; }
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat+Condensed:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
-/* Page Container */
-.page {
-  width:100%; min-height:10.5in; display:flex; flex-direction:column; position:relative;
-  background: radial-gradient(circle at top right, #2B003C 0%, #5C1B70 35%, #FF69A2 85%, #1B0A2C 100%);
-  overflow:hidden;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(160deg, #2B0050 0%, #2B0050 70%, #B868A0 100%);
+        font-family: 'Montserrat Condensed', sans-serif;
+        color: #F5F5F5;
+    }
 
-/* Cinematic Top Placeholder Image */
-.bg-image {
-  width:100%; height:45%; background:rgba(0,0,0,0.3);
-  display:flex; align-items:center; justify-content:center;
-  font-size:14px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:1.5px; font-weight:bold; text-align:center;
-  backdrop-filter: blur(2px);
-}
+    .container {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
-/* Overlay Panel for All Content */
-.overlay-panel {
-  flex:1; padding:40px 50px; display:flex; flex-direction:column; justify-content:flex-start;
-}
+    /* Cinematic top divider line */
+    .top-divider {
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(to right, #F5C243, #F5F5F5, #F5C243);
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
 
-/* Executive Overview Title with theatrical font */
-h1 {
-  font-family:'Playfair Display',serif; font-size:42px; letter-spacing:1px;
-  color:#FFD15C; text-shadow: 2px 2px 12px rgba(255,193,0,0.6);
-  margin-bottom:20px;
-}
+    .headline {
+        font-family: 'Bungee Shade', cursive;
+        font-size: 48px;
+        color: #F5C243;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
 
-/* Frosted Glass Panels */
-.glass-panel {
-  background: rgba(255,255,255,0.07); 
-  backdrop-filter: blur(10px);
-  padding:25px; margin:20px 0; border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.12);
-}
+    .glass-panel {
+        backdrop-filter: blur(10px);
+        background: rgba(40, 20, 60, 0.6);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
 
-/* Paragraph styling */
-p { font-size:13px; line-height:1.6; margin-bottom:12px; color:#FFF1E0; }
+    .glass-panel h2 {
+        font-family: 'Playfair Display', serif;
+        color: #F5C243;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
 
-/* Included Highlights Table */
-.highlight-table {
-  width:100%; border-collapse:collapse; margin-top:20px;
-  background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius:12px;
-}
-.highlight-table td {
-  padding:12px 16px;
-  border-bottom:1px solid rgba(255,255,255,0.12);
-  color:#FFDDAA;
-  font-size:13px;
-}
-.highlight-table tr:last-child td { border-bottom:none; }
+    .glass-panel ul {
+        margin-left: 20px;
+        line-height: 1.8;
+    }
 
-/* Section divider */
-.divider { height:2px; background:rgba(255,193,0,0.3); margin:20px 0; border-radius:2px; }
+    .glass-panel li {
+        margin-bottom: 12px;
+    }
 
-/* Footer */
-.footer { font-size:11px; opacity:0.7; margin-top:auto; text-align:right; padding-top:12px; color:#FFDDAA; }
+    .highlight-table {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+    }
 
-/* Optional cinematic glow text */
-.cinematic-text { text-shadow: 1px 1px 8px rgba(0,0,0,0.8); }
+    .highlight-table h3 {
+        font-family: 'Playfair Display', serif;
+        color: #F5C243;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .highlight-table ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        line-height: 1.7;
+    }
+
+    .footer {
+        text-align: right;
+        font-size: 14px;
+        color: #F5F5F5;
+        margin-top: 50px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 10px;
+    }
 </style>
 </head>
 <body>
+    <div class="container">
+        <div class="top-divider"></div>
+        <div class="headline">Executive Overview</div>
 
-<div class="page">
+        <div class="glass-panel">
+            <h2>Urban Cinematic Media</h2>
+            <p>Urban Cinematic Media (UCM) is a premier outdoor cinematic experience company, delivering immersive, community-driven drive-in movie events, coupled with gourmet festival-style concessions. This document outlines our business model, operational strategy, financials, and growth plan for investors.</p>
+            
+            <p>The Executive Overview captures the entirety of what is included in this dossier:</p>
+            <ul>
+                <li>Company Vision, Mission, and Management Bios</li>
+                <li>Pilot Event Plan & Scaled Event Strategy</li>
+                <li>Revenue Streams including concessions, ticketing, and sponsorships</li>
+                <li>Full Menu Architecture with food sourcing, preparation, and packaging logistics</li>
+                <li>Technical Infrastructure: long-range transmitters, audio systems, projectors, and lighting</li>
+                <li>Financial Breakdown: Costs, Margins, Loan Allocation, Quarterly Revenue Projections</li>
+                <li>Marketing & Community Engagement Strategy</li>
+                <li>Risk Mitigation, Legal Compliance, and Operational Flowcharts</li>
+            </ul>
+        </div>
 
-  <!-- Cinematic placeholder image -->
-  <div class="bg-image">
-    CAMPFIRE + PROJECTOR + CROWD IMAGE PLACEHOLDER
-  </div>
+        <div class="highlight-table">
+            <h3>Included Highlights</h3>
+            <ul>
+                <li>Pilot Event Launch and Modular Infrastructure</li>
+                <li>Fully Scalable Revenue Model for Concessions & Admissions</li>
+                <li>Maximized Margin Strategy for Popcorn, Slushies, Fried Foods, and Festival Snacks</li>
+                <li>Marketing Footwork: Flyers, Community Outreach, Social Media Campaigns</li>
+                <li>Projected Loan Liquidation & Quarterly Performance Metrics</li>
+                <li>Immersive Event Experience Blueprint</li>
+            </ul>
+        </div>
 
-  <!-- Overlay panel -->
-  <div class="overlay-panel">
-
-    <h1 class="cinematic-text">Executive Overview</h1>
-
-    <!-- Main overview -->
-    <div class="glass-panel">
-      <p>
-        Urban Cinematic Media (UCM) is an immersive outdoor entertainment company, blending **drive-in cinematic experiences with multi-tier revenue strategies, modular infrastructure, and operational excellence**. This lender packet illustrates both the **pilot event** and the **fully scaled model**, demonstrating profitability, scalability, and technical precision.
-      </p>
+        <div class="footer">
+            Page 2
+        </div>
     </div>
-
-    <div class="glass-panel">
-      <p>
-        The document includes: **full event configuration**, technological and logistical infrastructure, menu & concession revenue architecture, SKU-level procurement strategy, marketing footwork, detailed financial projections, operational flow, risk management, and loan liquidation strategies.
-      </p>
-    </div>
-
-    <div class="glass-panel">
-      <p>
-        The **pilot event** highlights modular setup, optimized upselling, multimedia engagement, vehicle-based experience, and repeatable logistics. The **fully scaled event** expands these elements with regional reach, enhanced technical deployment, additional menu items, VIP experiences, and comprehensive marketing execution.
-      </p>
-    </div>
-
-    <!-- Included Highlights Table -->
-    <h2>Included Highlights</h2>
-    <div class="divider"></div>
-    <table class="highlight-table">
-      <tr><td>Pilot & Fully Scaled Event Configuration (Food, Tech, Flow)</td></tr>
-      <tr><td>Procurement Strategy with SKU-Level Inventory Tracking</td></tr>
-      <tr><td>Concessions & Menu Revenue Architecture</td></tr>
-      <tr><td>Logistics: Sourcing → Prep → Cooking → Serving → Disposal</td></tr>
-      <tr><td>Financial Forecasts (Break-Even, Margins, Capacity Scenarios)</td></tr>
-      <tr><td>Marketing Footwork & Regional Expansion Plan</td></tr>
-      <tr><td>Legal Compliance, Insurance, Licensing, Sanitation</td></tr>
-      <tr><td>Loan Liquidation Options & Multi-Tier Repayment Strategy</td></tr>
-    </table>
-
-    <div class="footer">
-      Page 2 — Executive Overview | Urban Cinematic Media
-    </div>
-
-  </div>
-
-</div>
 </body>
 </html>
