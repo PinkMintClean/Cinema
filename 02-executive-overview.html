@@ -16,47 +16,58 @@
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background: linear-gradient(180deg, #050814 0%, #0b1024 45%, #120a18 100%);
+  background: #0b1024;
   color: #f5f5f5;
 }
 
 .page {
   width: 100%;
   min-height: 10.5in;
-  padding: 40px 48px;
+  padding: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Glass Panels */
-.panel {
-  background: rgba(18, 22, 45, 0.82);
+/* Background image placeholder */
+.bg-image {
+  width: 100%;
+  height: 50%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+/* Overlay panel for text at bottom */
+.overlay-panel {
+  background: rgba(18,22,45,0.85);
   backdrop-filter: blur(8px);
-  border-radius: 14px;
-  padding: 26px 28px;
-  margin-bottom: 22px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  border-radius: 14px 14px 0 0;
+  padding: 32px 40px;
+  margin-top: -20px;
+  box-shadow: 0 -15px 40px rgba(0,0,0,0.55);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-/* Typography */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin: 0 0 14px 0;
+  font-size: 32px;
+  margin: 0 0 12px 0;
   letter-spacing: 0.5px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-size: 20px;
   margin: 0 0 10px 0;
-}
-
-h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  opacity: 0.85;
-  margin-bottom: 8px;
 }
 
 p {
@@ -66,7 +77,7 @@ p {
 }
 
 ul {
-  padding-left: 16px;
+  padding-left: 18px;
   margin: 6px 0 0 0;
 }
 
@@ -76,71 +87,58 @@ li {
   margin-bottom: 6px;
 }
 
-/* Layout Grids */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 18px;
-}
-
-.metric {
-  background: rgba(255,255,255,0.04);
-  padding: 14px;
-  border-radius: 10px;
-}
-
-.metric strong {
-  font-size: 18px;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.placeholder {
-  height: 140px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  opacity: 0.6;
-}
-
+/* Footer for page numbering */
 .footer {
-  position: absolute;
-  bottom: 18px;
-  right: 40px;
   font-size: 11px;
   opacity: 0.6;
+  margin-top: auto;
+  text-align: right;
+  padding-top: 12px;
 }
 </style>
 </head>
-
 <body>
+
 <div class="page">
 
-  <!-- HEADER PANEL -->
-  <div class="panel">
-    <h1>Executive Overview</h1>
-    <p>
-      <strong>Urban Cinematic Media (UCM)</strong> is a modular, revenue-dense, outdoor cinematic entertainment company designed to transform underutilized land into high-performing, multi-stream income experiences. This lender packet documents the <em>pilot launch</em> and the <em>fully scaled expansion model</em>, engineered for fast deployment, controlled risk, and aggressive scalability.
-    </p>
-    <p>
-      This document is intentionally exhaustive. It is designed not merely to justify a loan request, but to demonstrate operational mastery, liquidation clarity, and long-term revenue certainty through diversified income architecture.
-    </p>
+  <!-- TOP IMAGE PLACEHOLDER -->
+  <div class="bg-image">
+    Placeholder: Background Cinematic Image Here
   </div>
 
-  <!-- CORE VISION + EXPERIENCE -->
-  <div class="grid-2">
-    <div class="panel">
-      <h2>The Experience Being Financed</h2>
-      <p>
-        Urban Cinematic Media is not a “
+  <!-- BOTTOM OVERLAY PANEL -->
+  <div class="overlay-panel">
+    <h1>Executive Overview</h1>
+    <p>
+      Urban Cinematic Media (UCM) is a multi-stream outdoor entertainment company built for modular scalability, operational efficiency, and high-density revenue generation. This lender packet provides a full breakdown of the pilot launch and the fully scaled event model, demonstrating both immediate revenue potential and long-term growth strategies.
+    </p>
+    <p>
+      The document includes: complete event configuration, technical and logistical infrastructure, concessions planning, procurement and SKU-level tracking, detailed revenue projections, marketing and footwork strategies, operational flow, and risk mitigation.
+    </p>
+    <p>
+      The pilot event is designed to demonstrate: optimized food and beverage upselling, multimedia engagement, vehicle-based experience, and repeatable logistics. The fully scaled model expands upon these elements to include additional revenue streams, a diverse menu, enhanced technological infrastructure, and regional expansion strategies.
+    </p>
+    <p>
+      This Executive Overview is intentionally comprehensive yet positioned professionally to provide a high-level orientation to the document contents. Further sections will detail precise data, visualizations, and operational frameworks to ensure lenders can assess viability and confidence in the venture.
+    </p>
+
+    <h2>Included Highlights:</h2>
+    <ul>
+      <li>Pilot & Fully Scaled Event Configuration (Food, Tech, Flow)</li>
+      <li>Procurement Strategy with SKU-Level Inventory</li>
+      <li>Concessions & Menu Revenue Architecture</li>
+      <li>Logistics from Sourcing → Cooking → Serving → Disposal</li>
+      <li>Financial & Revenue Forecasts (Break-Even, Margins, Capacity Scenarios)</li>
+      <li>Marketing Footwork & Regional Expansion Plan</li>
+      <li>Legal Compliance, Insurance, Licensing, and Sanitation</li>
+      <li>Loan Liquidation Options & Multi-Tier Repayment Strategy</li>
+    </ul>
+
+    <div class="footer">
+      Page 2 — Executive Overview | Urban Cinematic Media
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
