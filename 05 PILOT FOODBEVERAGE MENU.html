@@ -20,6 +20,8 @@ min-height:11in;
 margin:auto;
 padding:.4in .5in;
 box-sizing:border-box;
+display: flex;
+flex-direction: column;
 }
 
 /* HEADER */
@@ -43,7 +45,8 @@ margin:.12in 0
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:.25in;
-position:relative
+position:relative;
+flex-grow: 1;
 }
 .columns:after{
 content:'';
@@ -92,39 +95,78 @@ text-shadow:0 0 3px rgba(230,200,110,.4)
 
 .hr{height:1px;background:rgba(255,255,255,.12);margin:3px 0}
 
-/* SWEET TOPPING BOX — MINIMAL */
+/* WHITE SEPARATOR (New Request) */
+.white-sep {
+height: 1px;
+background: rgba(255, 255, 255, 0.25);
+margin: .15in 0;
+box-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+/* PRESIDENTIAL SWEET BOX (Modified) */
 .sweet-box{
-border:1.5px solid #FFD700;
-box-shadow:0 0 10px rgba(255,215,0,.45);
-padding:.08in;
-margin:.08in 0;
-background:rgba(30,15,50,.55);
+border:2px solid #FFD700;
+box-shadow:0 0 15px rgba(255,215,0,.3);
+padding:.1in;
+margin:.1in 0 0 0;
+background:rgba(20, 10, 40, 0.7);
 font-size:9.5px;
-line-height:1.2
+line-height:1.2;
+text-align: center;
 }
 .sweet-box h3{
 text-align:center;
 font-family:'Playfair Display',serif;
 color:#FFD700;
-font-size:10px;
-margin-bottom:3px
+font-size:11px; /* Smaller to fit one line */
+margin:0 0 2px 0;
+white-space: nowrap;
+letter-spacing: 0.5px;
+}
+.gold-bar-illuminating {
+height: 2px;
+background: linear-gradient(90deg, transparent, #FFD700, #FFF, #FFD700, transparent);
+width: 90%;
+margin: 2px auto 6px auto;
+box-shadow: 0 0 8px #FFD700;
+border-radius: 2px;
+}
+.sweet-box-content {
+text-align: left;
 }
 
-/* VALUE MENU */
+/* VALUE MENU (Moved & Styled) */
 .value-menu{
-grid-column:1 / -1;
-padding:.08in;
-border-top:1px solid rgba(255,255,255,.2);
-margin-top:.08in;
-font-size:10px;
+margin-top: .15in;
+padding-top: .1in;
+border-top: 1px solid rgba(255,215,0,0.4);
+}
+.value-menu h2 {
+font-family:'Playfair Display',serif;
+font-size:14px;
+color:#FFD700;
+margin:0 0 8px;
+text-shadow:0 0 6px rgba(255,215,0,.6);
+border-bottom: 1px dashed rgba(255,215,0,0.3);
+padding-bottom: 4px;
+}
+.value-item {
+font-size: 10px;
+margin-bottom: 3px;
+display: flex;
+justify-content: space-between;
 }
 
-/* FOOTER */
+/* FOOTER (Modified) */
 .footer{
-margin-top:.12in;
+margin-top: auto; /* Pushes to bottom */
+padding-top: .15in;
+border-top: 1px solid rgba(197,164,0,0.5); /* Closes the page out */
 text-align:right;
 font-size:10px;
-opacity:.85
+opacity:.9;
+width: 100%;
+color: #E6C86E;
 }
 </style>
 </head>
@@ -139,194 +181,201 @@ opacity:.85
 
 <div class="columns">
 
-<!-- LEFT COLUMN -->
 <div>
 
-<div class="section">
-<h2>GRILL STATION</h2>
+    <div class="section">
+    <h2>GRILL STATION</h2>
 
-<div class="item">
-<div class="item-name">Grilled Wings</div>
-<span class="sizes">S (6 pcs)</span> <span class="price">$8</span> ·
-<span class="sizes">M (8 pcs)</span> <span class="price">$10</span> ·
-<span class="sizes">L (10 pcs)</span> <span class="price">$12</span><br>
-<span class="label">Prep:</span> Marinated night prior, refrigerated · Chafing dish hold<br>
-<span class="label">Serve:</span> Food boat, napkin, sauce cup<br>
-<span class="label">Toppings / Notes:</span> Ranch · Blue Cheese · Wet BBQ Finish · Wet Hot Sauce Finish
+    <div class="item">
+    <div class="item-name">Grilled Wings</div>
+    <span class="sizes">S (6 pcs)</span> <span class="price">$8</span> ·
+    <span class="sizes">M (8 pcs)</span> <span class="price">$10</span> ·
+    <span class="sizes">L (10 pcs)</span> <span class="price">$12</span><br>
+    <span class="label">Prep:</span> Marinated night prior, refrigerated · Chafing dish hold<br>
+    <span class="label">Serve:</span> Food boat, napkin, sauce cup<br>
+    <span class="label">Toppings / Notes:</span> Ranch · Blue Cheese · Wet BBQ Finish · Wet Hot Sauce Finish
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="item">
+    <div class="item-name">Hot Dogs</div>
+    <span class="price">$4 each</span><br>
+    <span class="label">Prep:</span> Toppings night prior · Grill day-of · Heat lamp hold<br>
+    <span class="label">Serve:</span> Boat + napkin<br>
+    <span class="label">Toppings:</span> Ketchup · Mustard · Relish
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="item">
+    <div class="item-name">Corn on the Cob</div>
+    <strong>Buttered:</strong> ½ <span class="price">$5</span> · 1 <span class="price">$8</span> · 2 <span class="price">$12</span><br>
+    <strong>Elote:</strong> ½ <span class="price">$6</span> · 1 <span class="price">$9</span> · 2 <span class="price">$12</span><br>
+    <span class="label">Prep:</span> Boiled / grilled · Heat lamp hold<br>
+    <span class="label">Toppings:</span> Cotija · Lime · Chili · Elote seasoning
+    </div>
+
+    </div>
+
+    <div class="section">
+    <h2>SAVORY POPCORN STATION</h2>
+
+    <div class="item">
+    <div class="item-name">Savory Popcorn</div>
+    <span class="sizes">S</span> <span class="price">$4</span> ·
+    <span class="sizes">M</span> <span class="price">$6</span> ·
+    <span class="sizes">L</span> <span class="price">$8</span><br>
+    <span class="label">Prep:</span> Butterfly kernels · Popped on-site · Scooped to order · Seasoned<br>
+    <span class="label">Serve:</span> Brown paper bags<br>
+    <span class="label">Flavors:</span> Ranch · Cayenne · Paprika
+    </div>
+
+    </div>
+
+    <div class="white-sep"></div>
+
+    <div class="section">
+    <h2>FRYER STATION — SAVORY</h2>
+
+    <div class="item">
+    <div class="item-name">Fried Wings (Dry Toss)</div>
+    <span class="sizes">S</span> <span class="price">$9</span> ·
+    <span class="sizes">M</span> <span class="price">$12</span> ·
+    <span class="sizes">L</span> <span class="price">$15</span><br>
+    <span class="label">Prep:</span> Breaded & frozen pre-event · Fried day-of<br>
+    <span class="label">Flavors:</span> Ranch · Cayenne · Cheddar · Lemon Pepper · Garlic Herb · Truffle
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="item">
+    <div class="item-name">French Fries</div>
+    <span class="sizes">S</span> <span class="price">$3</span> ·
+    <span class="sizes">M</span> <span class="price">$5</span> ·
+    <span class="sizes">L</span> <span class="price">$7</span><br>
+    <span class="label">Prep:</span> Bulk frozen · Fried day-of · Salted
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="item">
+    <div class="item-name">Fried Okra</div>
+    <span class="sizes">S</span> <span class="price">$4</span> ·
+    <span class="sizes">M</span> <span class="price">$6</span> ·
+    <span class="sizes">L</span> <span class="price">$8</span><br>
+    <span class="label">Prep:</span> Pre-breaded bulk · Fry day-of · Boat service
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="item">
+    <div class="item-name">Pretzels (Plain / Cheese / Cream Cheese)</div>
+    <span class="sizes">S</span> <span class="price">$5</span> ·
+    <span class="sizes">M</span> <span class="price">$8</span> ·
+    <span class="sizes">L</span> <span class="price">$11</span><br>
+    <span class="label">Prep:</span> Dough frozen 3 days prior · Fried day-of · Warming trays · Cheese dip cups
+    </div>
+
+    <div class="value-menu">
+        <h2>VALUE MENU — $2–$5</h2>
+        <div class="value-item"><span>$5 Wings (6) + Small Fry + Small Drink</span></div>
+        <div class="value-item"><span>$4 Hot Dog + Small Fry + Bottled Water</span></div>
+        <div class="value-item"><span>$5 Churros (2) + Lemonade</span></div>
+        <div class="value-item"><span>$3 Fries + Fruit Punch</span></div>
+        <div class="value-item"><span>$5 Sweet Popcorn + Slushie (M)</span></div>
+        <div class="value-item"><span>$4 Funnel Cake Fries (S)</span></div>
+        <div class="value-item"><span>$3 Cookie + Drink</span></div>
+        <div class="value-item"><span>$5 Cotton Candy (S) + Drink</span></div>
+        <div class="value-item"><span>$2 Popcorn (S)</span></div>
+        <div class="value-item"><span>$5 Slushie (M) + Cookie</span></div>
+        <div class="value-item"><span>$5 Elote Cup + Small Drink</span></div>
+        <div class="value-item"><span>$5 Pretzel + Small Drink</span></div>
+    </div>
+
+    </div>
+
 </div>
 
-<div class="hr"></div>
-
-<div class="item">
-<div class="item-name">Hot Dogs</div>
-<span class="price">$4 each</span><br>
-<span class="label">Prep:</span> Toppings night prior · Grill day-of · Heat lamp hold<br>
-<span class="label">Serve:</span> Boat + napkin<br>
-<span class="label">Toppings:</span> Ketchup · Mustard · Relish
-</div>
-
-<div class="hr"></div>
-
-<div class="item">
-<div class="item-name">Corn on the Cob</div>
-<strong>Buttered:</strong> ½ <span class="price">$5</span> · 1 <span class="price">$8</span> · 2 <span class="price">$12</span><br>
-<strong>Elote:</strong> ½ <span class="price">$6</span> · 1 <span class="price">$9</span> · 2 <span class="price">$12</span><br>
-<span class="label">Prep:</span> Boiled / grilled · Heat lamp hold<br>
-<span class="label">Toppings:</span> Cotija · Lime · Chili · Elote seasoning
-</div>
-
-</div>
-
-<div class="section">
-<h2>SAVORY POPCORN STATION</h2>
-
-<div class="item">
-<div class="item-name">Savory Popcorn</div>
-<span class="sizes">S</span> <span class="price">$4</span> ·
-<span class="sizes">M</span> <span class="price">$6</span> ·
-<span class="sizes">L</span> <span class="price">$8</span><br>
-<span class="label">Prep:</span> Butterfly kernels · Popped on-site · Scooped to order · Seasoned<br>
-<span class="label">Serve:</span> Brown paper bags<br>
-<span class="label">Flavors:</span> Ranch · Cayenne · Paprika
-</div>
-
-</div>
-
-<div class="section">
-<h2>FRYER STATION — SAVORY</h2>
-
-<div class="item">
-<div class="item-name">Fried Wings (Dry Toss)</div>
-<span class="sizes">S</span> <span class="price">$9</span> ·
-<span class="sizes">M</span> <span class="price">$12</span> ·
-<span class="sizes">L</span> <span class="price">$15</span><br>
-<span class="label">Prep:</span> Breaded & frozen pre-event · Fried day-of<br>
-<span class="label">Flavors:</span> Ranch · Cayenne · Cheddar · Lemon Pepper · Garlic Herb · Truffle
-</div>
-
-<div class="hr"></div>
-
-<div class="item">
-<div class="item-name">French Fries</div>
-<span class="sizes">S</span> <span class="price">$3</span> ·
-<span class="sizes">M</span> <span class="price">$5</span> ·
-<span class="sizes">L</span> <span class="price">$7</span><br>
-<span class="label">Prep:</span> Bulk frozen · Fried day-of · Salted
-</div>
-
-<div class="hr"></div>
-
-<div class="item">
-<div class="item-name">Fried Okra</div>
-<span class="sizes">S</span> <span class="price">$4</span> ·
-<span class="sizes">M</span> <span class="price">$6</span> ·
-<span class="sizes">L</span> <span class="price">$8</span><br>
-<span class="label">Prep:</span> Pre-breaded bulk · Fry day-of · Boat service
-</div>
-
-<div class="hr"></div>
-
-<div class="item">
-<div class="item-name">Pretzels (Plain / Cheese / Cream Cheese)</div>
-<span class="sizes">S</span> <span class="price">$5</span> ·
-<span class="sizes">M</span> <span class="price">$8</span> ·
-<span class="sizes">L</span> <span class="price">$11</span><br>
-<span class="label">Prep:</span> Dough frozen 3 days prior · Fried day-of · Warming trays · Cheese dip cups
-</div>
-
-</div>
-
-</div>
-
-<!-- RIGHT COLUMN -->
 <div>
 
-<div class="section">
-<h2>COTTON CANDY STATION</h2>
-<div class="item">
-<span class="sizes">Small</span> <span class="price">$4</span> ·
-<span class="sizes">Medium</span> <span class="price">$6</span> ·
-<span class="sizes">Large</span> <span class="price">$8</span> ·
-<span class="sizes">Family</span> <span class="price">$12</span><br>
-<span class="label">Prep:</span> Spun & bagged night-before · Clear gusset bags<br>
-<span class="label">Flavors:</span> Sky Blue · Sunset Pink
+    <div class="section">
+    <h2>COTTON CANDY STATION</h2>
+    <div class="item">
+    <span class="sizes">Small</span> <span class="price">$4</span> ·
+    <span class="sizes">Medium</span> <span class="price">$6</span> ·
+    <span class="sizes">Large</span> <span class="price">$8</span> ·
+    <span class="sizes">Family</span> <span class="price">$12</span><br>
+    <span class="label">Prep:</span> Spun & bagged night-before · Clear gusset bags<br>
+    <span class="label">Flavors:</span> Sky Blue · Sunset Pink
+    </div>
+    </div> <div class="section">
+    <h2>FRYER STATION — SWEET</h2>
+    <div class="item">
+    <div class="item-name">Churros</div>
+    2 <span class="price">$5</span> · 4 <span class="price">$8</span> · 6 <span class="price">$11</span><br>
+    <span class="label">Prep:</span> Scratch dough · Pre-piped & frozen · Fried day-of<br>
+    <span class="label">Toppings:</span> Powdered sugar · Chocolate · Caramel · Vanilla · Sprinkles · Edible Glitter
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="item">
+    <div class="item-name">Funnel Cake Fries</div>
+    S <span class="price">$5</span> · M <span class="price">$8</span> · L <span class="price">$11</span><br>
+    <span class="label">Prep:</span> Scratch batter · Pre-piped & frozen · Fried day-of
+    </div>
+    
+    </div>
+
+    <div class="white-sep"></div>
+
+    <div class="section">
+    <h2>SWEETERY & BAKERY</h2>
+    <div class="item">Belgian Waffles — $6<br><span class="label">Prep:</span> Bulk mix · Vanilla creamer enhancement · Syrup included · Paid drizzles: Chocolate · Caramel · Vanilla</div>
+    <div class="item">Cupcakes — $3<br><span class="label">Prep:</span> Box mix baked night-before · Scratch frostings<br>Flavors: Oreo · Golden Oreo · S’mores · Soft-Launch Caramel</div>
+    <div class="item">Cake Slices — $5<br><span class="label">Prep:</span> Wrapped night-before · Clear seal + branded sticker</div>
+    <div class="item">Cookies (Individually Wrapped) — $2–$3<br><span class="label">Prep:</span> Scratch baked · Sugar · Vanilla · Chocolate Chip</div>
+    <div class="item">Brownies (Individually Wrapped) — $3<br><span class="label">Prep:</span> Scratch baked · Wrapped night-before</div>
+    </div>
+
+    <div class="white-sep"></div>
+
+    <div class="section">
+    <h2>SWEET POPCORN STATION</h2>
+    <div class="item">
+    <span class="sizes">S</span> <span class="price">$4</span> ·
+    <span class="sizes">M</span> <span class="price">$6</span> ·
+    <span class="sizes">L</span> <span class="price">$8</span> ·
+    <span class="sizes">Family</span> <span class="price">$12</span><br>
+    <span class="label">Prep:</span> Pre-made & bagged night-before<br>
+    <span class="label">Flavors:</span> Blue Raspberry · Cherry · Candy Toss Variants<br>
+    <span class="label">Kernels:</span> Mushroom & Butterfly
+    </div>
+    </div>
+
+    <div class="white-sep"></div>
+
+    <div class="section">
+    <h2>SLUSHIE STATION</h2>
+    <div class="item">
+    M <span class="price">$5</span> · L <span class="price">$7</span><br>
+    <span class="label">Prep:</span> Concentrated juice + regular juice<br>
+    <span class="label">Upsell Toppings:</span> 2–3 Gummy Worms · Waffle Platter · Cotton Candy Bottle
+    </div>
+    </div>
+
+    <div class="sweet-box">
+    <h3>Universal Sweet Toppings & Drizzles</h3>
+    <div class="gold-bar-illuminating"></div>
+    <div class="sweet-box-content">
+    <span class="label">Toppings:</span> Chocolate chips · Gummy bears · Gummy worms · Rainbow sprinkles · Edible Glitter<br>
+    <span class="label">Drizzles:</span> Chocolate · Caramel · Vanilla · Honey · Agave
+    </div>
+    </div>
+
 </div>
 
-<div class="section">
-<h2>FRYER STATION — SWEET</h2>
-<div class="item">
-<div class="item-name">Churros</div>
-2 <span class="price">$5</span> · 4 <span class="price">$8</span> · 6 <span class="price">$11</span><br>
-<span class="label">Prep:</span> Scratch dough · Pre-piped & frozen · Fried day-of<br>
-<span class="label">Toppings:</span> Powdered sugar · Chocolate · Caramel · Vanilla · Sprinkles · Edible Glitter
-</div>
-
-<div class="hr"></div>
-
-<div class="item">
-<div class="item-name">Funnel Cake Fries</div>
-S <span class="price">$5</span> · M <span class="price">$8</span> · L <span class="price">$11</span><br>
-<span class="label">Prep:</span> Scratch batter · Pre-piped & frozen · Fried day-of
-</div>
-
-</div>
-
-<div class="section">
-<h2>SWEETERY & BAKERY</h2>
-<div class="item">Belgian Waffles — $6<br><span class="label">Prep:</span> Bulk mix · Vanilla creamer enhancement · Syrup included · Paid drizzles: Chocolate · Caramel · Vanilla</div>
-<div class="item">Cupcakes — $3<br><span class="label">Prep:</span> Box mix baked night-before · Scratch frostings<br>Flavors: Oreo · Golden Oreo · S’mores · Soft-Launch Caramel</div>
-<div class="item">Cake Slices — $5<br><span class="label">Prep:</span> Wrapped night-before · Clear seal + branded sticker</div>
-<div class="item">Cookies (Individually Wrapped) — $2–$3<br><span class="label">Prep:</span> Scratch baked · Sugar · Vanilla · Chocolate Chip</div>
-<div class="item">Brownies (Individually Wrapped) — $3<br><span class="label">Prep:</span> Scratch baked · Wrapped night-before</div>
-</div>
-
-<div class="section">
-<h2>SWEET POPCORN STATION</h2>
-<div class="item">
-<span class="sizes">S</span> <span class="price">$4</span> ·
-<span class="sizes">M</span> <span class="price">$6</span> ·
-<span class="sizes">L</span> <span class="price">$8</span> ·
-<span class="sizes">Family</span> <span class="price">$12</span><br>
-<span class="label">Prep:</span> Pre-made & bagged night-before<br>
-<span class="label">Flavors:</span> Blue Raspberry · Cherry · Candy Toss Variants<br>
-<span class="label">Kernels:</span> Mushroom & Butterfly
-</div>
-</div>
-
-<div class="section">
-<h2>SLUSHIE STATION</h2>
-<div class="item">
-M <span class="price">$5</span> · L <span class="price">$7</span><br>
-<span class="label">Prep:</span> Concentrated juice + regular juice<br>
-<span class="label">Upsell Toppings:</span> 2–3 Gummy Worms · Waffle Platter · Cotton Candy Bottle
-</div>
-</div>
-
-<div class="sweet-box">
-<h3>🍯 Universal Sweet Toppings & Drizzles</h3>
-<span class="label">Toppings:</span> Chocolate chips · Gummy bears · Gummy worms · Rainbow sprinkles · Edible Glitter<br>
-<span class="label">Drizzles:</span> Chocolate · Caramel · Vanilla · Honey · Agave
-</div>
-
-</div>
-
-</div>
-
-<!-- VALUE MENU (1-column across bottom) -->
-<div class="value-menu">
-<h2>VALUE MENU — $2–$5</h2>
-$5 Wings (6) + Small Fry + Small Drink<br>
-$4 Hot Dog + Small Fry + Bottled Water<br>
-$5 Churros (2) + Lemonade<br>
-$3 Fries + Fruit Punch<br>
-$5 Sweet Popcorn + Slushie (M)<br>
-$4 Funnel Cake Fries (S)<br>
-$3 Cookie + Drink<br>
-$5 Cotton Candy (S) + Drink<br>
-$2 Popcorn (S)<br>
-$5 Slushie (M) + Cookie<br>
-$5 Elote Cup + Small Drink<br>
-$5 Pretzel + Small Drink
 </div>
 
 <div class="footer">
