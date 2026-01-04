@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Page 5A — Pilot Food & Beverage Menu</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap');
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+color:#F5F5F5;
+background:linear-gradient(180deg,#0B0D2B 0%,#2A0B3F 55%,#4B1648 85%,#FF1493 100%);
+}
+
+.page{
+width:8.5in;
+min-height:11in;
+margin:auto;
+padding:.4in .5in;
+box-sizing:border-box;
+}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:.15in}
+.header h1{
+font-family:'Playfair Display',serif;
+font-size:32px;
+color:#C5A400;
+text-shadow:0 0 14px rgba(197,164,0,.65);
+margin:0
+}
+.gold-rule{
+height:3px;
+background:linear-gradient(to right,transparent,#C5A400,transparent);
+box-shadow:0 0 12px rgba(197,164,0,.6);
+margin:.12in 0
+}
+
+/* COLUMNS */
+.columns{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:.25in;
+position:relative
+}
+.columns:after{
+content:'';
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:2px;
+background:rgba(197,164,0,.6);
+box-shadow:0 0 10px rgba(197,164,0,.5)
+}
+
+/* SECTION */
+.section{
+padding-left:.18in;
+margin-bottom:.16in;
+position:relative
+}
+.section:before{
+content:'';
+position:absolute;
+left:0;top:0;
+width:4px;height:100%;
+background:#C5A400;
+box-shadow:0 0 8px rgba(197,164,0,.6)
+}
+.section h2{
+font-family:'Playfair Display',serif;
+font-size:18px;
+color:#FFD700;
+margin:0 0 6px;
+text-shadow:0 0 6px rgba(255,215,0,.6)
+}
+
+/* ITEM */
+.item{font-size:10px;line-height:1.3;margin-bottom:.08in}
+.item-name{font-size:11px;color:#FFF;font-weight:600}
+.sizes{color:#D6B85A;font-weight:600}
+.price{color:#7CFF9B;font-weight:600}
+
+.label{
+color:#E6C86E;
+font-weight:600;
+text-shadow:0 0 3px rgba(230,200,110,.4)
+}
+
+.hr{height:1px;background:rgba(255,255,255,.12);margin:3px 0}
+
+/* SWEET TOPPING BOX — MINIMAL */
+.sweet-box{
+border:1.5px solid #FFD700;
+box-shadow:0 0 10px rgba(255,215,0,.45);
+padding:.08in;
+margin:.08in 0;
+background:rgba(30,15,50,.55);
+font-size:9.5px;
+line-height:1.2
+}
+.sweet-box h3{
+text-align:center;
+font-family:'Playfair Display',serif;
+color:#FFD700;
+font-size:10px;
+margin-bottom:3px
+}
+
+/* VALUE MENU */
+.value-menu{
+grid-column:1 / -1;
+padding:.08in;
+border-top:1px solid rgba(255,255,255,.2);
+margin-top:.08in;
+font-size:10px;
+}
+
+/* FOOTER */
+.footer{
+margin-top:.12in;
+text-align:right;
+font-size:10px;
+opacity:.85
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<div class="header">
+<h1>PAGE 5A — PILOT FOOD & BEVERAGE MENU</h1>
+<div class="gold-rule"></div>
+</div>
+
+<div class="columns">
+
+<!-- LEFT COLUMN -->
+<div>
+
+<div class="section">
+<h2>GRILL STATION</h2>
+
+<div class="item">
+<div class="item-name">Grilled Wings</div>
+<span class="sizes">S (6 pcs)</span> <span class="price">$8</span> ·
+<span class="sizes">M (8 pcs)</span> <span class="price">$10</span> ·
+<span class="sizes">L (10 pcs)</span> <span class="price">$12</span><br>
+<span class="label">Prep:</span> Marinated night prior, refrigerated · Chafing dish hold<br>
+<span class="label">Serve:</span> Food boat, napkin, sauce cup<br>
+<span class="label">Toppings / Notes:</span> Ranch · Blue Cheese · Wet BBQ Finish · Wet Hot Sauce Finish
+</div>
+
+<div class="hr"></div>
+
+<div class="item">
+<div class="item-name">Hot Dogs</div>
+<span class="price">$4 each</span><br>
+<span class="label">Prep:</span> Toppings night prior · Grill day-of · Heat lamp hold<br>
+<span class="label">Serve:</span> Boat + napkin<br>
+<span class="label">Toppings:</span> Ketchup · Mustard · Relish
+</div>
+
+<div class="hr"></div>
+
+<div class="item">
+<div class="item-name">Corn on the Cob</div>
+<strong>Buttered:</strong> ½ <span class="price">$5</span> · 1 <span class="price">$8</span> · 2 <span class="price">$12</span><br>
+<strong>Elote:</strong> ½ <span class="price">$6</span> · 1 <span class="price">$9</span> · 2 <span class="price">$12</span><br>
+<span class="label">Prep:</span> Boiled / grilled · Heat lamp hold<br>
+<span class="label">Toppings:</span> Cotija · Lime · Chili · Elote seasoning
+</div>
+
+</div>
+
+<div class="section">
+<h2>SAVORY POPCORN STATION</h2>
+
+<div class="item">
+<div class="item-name">Savory Popcorn</div>
+<span class="sizes">S</span> <span class="price">$4</span> ·
+<span class="sizes">M</span> <span class="price">$6</span> ·
+<span class="sizes">L</span> <span class="price">$8</span><br>
+<span class="label">Prep:</span> Butterfly kernels · Popped on-site · Scooped to order · Seasoned<br>
+<span class="label">Serve:</span> Brown paper bags<br>
+<span class="label">Flavors:</span> Ranch · Cayenne · Paprika
+</div>
+
+</div>
+
+<div class="section">
+<h2>FRYER STATION — SAVORY</h2>
+
+<div class="item">
+<div class="item-name">Fried Wings (Dry Toss)</div>
+<span class="sizes">S</span> <span class="price">$9</span> ·
+<span class="sizes">M</span> <span class="price">$12</span> ·
+<span class="sizes">L</span> <span class="price">$15</span><br>
+<span class="label">Prep:</span> Breaded & frozen pre-event · Fried day-of<br>
+<span class="label">Flavors:</span> Ranch · Cayenne · Cheddar · Lemon Pepper · Garlic Herb · Truffle
+</div>
+
+<div class="hr"></div>
+
+<div class="item">
+<div class="item-name">French Fries</div>
+<span class="sizes">S</span> <span class="price">$3</span> ·
+<span class="sizes">M</span> <span class="price">$5</span> ·
+<span class="sizes">L</span> <span class="price">$7</span><br>
+<span class="label">Prep:</span> Bulk frozen · Fried day-of · Salted
+</div>
+
+<div class="hr"></div>
+
+<div class="item">
+<div class="item-name">Fried Okra</div>
+<span class="sizes">S</span> <span class="price">$4</span> ·
+<span class="sizes">M</span> <span class="price">$6</span> ·
+<span class="sizes">L</span> <span class="price">$8</span><br>
+<span class="label">Prep:</span> Pre-breaded bulk · Fry day-of · Boat service
+</div>
+
+<div class="hr"></div>
+
+<div class="item">
+<div class="item-name">Pretzels (Plain / Cheese / Cream Cheese)</div>
+<span class="sizes">S</span> <span class="price">$5</span> ·
+<span class="sizes">M</span> <span class="price">$8</span> ·
+<span class="sizes">L</span> <span class="price">$11</span><br>
+<span class="label">Prep:</span> Dough frozen 3 days prior · Fried day-of · Warming trays · Cheese dip cups
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT COLUMN -->
+<div>
+
+<div class="section">
+<h2>COTTON CANDY STATION</h2>
+<div class="item">
+<span class="sizes">Small</span> <span class="price">$4</span> ·
+<span class="sizes">Medium</span> <span class="price">$6</span> ·
+<span class="sizes">Large</span> <span class="price">$8</span> ·
+<span class="sizes">Family</span> <span class="price">$12</span><br>
+<span class="label">Prep:</span> Spun & bagged night-before · Clear gusset bags<br>
+<span class="label">Flavors:</span> Sky Blue · Sunset Pink
+</div>
+
+<div class="section">
+<h2>FRYER STATION — SWEET</h2>
+<div class="item">
+<div class="item-name">Churros</div>
+2 <span class="price">$5</span> · 4 <span class="price">$8</span> · 6 <span class="price">$11</span><br>
+<span class="label">Prep:</span> Scratch dough · Pre-piped & frozen · Fried day-of<br>
+<span class="label">Toppings:</span> Powdered sugar · Chocolate · Caramel · Vanilla · Sprinkles · Edible Glitter
+</div>
+
+<div class="hr"></div>
+
+<div class="item">
+<div class="item-name">Funnel Cake Fries</div>
+S <span class="price">$5</span> · M <span class="price">$8</span> · L <span class="price">$11</span><br>
+<span class="label">Prep:</span> Scratch batter · Pre-piped & frozen · Fried day-of
+</div>
+
+</div>
+
+<div class="section">
+<h2>SWEETERY & BAKERY</h2>
+<div class="item">Belgian Waffles — $6<br><span class="label">Prep:</span> Bulk mix · Vanilla creamer enhancement · Syrup included · Paid drizzles: Chocolate · Caramel · Vanilla</div>
+<div class="item">Cupcakes — $3<br><span class="label">Prep:</span> Box mix baked night-before · Scratch frostings<br>Flavors: Oreo · Golden Oreo · S’mores · Soft-Launch Caramel</div>
+<div class="item">Cake Slices — $5<br><span class="label">Prep:</span> Wrapped night-before · Clear seal + branded sticker</div>
+<div class="item">Cookies (Individually Wrapped) — $2–$3<br><span class="label">Prep:</span> Scratch baked · Sugar · Vanilla · Chocolate Chip</div>
+<div class="item">Brownies (Individually Wrapped) — $3<br><span class="label">Prep:</span> Scratch baked · Wrapped night-before</div>
+</div>
+
+<div class="section">
+<h2>SWEET POPCORN STATION</h2>
+<div class="item">
+<span class="sizes">S</span> <span class="price">$4</span> ·
+<span class="sizes">M</span> <span class="price">$6</span> ·
+<span class="sizes">L</span> <span class="price">$8</span> ·
+<span class="sizes">Family</span> <span class="price">$12</span><br>
+<span class="label">Prep:</span> Pre-made & bagged night-before<br>
+<span class="label">Flavors:</span> Blue Raspberry · Cherry · Candy Toss Variants<br>
+<span class="label">Kernels:</span> Mushroom & Butterfly
+</div>
+</div>
+
+<div class="section">
+<h2>SLUSHIE STATION</h2>
+<div class="item">
+M <span class="price">$5</span> · L <span class="price">$7</span><br>
+<span class="label">Prep:</span> Concentrated juice + regular juice<br>
+<span class="label">Upsell Toppings:</span> 2–3 Gummy Worms · Waffle Platter · Cotton Candy Bottle
+</div>
+</div>
+
+<div class="sweet-box">
+<h3>🍯 Universal Sweet Toppings & Drizzles</h3>
+<span class="label">Toppings:</span> Chocolate chips · Gummy bears · Gummy worms · Rainbow sprinkles · Edible Glitter<br>
+<span class="label">Drizzles:</span> Chocolate · Caramel · Vanilla · Honey · Agave
+</div>
+
+</div>
+
+</div>
+
+<!-- VALUE MENU (1-column across bottom) -->
+<div class="value-menu">
+<h2>VALUE MENU — $2–$5</h2>
+$5 Wings (6) + Small Fry + Small Drink<br>
+$4 Hot Dog + Small Fry + Bottled Water<br>
+$5 Churros (2) + Lemonade<br>
+$3 Fries + Fruit Punch<br>
+$5 Sweet Popcorn + Slushie (M)<br>
+$4 Funnel Cake Fries (S)<br>
+$3 Cookie + Drink<br>
+$5 Cotton Candy (S) + Drink<br>
+$2 Popcorn (S)<br>
+$5 Slushie (M) + Cookie<br>
+$5 Elote Cup + Small Drink<br>
+$5 Pretzel + Small Drink
+</div>
+
+<div class="footer">
+Urban Cinematic Drive-In · Page 5A · Pilot Launch Menu Architecture
+</div>
+
+</div>
+</body>
+</html>
