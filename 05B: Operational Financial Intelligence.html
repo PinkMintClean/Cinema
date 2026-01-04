@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Page 5B — Operational Intelligence</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+color:#F5F5F5;
+background:linear-gradient(180deg,#0B0D2B 0%,#2A0B3F 55%,#4B1648 85%,#FF1493 100%);
+}
+
+.page{
+width:8.5in;
+min-height:11in;
+margin:auto;
+padding:.4in .5in;
+box-sizing:border-box;
+display: flex;
+flex-direction: column;
+}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:.15in}
+.header h1{
+font-family:'Playfair Display',serif;
+font-size:28px;
+color:#C5A400;
+text-shadow:0 0 14px rgba(197,164,0,.65);
+margin:0;
+letter-spacing: 1px;
+}
+.gold-rule{
+height:3px;
+background:linear-gradient(to right,transparent,#C5A400,transparent);
+box-shadow:0 0 12px rgba(197,164,0,.6);
+margin:.1in 0
+}
+
+/* HIGH-DENSITY GRID */
+.grid-container {
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 0.2in;
+flex-grow: 1;
+}
+
+.col-left { border-right: 1px solid rgba(197,164,0,0.3); padding-right: 0.15in; }
+
+/* INTEL BOXES */
+.intel-section { margin-bottom: 0.2in; }
+.intel-section h2 {
+font-family: 'Playfair Display', serif;
+font-size: 16px;
+color: #FFD700;
+border-bottom: 1px solid #C5A400;
+padding-bottom: 4px;
+margin-bottom: 10px;
+text-transform: uppercase;
+}
+
+.data-row {
+display: flex;
+justify-content: space-between;
+font-size: 10px;
+margin-bottom: 6px;
+border-bottom: 1px solid rgba(255,255,255,0.05);
+padding-bottom: 2px;
+}
+
+.label { color: #D6B85A; font-weight: 700; }
+.value { color: #FFF; }
+.highlight { color: #7CFF9B; font-weight: 700; }
+
+/* TIMELINE BOX */
+.timeline {
+background: rgba(0,0,0,0.2);
+padding: 10px;
+border-left: 3px solid #FFD700;
+font-size: 9.5px;
+}
+.timeline-item { margin-bottom: 8px; position: relative; padding-left: 15px; }
+.timeline-item::before {
+content: '•';
+position: absolute;
+left: 0;
+color: #FF1493;
+font-weight: bold;
+}
+
+/* PRESIDENTIAL BOX */
+.presidential-box {
+border: 2px solid #C5A400;
+background: rgba(30,15,50,0.6);
+padding: 12px;
+margin-top: 10px;
+box-shadow: 0 0 15px rgba(197,164,0,0.2);
+}
+.gold-bar {
+height: 2px;
+background: linear-gradient(90deg, transparent, #C5A400, #FFF, #C5A400, transparent);
+margin: 8px 0;
+}
+
+.footer {
+margin-top: auto;
+text-align: right;
+font-size: 10px;
+color: #C5A400;
+border-top: 1px solid rgba(197,164,0,0.5);
+padding-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <h1>PAGE 5B — OPERATIONAL FINANCIAL INTELLIGENCE</h1>
+        <div class="gold-rule"></div>
+    </div>
+
+    <div class="grid-container">
+        <div class="col-left">
+            <div class="intel-section">
+                <h2>I. ATOMIC UNIT ECONOMICS (MATH PROOF)</h2>
+                <div class="data-row"><span class="label">ITEM</span> <span class="label">UNIT COST</span> <span class="label">PRICE</span> <span class="label">GP %</span></div>
+                <div class="data-row"><span>Fried Wings (6ct)</span> <span>$3.15</span> <span>$8.00</span> <span class="highlight">60.6%</span></div>
+                <div class="data-row"><span>French Fries (L)</span> <span>$0.42</span> <span>$7.00</span> <span class="highlight">94.0%</span></div>
+                <div class="data-row"><span>Savory Popcorn (L)</span> <span>$0.65</span> <span>$8.00</span> <span class="highlight">91.8%</span></div>
+                <div class="data-row"><span>Cotton Candy (S)</span> <span>$0.30</span> <span>$4.00</span> <span class="highlight">92.5%</span></div>
+                <div class="data-row"><span>Churros (2ct)</span> <span>$0.55</span> <span>$5.00</span> <span class="highlight">89.0%</span></div>
+                <div class="data-row"><span>Slushie (M)</span> <span>$0.60</span> <span>$5.00</span> <span class="highlight">88.0%</span></div>
+                <div class="data-row"><span>Hot Dog (ea)</span> <span>$0.95</span> <span>$4.00</span> <span class="highlight">76.2%</span></div>
+            </div>
+
+            <div class="intel-section">
+                <h2>II. HYBRID PREP LOGIC (THE 72-HOUR SHIELD)</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>T-72H:</strong> Scratch Dough Production (Pretzels/Churros). Individually flash-frozen to lock in chew and aroma.</div>
+                    <div class="timeline-item"><strong>T-48H:</strong> Mushroom Kernel Glazing (Sweet Popcorn). Cool-curing ensures zero-stick visual quality.</div>
+                    <div class="timeline-item"><strong>T-24H:</strong> Dry-Path Wing Prep. Pre-breaded and set to prevent loose flour oil degradation.</div>
+                    <div class="timeline-item"><strong>EVENT DAY:</strong> Waffle Warming & Aromatic Smoking. Smoker usage is for scent-marketing/upsell.</div>
+                </div>
+            </div>
+
+            <div class="intel-section">
+                <h2>III. RISK MITIGATION & SUPPLY CHAIN</h2>
+                <div class="data-row"><span>Primary Sourcing:</span> <span class="value">National Retail (Kroger/Walmart/Amazon)</span></div>
+                <div class="data-row"><span>Supply Redundancy:</span> <span class="value">Zero Single-Point Vendor Failure</span></div>
+                <div class="data-row"><span>Waste Buffer:</span> <span class="value">13.3% Managed Contingency Fund</span></div>
+            </div>
+        </div>
+
+        <div class="col-right">
+            <div class="intel-section">
+                <h2>IV. REVENUE ROLE MAPPING</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><strong style="color:#FFD700">ANCHORS:</strong> Fries, Popcorn, Hot Dogs (High Volume/Predictable).</div>
+                    <div class="timeline-item"><strong style="color:#FFD700">UPSELLS:</strong> Wings, Elote, Slushies (Visual/Perceived Value).</div>
+                    <div class="timeline-item"><strong style="color:#FFD700">STABILIZERS:</strong> Cookies, Brownies, Water (Fixed Cost/Fast Service).</div>
+                </div>
+            </div>
+
+            <div class="presidential-box">
+                <h3 style="margin:0; font-size:12px; color:#FFD700; text-align:center;">OPERATIONAL COMPLIANCE STATUS</h3>
+                <div class="gold-bar"></div>
+                <div style="font-size:9.5px; line-height:1.5;">
+                    ✅ <strong>NO-WET-BATTER POLICY:</strong> All frying is dry-tossed or pre-set to maximize oil lifespan.<br>
+                    ✅ <strong>WAFFLE BATCHING:</strong> Zero on-site cooking; warming-only for 15-second service times.<br>
+                    ✅ <strong>LABOR EFFICIENCY:</strong> Prep-to-Service ratio maintained at 1:1.5.
+                </div>
+            </div>
+
+            <div class="intel-section" style="margin-top:20px;">
+                <h2>V. LABOR METRICS</h2>
+                <div class="data-row"><span>Service Staff:</span> <span class="value">2-3 Persons</span></div>
+                <div class="data-row"><span>Prep Hours:</span> <span class="value">4-6 Hours</span></div>
+                <div class="data-row"><span>Target Labor Cost:</span> <span class="highlight">&lt; 25% Gross Revenue</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Urban Cinematic Drive-In · Operational Intelligence · Page 5B
+    </div>
+</div>
+
+</body>
+</html>
