@@ -2,150 +2,98 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Page 5B — Sweet Fryer Station: Individualized Production SOP</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap');
-
 body{ margin:0; font-family:'Montserrat',sans-serif; color:#F5F5F5; background:linear-gradient(180deg,#0B0D2B 0%,#2A0B3F 55%,#4B1648 85%,#FF1493 100%); }
-
-.page{
-    width:8.5in; min-height:11in; margin:auto; padding:.4in .5in;
-    box-sizing:border-box; display: flex; flex-direction: column;
-}
-
-.header{text-align:center;margin-bottom:.15in}
-.header h1{ font-family:'Playfair Display',serif; font-size:24px; color:#C5A400; margin:0; text-transform: uppercase; letter-spacing: 2px;}
-.gold-rule{ height:3px; background:linear-gradient(to right,transparent,#C5A400,transparent); margin:.1in 0 }
-
-.station-title {
-    background: rgba(197, 164, 0, 0.15);
-    border: 1px solid #C5A400;
-    padding: 10px;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: #FFD700;
-    margin-bottom: .2in;
-}
-
-.item-container {
-    background: rgba(0,0,0,0.25);
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: .25in;
-    border-left: 5px solid #FF1493;
-}
-
-.item-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(197,164,0,0.5);
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.item-name { font-family: 'Playfair Display', serif; font-size: 18px; color: #FFF; }
-.mechanical-tag { color: #7CFF9B; font-size: 10px; font-weight: 700; text-transform: uppercase;}
-
-.grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; }
-
-.sub-head { color: #E6C86E; font-weight: 700; font-size: 11px; text-transform: uppercase; margin-top: 10px; margin-bottom: 5px; display: block;}
-
-.ingredient-list { font-size: 10px; line-height: 1.5; columns: 2; list-style-type: square; padding-left: 15px;}
-.step-text { font-size: 10px; line-height: 1.4; text-align: justify; margin-bottom: 8px;}
-
-.box-highlight {
-    border: 1px dashed #7CFF9B;
-    padding: 10px;
-    background: rgba(124, 255, 155, 0.05);
-    font-size: 10px;
-    margin-top: 10px;
-}
-
-.footer{ margin-top: auto; padding-top: .1in; border-top: 1px solid rgba(197,164,0,0.5); text-align:right; font-size:10px; color: #E6C86E; }
+.page{ width:8.5in; min-height:11in; margin:auto; padding:.2in .3in; box-sizing:border-box; display: flex; flex-direction: column; border: 1px solid #333;}
+.header{text-align:center;margin-bottom:.05in}
+.header h1{ font-family:'Playfair Display',serif; font-size:18px; color:#C5A400; margin:0; text-transform: uppercase; letter-spacing: 2px;}
+.gold-rule{ height:2px; background:linear-gradient(to right,transparent,#C5A400,transparent); margin:.05in 0 }
+.item-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(197, 164, 0, 0.6); padding: 10px; margin-bottom: .1in; border-left: 6px solid #FF1493; }
+.card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 164, 0, 0.4); padding-bottom: 3px; margin-bottom: 5px; }
+.card-header h2 { font-family: 'Playfair Display', serif; font-size: 14px; color: #FFD700; margin: 0; text-transform: uppercase; }
+.mechanical-tag { font-size: 8px; font-weight: 700; color: #7CFF9B; border: 1px solid #7CFF9B; padding: 1px 4px; text-transform: uppercase; }
+.card-body { display: grid; grid-template-columns: 0.8fr 1.4fr 0.8fr; gap: 10px; }
+.col-title { color: #E6C86E; font-weight: 700; font-size: 9px; text-transform: uppercase; display: block; margin-bottom: 3px; border-bottom: 1px dotted rgba(230, 200, 110, 0.3); }
+.list-items { font-size: 8px; line-height: 1.2; margin: 0; padding-left: 10px; list-style-type: disc; }
+.step-text { font-size: 8px; line-height: 1.2; text-align: justify; margin-bottom: 4px; color: #EEE; }
+.bold-step { color: #FFD700; font-weight: 700; }
+.footer{ margin-top: auto; padding-top: .05in; border-top: 1px solid rgba(197, 164, 0, 0.5); text-align:right; font-size:8px; color: #E6C86E; }
 </style>
 </head>
 <body>
 <div class="page">
-    <div class="header">
-        <h1>OPERATIONAL LOGISTICS: INDIVIDUALIZED PRODUCTION</h1>
-        <div class="gold-rule"></div>
-    </div>
+    <div class="header"><h1>SWEETERY LOGISTICS: EXHAUSTIVE PRODUCTION (CARDS 1-4)</h1><div class="gold-rule"></div></div>
 
-    <div class="station-title">STATION ALPHA: THE SWEET FRYER (CHURRO & FUNNEL FOCUS)</div>
-
-    <div class="item-container">
-        <div class="item-header">
-            <span class="item-name">1. SCRATCH-MADE CHURROS (PÂTE À CHOUX)</span>
-            <span class="mechanical-tag">Mechanical Prep: 1200W Planetary Mixer Required</span>
-        </div>
-        <div class="grid">
-            <div>
-                <span class="sub-head">Atomic Ingredients</span>
-                <ul class="ingredient-list">
-                    <li>Filtered Water</li>
-                    <li>Unsalted High-Fat Butter</li>
-                    <li>All-Purpose Flour (Sifted)</li>
-                    <li>Farm-Fresh Large Eggs</li>
-                    <li>Fine Sea Salt</li>
-                    <li>Granulated Sugar</li>
-                    <li>Cinnamon (Ceylon Grade)</li>
-                    <li>Vanilla Bean Paste</li>
-                </ul>
-                <span class="sub-head">Post-Cook Warming</span>
-                <div class="step-text">
-                    <b>Primary:</b> Commercial Stainless Warming Tray (Dry Heat).<br>
-                    <b>Secondary:</b> Chafing Dish with indirect steam if volume exceeds 50 units/hour.
-                </div>
+    <div class="item-card">
+        <div class="card-header"><h2>1. SCRATCH-MADE CHURROS</h2><span class="mechanical-tag">1200W Engine: Paddle Attachment</span></div>
+        <div class="card-body">
+            <div><span class="col-title">Atomic Ingredients</span><ul class="list-items"><li>Filtered Water</li><li>High-Fat Unsalted Butter</li><li>Sifted AP Flour</li><li>Fresh Grade A Eggs</li><li>Pure Vanilla Bean Paste</li><li>Fine Sea Salt</li><li>Granulated Sugar</li><li>Ceylon Cinnamon</li><li>Vegetable Fry Oil</li></ul></div>
+            <div><span class="col-title">Exhaustive Preparation & Phases</span>
+                <div class="step-text"><span class="bold-step">Phase 1:</span> Boil water, butter, salt in heavy-bottom pot. Dump flour in at once; stir vigorously by hand until dough pulls from sides.</div>
+                <div class="step-text"><span class="bold-step">Phase 2:</span> Transfer to mixer. Run <b>Speed 2</b> for 3 mins to vent heat. Slowly add eggs at <b>Speed 4</b> until a glossy "hook" forms. Fold in vanilla paste.</div>
+                <div class="step-text"><span class="bold-step">Phase 3 (Cryo):</span> Pipe 6" star-profile rods on parchment. Flash-freeze for 4 hours. Once solid, transfer into labeled, airtight Ziploc bags for transport.</div>
             </div>
-            <div>
-                <span class="sub-head">Industrial Prep Phases</span>
-                <div class="step-text"><b>X-2 DAY PREP:</b> Boil water/butter. Incorporate flour via stovetop agitation. Transfer to mixer. Use <b>Speed 2</b> for 2 mins to vent steam. Switch to <b>Speed 4</b> and add eggs via splash-port until glossy emulsion is achieved. Pipe into 6" star-profile rods and flash-freeze.</div>
-                <span class="sub-head">Event-Day Field Staging</span>
-                <div class="step-text"><b>Setup Hour (T-60 mins):</b> Pre-fry first 20 orders from frozen. Toss in Cinnamon-Sugar while oil-tack is active. Place in pre-heated warming tray. This ensures "Zero-Wait" service for the first wave of arriving vehicles. Drop fresh batches every 15 mins to maintain stock.</div>
+            <div><span class="col-title">Service & Holding</span>
+                <div class="step-text"><span class="bold-step">Field Fry:</span> 375°F Oil. Pre-fry 20 units T-60 mins. Toss in Cinnamon-Sugar while oil-tack is active.</div>
+                <div class="step-text"><span class="bold-step">Holding:</span> <b>Stainless Warming Tray</b> (Dry Heat) at 155°F.</div>
+                <div class="step-text"><span class="bold-step">Sold:</span> 3-count ($6) or 5-count ($9). Served in parchment gusset with dipping cup.</div>
             </div>
         </div>
     </div>
 
-    <div class="item-container" style="border-left: 5px solid #C5A400;">
-        <div class="item-header">
-            <span class="item-name">2. FUNNEL CAKE FRIES (CRYO-STAGED)</span>
-            <span class="mechanical-tag">Mechanical Prep: 1200W Whisk Aeration</span>
-        </div>
-        <div class="grid">
-            <div>
-                <span class="sub-head">Atomic Ingredients</span>
-                <ul class="ingredient-list">
-                    <li>All-Purpose Flour</li>
-                    <li>Double-Acting Baking Powder</li>
-                    <li>Whole Milk (Cold)</li>
-                    <li>Granulated Sugar</li>
-                    <li>Large Eggs</li>
-                    <li>Pure Vanilla Extract</li>
-                    <li>Powdered Sugar (Dusting)</li>
-                    <li>Pinch of Nutmeg</li>
-                </ul>
-                <span class="sub-head">Post-Cook Bagging</span>
-                <div class="step-text">
-                    <b>Station Setup:</b> Pre-fry 30 batches during vehicle ingress. <br>
-                    <b>Bagging:</b> Bag into S (8pc), M (12pc), and L (18pc) counts. Store bags upright in warming trays to maintain airflow and prevent sogginess.
-                </div>
+    <div class="item-card" style="border-left-color: #C5A400;">
+        <div class="card-header"><h2>2. INDIVIDUALIZED FUNNEL CAKE FRIES</h2><span class="mechanical-tag">1200W Engine: Whisk Attachment</span></div>
+        <div class="card-body">
+            <div><span class="col-title">Atomic Ingredients</span><ul class="list-items"><li>AP Enriched Flour</li><li>Whole Vitamin D Milk</li><li>Granulated Sugar</li><li>Farm Eggs</li><li>Baking Powder (Double-Act)</li><li>Vanilla Extract</li><li>Confectioners Sugar</li><li>Ground Nutmeg</li><li>Sea Salt</li><li>Refined Fry Oil</li></ul></div>
+            <div><span class="col-title">Exhaustive Preparation & Phases</span>
+                <div class="step-text"><span class="bold-step">Phase 1:</span> Whisk milk, eggs, and vanilla in mixer at <b>Speed 6</b> for 4 mins to create structural aeration.</div>
+                <div class="step-text"><span class="bold-step">Phase 2:</span> In a separate bowl, sift dry goods twice to ensure Nutmeg and Salt distribution.</div>
+                <div class="step-text"><span class="bold-step">Phase 3:</span> Reduce mixer to <b>Speed 1</b>. Rain in dry mix until "ribbon stage." Pipe 4" uniform rods onto trays.</div>
+                <div class="step-text"><span class="bold-step">Phase 4 (Cryo):</span> Flash-freeze on trays. Transfer to Ziploc bags. Freezing locks the batter's moisture in for a fluffier "pop" when hitting hot oil.</div>
             </div>
-            <div>
-                <span class="sub-head">Industrial Prep Phases</span>
-                <div class="step-text"><b>X-2 DAY PREP:</b> Sift dry ingredients. Use 1200W Whisk at <b>Speed 6</b> to combine dairy/eggs until frothy. Slow to <b>Speed 1</b> and rain in dry mix via splash-port. Pipe into 4" "Fry" shapes on parchment. Freeze solid to lock the shape.</div>
-                <span class="sub-head">Event-Day Execution</span>
-                <div class="step-text"><b>Live Drop:</b> Fry directly from frozen at 375°F. The frozen core ensures the fry stays buoyant and expands without absorbing excess oil. Dust with powdered sugar immediately upon exit using a fine-mesh shaker.</div>
+            <div><span class="col-title">Service & Holding</span>
+                <div class="step-text"><span class="bold-step">Field Fry:</span> Fry directly from frozen at 375°F. Pre-fry S/M/L batch counts 45 mins prior to gates.</div>
+                <div class="step-text"><span class="bold-step">Holding:</span> <b>Warming Tray</b> with vertical spacers to prevent stacking/sogging.</div>
+                <div class="step-text"><span class="bold-step">Sold:</span> S (8) M (12) L (18). Served in paper food boats with heavy powdered sugar dust.</div>
             </div>
-        </div>
-        <div class="box-highlight">
-            <b>LENDER NOTE:</b> By pre-bagging and staging in warming trays 60 minutes before the film starts, we solve the "Concession Rush" bottleneck. This mechanical prep allows a single operator to serve 100+ orders in the 20-minute peak window.
         </div>
     </div>
 
-    <div class="footer">
-        The Purple Box Drive-In · Page 5B · Alpha Station Mechanics · 1817 Hughes Rd.
+    <div class="item-card" style="border-left-color: #7CFF9B;">
+        <div class="card-header"><h2>3. SCRATCH-MADE SOFT PRETZELS</h2><span class="mechanical-tag">1200W Engine: Dough Hook</span></div>
+        <div class="card-body">
+            <div><span class="col-title">Atomic Ingredients</span><ul class="list-items"><li>High-Protein Bread Flour</li><li>Filtered Warm Water</li><li>Active Dry Yeast</li><li>Light Brown Sugar</li><li>Clarified Butter (Melted)</li><li>Fine Sea Salt</li><li>Baking Soda (Bath)</li><li>Coarse Pretzel Salt</li></ul></div>
+            <div><span class="col-title">Exhaustive Preparation & Phases</span>
+                <div class="step-text"><span class="bold-step">Phase 1:</span> Bloom yeast in warm water/sugar for 10 mins. Add to mixer with flour/butter. Knead at <b>Speed 2</b> for 8 mins until elastic.</div>
+                <div class="step-text"><span class="bold-step">Phase 2:</span> Bulk proof 60 mins. Portion into 5oz balls. Hand-roll 20" ropes and twist.</div>
+                <div class="step-text"><span class="bold-step">Phase 3:</span> 30s dip in boiling water + Baking Soda (Alkaline Bath). This creates the "brown" pretzel skin. Flash-freeze solid.</div>
+            </div>
+            <div><span class="col-title">Service & Holding</span>
+                <div class="step-text"><span class="bold-step">Field Bake:</span> 425°F for 10-12 mins. Pre-bake 15 units 60 mins prior. Brush with melted butter immediately.</div>
+                <div class="step-text"><span class="bold-step">Holding:</span> <b>Humidity-Controlled Steam Warmer</b>. Dry heat will ruin the crust.</div>
+                <div class="step-text"><span class="bold-step">Sold:</span> Single Twist. Served in foil bag to retain moisture. Optional cheese dip.</div>
+            </div>
+        </div>
     </div>
+
+    <div class="item-card" style="border-left-color: #00E5FF;">
+        <div class="card-header"><h2>4. PINEAPPLE UPSIDE-DOWN CAKE</h2><span class="mechanical-tag">1200W Engine: Paddle Attachment</span></div>
+        <div class="card-body">
+            <div><span class="col-title">Atomic Ingredients</span><ul class="list-items"><li>Yellow Cake Base</li><li>Clarified Butter</li><li>Whole Vitamin D Milk</li><li>Reserved Pineapple Juice</li><li>Farm Large Eggs</li><li>Drained Pineapple Rings</li><li>Maraschino Cherries</li><li>Dark Brown Sugar</li></ul></div>
+            <div><span class="col-title">Exhaustive Preparation & Phases</span>
+                <div class="step-text"><span class="bold-step">Phase 1:</span> Coat 9x13 pan base with melted butter. Pack 1/2" layer of dark brown sugar. Press pineapple rings and cherries into sugar.</div>
+                <div class="step-text"><span class="bold-step">Phase 2:</span> In mixer, combine cake base, milk, juice, butter, and eggs at <b>Speed 4</b> for 2 mins. Pour gently over fruit.</div>
+                <div class="step-text"><span class="bold-step">Phase 3:</span> Bake. Must cool 100% in pan to allow sugar to "set" as a caramel glaze. Invert. Slice into 12 units. Wrap in branded cellophane.</div>
+            </div>
+            <div><span class="col-title">Service & Holding</span>
+                <div class="step-text"><span class="bold-step">Staging:</span> Individual units placed in bakery transport trays.</div>
+                <div class="step-text"><span class="bold-step">Holding:</span> <b>Ambient Acrylic Display Case</b>. Visually showcases the glazed fruit to driving customers.</div>
+                <div class="step-text"><span class="bold-step">Sold:</span> Single Slice ($5). Served on a gold-rimmed paper plate with a fork.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">The Purple Box Drive-In · Page 5B · Sweetery Logistics Part 1 · 1817 Hughes Rd.</div>
 </div>
 </body>
 </html>
