@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@page { margin: 0; size: letter; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    background: #05071A linear-gradient(180deg, #05071A 0%, #1A0B2E 50%, #4B0082 100%) no-repeat;
+    background-size: cover;
+    min-height: 11in;
+    display: flex;
+    justify-content: center;
+}
+
+.page-container { 
+    width: 8.5in; 
+    height: 11in; 
+    padding: 0.5in; 
+    position: relative; 
+    color: #FFF; 
+    font-family: 'Montserrat', sans-serif;
+    border: 3px solid #C5A400;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+}
+
+.header { border-bottom: 2px solid #C5A400; margin-bottom: 20px; padding-bottom: 8px; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: 22pt; color: #C5A400; margin: 0; text-transform: uppercase; letter-spacing: 5px; }
+
+.item-card { 
+    background: rgba(255, 255, 255, 0.07); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12); 
+    padding: 15px; 
+    margin-bottom: 15px; 
+    border-radius: 2px; 
+    border-left: 5px solid #C5A400;
+}
+
+.card-title { font-family: 'Playfair Display', serif; font-size: 14pt; color: #C5A400; text-transform: uppercase; border-bottom: 1px solid rgba(197, 164, 0, 0.3); margin-bottom: 10px; }
+.grid-container { display: grid; grid-template-columns: 0.8fr 1.2fr 1fr; gap: 15px; }
+.label { color: #C5A400; font-weight: 800; font-size: 8.5pt; text-transform: uppercase; display: block; margin-bottom: 5px; }
+.list-ing { font-size: 9pt; margin: 0; padding-left: 12px; list-style: square; color: #FFF; font-weight: 500; line-height: 1.5; }
+.content-text { font-size: 8.5pt; line-height: 1.4; color: #FFF; }
+.bold { color: #C5A400; font-weight: 800; text-decoration: underline; }
+
+.footer { position: absolute; bottom: 0.4in; right: 0.5in; font-size: 10pt; color: #C5A400; font-weight: 800; letter-spacing: 3px; }
+</style>
+</head>
+<body>
+
+<div class="page-container">
+    <div class="header"><h1>PRODUCTION BIBLE // PAGE 6B</h1></div>
+
+    <div class="item-card">
+        <div class="card-title">4. SIGNATURE ATOMIC HOT DOGS (GRILL)</div>
+        <div class="grid-container">
+            <div>
+                <span class="label">Atomic Inputs</span>
+                <ul class="list-ing">
+                    <li>All-Beef Franks</li>
+                    <li>Premium Brioche Buns</li>
+                    <li>Garlic Butter Glaze</li>
+                    <li>Diced Onions / Relish</li>
+                </ul>
+            </div>
+            <div>
+                <span class="label">Commissary Prep</span>
+                <div class="content-text">
+                    <span class="bold">The Score:</span> Cut a shallow cross-hatch (X-pattern) across the top of each frank. This allows heat to penetrate and "blossom" the meat on the grill.
+                </div>
+                <div class="content-text">
+                    <span class="bold">The Bun:</span> Pre-split buns and brush the interior lightly with Garlic Butter. Place in bins.
+                </div>
+            </div>
+            <div>
+                <span class="label">Machine: Industrial Grill</span>
+                <div class="content-text">
+                    <span class="bold">Step 1:</span> Sear franks until the scoring opens and edges are charred. 
+                </div>
+                <div class="content-text">
+                    <span class="bold">Step 2:</span> Flash-toast the buttered buns on the cooler side of the grill for 30s. Assemble immediately.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="item-card">
+        <div class="card-title">5. BUTTERED FOIL-LOCK CORN (BASE)</div>
+        <div class="grid-container">
+            <div>
+                <span class="label">Atomic Inputs</span>
+                <ul class="list-ing">
+                    <li>Fresh Corn (Shucked)</li>
+                    <li>Softened Salted Butter</li>
+                    <li>Atomic Seasoning Dust</li>
+                    <li>Heavy Duty Foil</li>
+                </ul>
+            </div>
+            <div>
+                <span class="label">Manual Prep Logic</span>
+                <div class="content-text">
+                    <span class="bold">The Coating:</span> Butter every single inch of the cob. Do not miss the tips. 
+                </div>
+                <div class="content-text">
+                    <span class="bold">The Lock:</span> Dust with seasoning. Wrap in foil and execute a "Double-Fold" seam to trap all steam inside.
+                </div>
+            </div>
+            <div>
+                <span class="label">Machine: Industrial Grill</span>
+                <div class="content-text">
+                    <span class="bold">Method:</span> Place foiled ears on high heat. Rotate 1/4 turn every 4 minutes. The corn should "steam-fry" inside its own butter.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item-card">
+        <div class="card-title">6. ELOTE STREET-STYLE FINISH</div>
+        <div class="grid-container">
+            <div>
+                <span class="label">Atomic Inputs</span>
+                <ul class="list-ing">
+                    <li>Grilled Foil-Lock Corn</li>
+                    <li>Chipotle Crema</li>
+                    <li>Cotija Cheese Bin</li>
+                    <li>Tajin & Cilantro</li>
+                </ul>
+            </div>
+            <div>
+                <span class="label">The Assembly Step</span>
+                <div class="content-text">
+                    <span class="bold">The Paint:</span> Carefully unwrap the hot corn. Use a silicone brush to "paint" a heavy layer of Chipotle Crema over the entire surface.
+                </div>
+            </div>
+            <div>
+                <span class="label">The Encrusting</span>
+                <div class="content-text">
+                    <span class="bold">The Roll:</span> Roll the creamed ear in the Cotija Cheese bin until fully encrusted. Finish with a heavy dusting of Tajin. Serve with a fresh Lime Wedge.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="footer">URBAN CINEMATIC MEDIA · PAGE 6B · 2026</div>
+</div>
+
+</body>
+</html>
