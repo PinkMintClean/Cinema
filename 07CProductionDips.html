@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@page { margin: 0; size: letter; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body { 
+    margin: 0; padding: 0; 
+    background: #05071A linear-gradient(180deg, #05071A 0%, #1A0B2E 50%, #4B0082 100%) no-repeat;
+    background-size: 100% 100%; height: 11in; width: 8.5in; overflow: hidden;
+}
+
+.page-container { 
+    width: 8.5in; height: 11in; padding: 0.25in 0.4in; position: relative; color: #FFF; 
+    font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column;
+}
+
+.header { border-bottom: 1.5px solid rgba(197, 164, 0, 0.5); margin-bottom: 8px; padding-bottom: 3px; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: 15pt; color: #C5A400; margin: 0; text-transform: uppercase; letter-spacing: 5px; }
+
+.item-card { 
+    background: rgba(255, 255, 255, 0.04); border-left: 3px solid #C5A400;
+    padding: 8px 12px; margin-bottom: 8px; box-shadow: -5px 0 10px rgba(197, 164, 0, 0.1);
+}
+
+.card-title { font-family: 'Playfair Display', serif; font-size: 9pt; color: #C5A400; text-transform: uppercase; border-bottom: 1px solid rgba(197, 164, 0, 0.2); margin-bottom: 6px; }
+
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.dip-entry { margin-bottom: 3px; }
+.dip-name { color: #C5A400; font-weight: 800; font-size: 7.2pt; text-transform: uppercase; display: block; }
+.dip-desc { font-size: 6.5pt; line-height: 1.15; color: #FFF; }
+.bold { color: #C5A400; font-weight: 800; }
+
+.image-slot-mini {
+    width: 100%; height: 40px; border: 1px solid rgba(197, 164, 0, 0.3);
+    background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;
+    color: #C5A400; font-size: 4pt; font-weight: 800; margin-top: 3px;
+}
+
+.logistics-footer-row { 
+    background: rgba(197, 164, 0, 0.1); padding: 6px 12px; 
+    border: 1px solid rgba(197, 164, 0, 0.3); margin-top: 5px;
+}
+
+.footer { position: absolute; bottom: 0.2in; right: 0.4in; font-size: 8pt; color: #C5A400; font-weight: 800; letter-spacing: 3px; }
+</style>
+</head>
+<body>
+
+<div class="page-container">
+    <div class="header"><h1>PRODUCTION BIBLE // PAGE 7C</h1></div>
+
+    <div class="item-card">
+        <div class="card-title">1. ATOMIC GOURMET SWEET DIPS (CLEAR CUPS)</div>
+        <div class="grid-4">
+            <div class="dip-entry">
+                <span class="dip-name">Churro Cream</span>
+                <span class="dip-desc">Cream cheese/brown sugar base. <span class="bold">Cinnamon cereal fold.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Strawberry</span>
+                <span class="dip-desc">Fresh puree, cream cheese, <span class="bold">lemon tang.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Choc Cheese</span>
+                <span class="dip-desc">Melted chocolate base. <span class="bold">Mini choc chips.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">PB Cookie</span>
+                <span class="dip-desc">PB & maple syrup. <span class="bold">Mini chip fold.</span></span>
+            </div>
+        </div>
+        <div class="grid-4" style="margin-top:4px;">
+            <div class="dip-entry">
+                <span class="dip-name">Cannoli Cream</span>
+                <span class="dip-desc">Ricotta, <span class="bold">lemon zest</span>, mini chips.</span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Marshmallow</span>
+                <span class="dip-desc">Staple: Fluff + vanilla base.</span>
+            </div>
+            <div class="image-slot-mini">[ CHURRO TEXTURE ]</div>
+            <div class="image-slot-mini">[ CANNOLI ZEST ]</div>
+        </div>
+    </div>
+
+    <div class="item-card">
+        <div class="card-title">2. SEASONAL & SPECIALTY ROTATIONS</div>
+        <div class="grid-4">
+            <div class="dip-entry">
+                <span class="dip-name">Pina Colada</span>
+                <span class="dip-desc">Coconut, pineapple, <span class="bold">whipped base.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Brown Sugar</span>
+                <span class="dip-desc">Sugar/Sour cream. <span class="bold">Tart finish.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Caramel Apple</span>
+                <span class="dip-desc">Apple butter + <span class="bold">salted caramel.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Pumpkin Pie</span>
+                <span class="dip-desc">Pumpkin purée + <span class="bold">pie spice.</span></span>
+            </div>
+        </div>
+        <div class="grid-4" style="margin-top:4px;">
+            <div class="dip-entry">
+                <span class="dip-name">Cardamom</span>
+                <span class="dip-desc">Unique spice depth; <span class="bold">sweet/savory.</span></span>
+            </div>
+            <div class="image-slot-mini">[ STRAWBERRY TANG ]</div>
+            <div class="image-slot-mini">[ CHOC DETAIL ]</div>
+            <div class="image-slot-mini">[ ROTATION ARRAY ]</div>
+        </div>
+    </div>
+
+    <div class="item-card">
+        <div class="card-title">3. UNIVERSAL SAVORY DIPS (BLACK CUPS)</div>
+        <div class="grid-3">
+            <div class="dip-entry">
+                <span class="dip-name">Pretzel Cheese</span>
+                <span class="dip-desc">Liquid gold. <span class="bold">Must keep hot.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Atomic Buffalo</span>
+                <span class="dip-desc">High-heat cayenne base.</span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Signature Ranch</span>
+                <span class="dip-desc">Herb cool base. <span class="bold">Chill always.</span></span>
+            </div>
+        </div>
+        <div class="grid-3" style="margin-top:4px;">
+            <div class="dip-entry">
+                <span class="dip-name">Smoky BBQ</span>
+                <span class="dip-desc">For <span class="bold">Chicken, Fries & Corn.</span></span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Honey Mustard</span>
+                <span class="dip-desc">Zesty & sweet; pretzel staple.</span>
+            </div>
+            <div class="dip-entry">
+                <span class="dip-name">Texas Pete / Garlic</span>
+                <span class="dip-desc">Garlic butter & spiced variants.</span>
+            </div>
+        </div>
+        <div class="image-slot-mini" style="height:30px;">[ BLACK CUP ARRAY ]</div>
+    </div>
+
+    <div class="logistics-footer-row">
+        <div class="grid-3">
+            <div class="dip-desc" style="font-size: 6pt;"><span class="bold">Clear Cups:</span> Sweet / Fruit / Cereal.</div>
+            <div class="dip-desc" style="font-size: 6pt;"><span class="bold">Black Cups:</span> Cheese / Savory / Heat.</div>
+            <div class="dip-desc" style="font-size: 6pt;"><span class="bold">Hold:</span> Room temp 10m before service.</div>
+        </div>
+    </div>
+
+    <div class="footer">URBAN CINEMATIC MEDIA · PAGE 7C · 2026</div>
+</div>
+
+</body>
+</html>
