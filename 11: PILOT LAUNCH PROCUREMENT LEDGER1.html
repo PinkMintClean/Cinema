@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@page { margin: 0; size: letter; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body { 
+    margin: 0; padding: 0; 
+    background: #020412 radial-gradient(circle at center, #1A0B2E 0%, #020412 100%) no-repeat;
+    background-size: 100% 100%; height: 11in; width: 8.5in; overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page { 
+    width: 8.5in; height: 11in; margin: auto; padding: 0.25in 0.3in; 
+    display: flex; flex-direction: column; color: #FFFFFF;
+}
+
+.header { text-align: center; margin-bottom: 5px; }
+.header h1 {
+    font-family: 'Playfair Display', serif; font-size: 20px; color: #C5A400;
+    text-shadow: 0 0 15px rgba(197,164,0,0.8); margin: 0; text-transform: uppercase; letter-spacing: 2px;
+}
+.gold-rule { height: 2px; background: linear-gradient(to right, transparent, #C5A400, transparent); margin: 4px 0; }
+
+.ledger-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 12px; margin-top: 5px; }
+
+.table-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(197, 164, 0, 0.4);
+    box-shadow: 0 0 15px rgba(197,164,0,0.1);
+    border-radius: 4px;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 7.2pt; }
+th { 
+    background: #C5A400; color: #000; text-transform: uppercase; 
+    padding: 6px; text-align: left; font-weight: 800; font-size: 7pt;
+}
+td { padding: 4px 6px; border-bottom: 1px solid rgba(197, 164, 0, 0.15); vertical-align: top; }
+tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+
+.brand-text { color: #D6B85A; font-weight: 800; text-transform: uppercase; display: block; }
+.source-tag { color: #0096FF; font-weight: 700; font-size: 6.5pt; display: block; }
+.price-text { font-weight: 800; color: #FFF; text-align: right; white-space: nowrap; }
+.qty-text { color: #C5A400; font-weight: 800; text-align: center; }
+
+.total-footer-bar {
+    margin-top: auto; background: linear-gradient(90deg, #C5A400 0%, #947A00 100%);
+    color: #000; padding: 12px 20px; display: flex; justify-content: space-between;
+    align-items: center; border-radius: 4px; font-weight: 900; font-size: 13pt;
+    box-shadow: 0 0 20px rgba(197,164,0,0.4);
+}
+
+.footer {
+    margin-top: 10px; text-align: right; font-size: 9px; color: #C5A400;
+    border-top: 1px solid #C5A400; padding-top: 5px; font-weight: 800;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <h1>PAGE 11 — THE INFRASTRUCTURE BIBLE (PRIMARY ASSETS)</h1>
+        <div class="gold-rule"></div>
+    </div>
+
+    <div class="ledger-grid">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:55%;">Culinary Item / Source</th>
+                        <th style="text-align:center; width:15%;">Qty</th>
+                        <th style="text-align:right; width:30%;">Unit Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="brand-text">Stand Mixer (VEVOR)</span><span class="source-tag">VEVOR Direct</span></td><td class="qty-text">1</td><td class="price-text">$100.99</td></tr>
+                    <tr><td><span class="brand-text">Slushie Machine (KEENSTAR)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$159.99</td></tr>
+                    <tr><td><span class="brand-text">Popcorn Machine (Theater 8oz)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$145.00</td></tr>
+                    <tr><td><span class="brand-text">Cotton Candy (1000W)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$99.99</td></tr>
+                    <tr><td><span class="brand-text">Dual Deep Fryer (ROVSUN)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$89.99</td></tr>
+                    <tr><td><span class="brand-text">Juice Dispenser (VEVOR 3G)</span><span class="source-tag">VEVOR Direct</span></td><td class="qty-text">2</td><td class="price-text">$35.95</td></tr>
+                    <tr><td><span class="brand-text">Food Heat Lamp (Skyshalo)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$60.00</td></tr>
+                    <tr><td><span class="brand-text">Chafing Dishes (Jacgood 2pk)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$119.98</td></tr>
+                    <tr><td><span class="brand-text">Prep Tables (6ft Heavy Duty)</span><span class="source-tag">Amazon</span></td><td class="qty-text">2</td><td class="price-text">$47.50</td></tr>
+                    <tr><td><span class="brand-text">Menu Board (A-Frame Wood)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$45.59</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:55%;">Logistics / Legal / Source</th>
+                        <th style="text-align:center; width:15%;">Qty</th>
+                        <th style="text-align:right; width:30%;">Unit Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="brand-text">Cinema Screen (20ft Inflat.)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$114.00</td></tr>
+                    <tr><td><span class="brand-text">Projector Stand (VEVOR)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$34.99</td></tr>
+                    <tr><td><span class="brand-text">Audio Mixer (PUPGSIS T12)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$29.86</td></tr>
+                    <tr><td><span class="brand-text">FM Transmitter (BaseWish)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$79.99</td></tr>
+                    <tr><td><span class="brand-text">Wireless Headsets (OxxyeeKS)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$31.49</td></tr>
+                    <tr><td><span class="brand-text">Movie License (Single Title)</span><span class="source-tag">Swank Motion</span></td><td class="qty-text">1</td><td class="price-text">$350.00</td></tr>
+                    <tr><td><span class="brand-text">General Liability (Event)</span><span class="source-tag">Thimble Agency</span></td><td class="qty-text">1</td><td class="price-text">$180.00</td></tr>
+                    <tr><td><span class="brand-text">Sanitation Unit Rental</span><span class="source-tag">GoBox Local</span></td><td class="qty-text">1</td><td class="price-text">$175.00</td></tr>
+                    <tr><td><span class="brand-text">Health Permit (MS State)</span><span class="source-tag">Health Dept</span></td><td class="qty-text">1</td><td class="price-text">$50.00</td></tr>
+                    <tr><td><span class="brand-text">Solar LED Strip Lights (200ft)</span><span class="source-tag">Amazon/Outdoor</span></td><td class="qty-text">1</td><td class="price-text">$75.00</td></tr>
+                    <tr><td><span class="brand-text">Safety & LED String Kit</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$52.00</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="total-footer-bar">
+        <span>CUMULATIVE INFRASTRUCTURE INVESTMENT</span>
+        <span>$2,150.77</span>
+    </div>
+
+    <div class="footer">
+        Urban Cinematic Drive-In · Reconciled Asset Ledger · Page 11
+    </div>
+</div>
+
+</body>
+</html>
