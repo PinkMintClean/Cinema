@@ -20,39 +20,41 @@ body {
     display: flex; flex-direction: column; color: #FFFFFF;
 }
 
-.header { text-align: center; margin-bottom: 5px; }
+.header { text-align: center; margin-bottom: 8px; }
 .header h1 {
     font-family: 'Playfair Display', serif; font-size: 20px; color: #C5A400;
     text-shadow: 0 0 15px rgba(197,164,0,0.8); margin: 0; text-transform: uppercase; letter-spacing: 2px;
 }
-.gold-rule { height: 2px; background: linear-gradient(to right, transparent, #C5A400, transparent); margin: 4px 0; }
+.gold-rule { height: 2px; background: linear-gradient(to right, transparent, #C5A400, transparent); margin: 6px 0; }
 
-.ledger-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 12px; margin-top: 5px; }
+.ledger-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 12px; margin-top: 5px; flex-grow: 1; }
 
 .table-container {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.01);
     border: 1px solid rgba(197, 164, 0, 0.4);
-    box-shadow: 0 0 15px rgba(197,164,0,0.1);
+    box-shadow: 0 0 20px rgba(197,164,0,0.1);
     border-radius: 4px;
+    display: flex; flex-direction: column;
 }
 
-table { width: 100%; border-collapse: collapse; font-size: 7pt; }
+table { width: 100%; border-collapse: collapse; font-size: 6.8pt; }
 th { 
     background: #C5A400; color: #000; text-transform: uppercase; 
-    padding: 6px; text-align: left; font-weight: 800;
+    padding: 8px; text-align: left; font-weight: 800;
 }
-td { padding: 4px 6px; border-bottom: 1px solid rgba(197, 164, 0, 0.15); vertical-align: top; }
+td { padding: 5px 8px; border-bottom: 1px solid rgba(197, 164, 0, 0.15); vertical-align: top; line-height: 1.2; }
 tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
 
-.brand-text { color: #D6B85A; font-weight: 800; text-transform: uppercase; display: block; }
-.source-tag { color: #0096FF; font-weight: 700; font-size: 6.5pt; display: block; }
-.price-text { font-weight: 800; color: #FFF; text-align: right; }
-.qty-text { color: #C5A400; font-weight: 800; text-align: center; }
+.brand-text { color: #D6B85A; font-weight: 800; text-transform: uppercase; display: block; font-size: 7pt; }
+.source-tag { color: #0096FF; font-weight: 700; font-size: 6pt; text-transform: uppercase; display: block; margin-bottom: 2px; }
+.detail-text { color: #B0B0B0; font-size: 6pt; font-style: italic; display: block; }
+.price-text { font-weight: 800; color: #FFF; text-align: right; font-size: 8pt; }
 
 .total-footer-bar {
-    margin-top: auto; background: linear-gradient(90deg, #C5A400 0%, #947A00 100%);
+    margin-top: 10px; background: linear-gradient(90deg, #C5A400 0%, #947A00 100%);
     color: #000; padding: 12px 20px; display: flex; justify-content: space-between;
-    align-items: center; border-radius: 4px; font-weight: 900; font-size: 13pt;
+    align-items: center; border-radius: 4px; font-weight: 900; font-size: 14pt;
+    box-shadow: 0 0 20px rgba(197,164,0,0.4);
 }
 
 .footer {
@@ -65,7 +67,7 @@ tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
 
 <div class="page">
     <div class="header">
-        <h1>PAGE 11 — THE INFRASTRUCTURE BIBLE (PRIMARY ASSETS)</h1>
+        <h1>PAGE 11 — THE INFRASTRUCTURE & LEGAL BIBLE</h1>
         <div class="gold-rule"></div>
     </div>
 
@@ -73,19 +75,19 @@ tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
         <div class="table-container">
             <table>
                 <thead>
-                    <tr><th>Culinary Item / Source</th><th style="text-align:center;">Qty</th><th style="text-align:right;">Unit Cost</th></tr>
+                    <tr><th>Culinary Assets / Source</th><th style="text-align:right;">Cost</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="brand-text">Stand Mixer (VEVOR)</span><span class="source-tag">VEVOR Direct</span></td><td class="qty-text">1</td><td class="price-text">$100.99</td></tr>
-                    <tr><td><span class="brand-text">Slushie Machine (KEENSTAR)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$159.99</td></tr>
-                    <tr><td><span class="brand-text">Popcorn Machine (8oz)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$145.00</td></tr>
-                    <tr><td><span class="brand-text">Cotton Candy (1000W)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$99.99</td></tr>
-                    <tr><td><span class="brand-text">Dual Deep Fryer (ROVSUN)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$89.99</td></tr>
-                    <tr><td><span class="brand-text">Juice Dispenser (VEVOR)</span><span class="source-tag">VEVOR Direct</span></td><td class="qty-text">2</td><td class="price-text">$35.95</td></tr>
-                    <tr><td><span class="brand-text">Food Heat Lamp (Skyshalo)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$60.00</td></tr>
-                    <tr><td><span class="brand-text">Chafing Dishes (2pk)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$119.98</td></tr>
-                    <tr><td><span class="brand-text">Prep Tables (6ft Heavy Duty)</span><span class="source-tag">Amazon</span></td><td class="qty-text">2</td><td class="price-text">$47.50</td></tr>
-                    <tr><td><span class="brand-text">Menu Board (A-Frame)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$45.59</td></tr>
+                    <tr><td><span class="brand-text">Stand Mixer (VEVOR)</span><span class="source-tag">VEVOR Direct</span><span class="detail-text">7QT 350W: Scratch dough production</span></td><td class="price-text">$100.99</td></tr>
+                    <tr><td><span class="brand-text">Slushie Machine (KEENSTAR)</span><span class="source-tag">Amazon</span></td><td class="price-text">$159.99</td></tr>
+                    <tr><td><span class="brand-text">Popcorn Machine (8oz)</span><span class="source-tag">Amazon</span><span class="detail-text">Old Tyme Style: High-volume output</span></td><td class="price-text">$145.00</td></tr>
+                    <tr><td><span class="brand-text">Cotton Candy (1000W)</span><span class="source-tag">Amazon</span><span class="detail-text">Commercial high-yield heat element</span></td><td class="price-text">$99.99</td></tr>
+                    <tr><td><span class="brand-text">Dual Deep Fryer (ROVSUN)</span><span class="source-tag">Amazon</span><span class="detail-text">2500W: Funnel fries & chicken wings</span></td><td class="price-text">$89.99</td></tr>
+                    <tr><td><span class="brand-text">Juice Dispenser (VEVOR x2)</span><span class="source-tag">VEVOR Direct</span><span class="detail-text">Twin cold beverage circulation units</span></td><td class="price-text">$71.90</td></tr>
+                    <tr><td><span class="brand-text">Food Heat Lamp</span><span class="source-tag">Amazon / Skyshalo</span><span class="detail-text">2-Bulb: Passive protein temp retention</span></td><td class="price-text">$60.00</td></tr>
+                    <tr><td><span class="brand-text">Chafing Dishes (2pk)</span><span class="source-tag">Amazon</span><span class="detail-text">Full-size pans w/ fuel holders</span></td><td class="price-text">$119.98</td></tr>
+                    <tr><td><span class="brand-text">Trash Receptacles (2pk)</span><span class="source-tag">Dollar General</span><span class="detail-text">Event waste management hardware</span></td><td class="price-text">$17.00</td></tr>
+                    <tr><td><span class="brand-text">Prep Tables (6ft x2)</span><span class="source-tag">Amazon</span><span class="detail-text">Heavy-duty folding stainless/poly</span></td><td class="price-text">$95.00</td></tr>
                 </tbody>
             </table>
         </div>
@@ -93,27 +95,27 @@ tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
         <div class="table-container">
             <table>
                 <thead>
-                    <tr><th>Logistics / Legal / Source</th><th style="text-align:center;">Qty</th><th style="text-align:right;">Unit Cost</th></tr>
+                    <tr><th>Licensing & Logistics / Source</th><th style="text-align:right;">Cost</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="brand-text">Cinema Screen (20ft)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$114.00</td></tr>
-                    <tr><td><span class="brand-text">Projector Stand (VEVOR)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$34.99</td></tr>
-                    <tr><td><span class="brand-text">Audio Mixer (PUPGSIS)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$29.86</td></tr>
-                    <tr><td><span class="brand-text">FM Transmitter (BaseWish)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$79.99</td></tr>
-                    <tr><td><span class="brand-text">Wireless Headsets (2.4G)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$31.49</td></tr>
-                    <tr><td><span class="brand-text">Movie License (PPR)</span><span class="source-tag">Swank Motion</span></td><td class="qty-text">1</td><td class="price-text">$350.00</td></tr>
-                    <tr><td><span class="brand-text">Liability Insurance</span><span class="source-tag">Thimble Agency</span></td><td class="qty-text">1</td><td class="price-text">$180.00</td></tr>
-                    <tr><td><span class="brand-text">Sanitation Unit (GoBox)</span><span class="source-tag">Local Vendor</span></td><td class="qty-text">1</td><td class="price-text">$175.00</td></tr>
-                    <tr><td><span class="brand-text">Health Permit (MS State)</span><span class="source-tag">Health Dept</span></td><td class="qty-text">1</td><td class="price-text">$50.00</td></tr>
-                    <tr><td><span class="brand-text">Solar LED Strips (200ft)</span><span class="source-tag">Amazon</span></td><td class="qty-text">1</td><td class="price-text">$75.00</td></tr>
+                    <tr><td><span class="brand-text">Cinema Screen (20ft)</span><span class="source-tag">Amazon</span><span class="detail-text">Inflatable 16:9 ratio high-gain theater</span></td><td class="price-text">$114.00</td></tr>
+                    <tr><td><span class="brand-text">FM Transmitter (BaseWish)</span><span class="source-tag">Amazon</span><span class="detail-text">Long-range in-car audio transmission</span></td><td class="price-text">$79.99</td></tr>
+                    <tr><td><span class="brand-text">Movie License (PPR)</span><span class="source-tag">Swank Motion Pictures</span><span class="detail-text">Legal public exhibition certification</span></td><td class="price-text">$350.00</td></tr>
+                    <tr><td><span class="brand-text">Liability Insurance</span><span class="source-tag">Thimble Agency</span><span class="detail-text">Policy coverage for event operations</span></td><td class="price-text">$180.00</td></tr>
+                    <tr><td><span class="brand-text">Sanitation Unit (GoBox)</span><span class="source-tag">GoBox Rentals</span><span class="detail-text">ADA Portable toilet & wash station</span></td><td class="price-text">$175.00</td></tr>
+                    <tr><td><span class="brand-text">Health Permit (MS State)</span><span class="source-tag">MS Dept of Health</span><span class="detail-text">Temporary food service permit</span></td><td class="price-text">$50.00</td></tr>
+                    <tr><td><span class="brand-text">Menu Board (A-Frame)</span><span class="source-tag">Amazon</span><span class="detail-text">Point-of-sale visual marketing</span></td><td class="price-text">$45.59</td></tr>
+                    <tr><td><span class="brand-text">Projector Stand (VEVOR)</span><span class="source-tag">Amazon</span><span class="detail-text">Heavy-duty height adjustable rack</span></td><td class="price-text">$34.99</td></tr>
+                    <tr><td><span class="brand-text">Audio Mixer (PUPGSIS)</span><span class="source-tag">Amazon</span><span class="detail-text">Live sound/mic control for announcements</span></td><td class="price-text">$29.86</td></tr>
+                    <tr><td><span class="brand-text">Solar LED Strips (200ft)</span><span class="source-tag">Amazon</span><span class="detail-text">Site safety perimeter lighting</span></td><td class="price-text">$75.00</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 
     <div class="total-footer-bar">
-        <span>CUMULATIVE INFRASTRUCTURE INVESTMENT</span>
-        <span>$2,098.77</span>
+        <span>TOTAL INFRASTRUCTURE & LEGAL CARRY</span>
+        <span>$2,095.27</span>
     </div>
 
     <div class="footer">
