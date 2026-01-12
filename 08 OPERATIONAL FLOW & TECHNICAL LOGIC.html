@@ -3,165 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* Force 8.5x11 printable area without spillover */
 @page { margin: 0; size: letter; }
 * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-html, body { 
+body { 
     margin: 0; padding: 0; 
-    width: 100%; height: 100%;
-    background: #05071A linear-gradient(180deg, #05071A 0%, #1A0B2E 50%, #4B0082 100%) no-repeat;
-    overflow: hidden; /* Prevents scrolling/spillover */
+    background: #05071A linear-gradient(180deg, #020412 0%, #05071A 50%, #1A0B2E 100%) no-repeat;
+    background-size: 100% 100%; height: 11in; width: 8.5in; overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.page-container { 
-    width: 8.5in; height: 11in; 
-    max-width: 100vw; max-height: 100vh;
-    margin: auto; padding: 0.3in 0.4in; 
-    position: relative; color: #FFF; 
-    font-family: 'Montserrat', sans-serif; 
-    display: flex; flex-direction: column;
+.page { 
+    width: 8.5in; height: 11in; margin: auto; padding: 0.4in 0.5in; 
+    display: flex; flex-direction: column; color: #F5F5F5;
 }
 
-/* COMPACT PRESIDENTIAL HEADER */
-.presidential-header {
-    text-align: center;
-    border-bottom: 1.5px solid #C5A400;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-.presidential-header span {
-    display: block;
-    font-size: 7pt;
-    letter-spacing: 6px;
-    color: rgba(197, 164, 0, 0.7);
-    margin-bottom: 5px;
-    text-transform: uppercase;
-}
-.presidential-header h1 {
+/* PRESIDENTIAL GOLD HALO HEADER */
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 18pt;
-    color: #C5A400;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-style: italic;
+    font-size: 24px; color: #C5A400;
+    text-shadow: 0 0 14px rgba(197,164,0,.75);
+    margin: 0; text-transform: uppercase; letter-spacing: 2px;
+}
+.gold-rule {
+    height: 3px; background: linear-gradient(to right, transparent, #C5A400, transparent);
+    box-shadow: 0 0 12px rgba(197,164,0,.6); margin: 10px 0;
 }
 
-/* GLASS PANELS - HEIGHT ADJUSTED */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(197, 164, 0, 0.2);
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 2px;
+/* SECTION STRUCTURE WITH GOLD HALO LABELS */
+.intel-section { 
+    background: rgba(255, 255, 255, 0.03); 
+    border-left: 3px solid #C5A400; /* Halo Gold sidebar */
+    padding: 15px; margin-bottom: 15px;
+    box-shadow: -5px 0 15px rgba(197, 164, 0, 0.1);
 }
-
-.section-label {
-    font-family: 'Playfair Display', serif;
-    font-size: 10pt;
-    color: #C5A400;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-.section-label::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(197,164,0,0.5), transparent);
-    margin-left: 10px;
+.intel-section h2 {
+    font-family: 'Playfair Display', serif; font-size: 16px;
+    color: #C5A400; border-bottom: 1px solid rgba(197, 164, 0, 0.3);
+    padding-bottom: 4px; margin-top: 0; text-transform: uppercase;
 }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.atomic-data { font-size: 7.8pt; line-height: 1.4; color: rgba(255,255,255,0.9); }
-.atomic-data strong { color: #C5A400; text-transform: uppercase; font-size: 7pt; display: block; margin-bottom: 3px; }
+.data-text { font-size: 10px; line-height: 1.5; color: #FFF; }
 
-/* COMPACT TIMELINE */
+/* ELECTRIC BLUE TECHNICAL SUB-HEADS */
+.label-tech { 
+    color: #0096FF; /* Electric Blue technical accent */
+    font-weight: 800; text-transform: uppercase; font-size: 9px; 
+    text-shadow: 0 0 8px rgba(0, 150, 255, 0.5);
+}
+
 .timeline-row {
-    display: flex;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; border-bottom: 1px solid rgba(197, 164, 0, 0.1);
     padding: 8px 0;
 }
-.time-stamp { width: 90px; font-weight: 800; color: #C5A400; font-size: 7pt; }
-.time-desc { flex: 1; font-size: 7.8pt; }
+.time-stamp { width: 90px; font-weight: 800; color: #0096FF; font-size: 9px; }
 
-/* STABLE FOOTER */
-.footer-right {
-    position: absolute;
-    bottom: 0.3in;
-    right: 0.4in;
-    text-align: right;
-}
-.footer-right p {
-    margin: 0;
-    font-size: 7.5pt;
-    font-weight: 800;
-    color: #C5A400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+/* CONSISTENT FOOTER - MATCHING PAGE 5B */
+.footer {
+    margin-top: auto; text-align: right; font-size: 10px;
+    color: #C5A400; border-top: 1px solid rgba(197,164,0,0.5);
+    padding-top: 10px;
 }
 </style>
 </head>
 <body>
 
-<div class="page-container">
-    <div class="presidential-header">
-        <span>Strategic Infrastructure Module</span>
-        <h1>Operational Flow & Technical Logic</h1>
+<div class="page">
+    <div class="header">
+        <h1>PAGE 08 — OPERATIONAL FLOW & TECH LOGIC</h1>
+        <div class="gold-rule"></div>
     </div>
 
-    <div class="glass-panel">
-        <div class="section-label">Digital Ecosystem & AV Control</div>
+    <div class="intel-section">
+        <h2>I. DIGITAL BACKBONE & SIGNAL ARCHITECTURE</h2>
         <div class="grid-2">
-            <div class="atomic-data">
-                <strong>I. 2.4GHz Communications Network</strong>
-                OxxyeeKS Digital Headsets facilitate multi-point coordination. This infrastructure ensures 100% synchronization between the Commissary and Front-of-House service windows.
+            <div class="data-text">
+                <span class="label-tech">⚡ 2.4GHz Comms Loop:</span><br>
+                OxxyeeKS Wireless Digital Headsets facilitate multi-point coordination. This infrastructure ensures 100% synchronization between the Commissary and Front-of-House service.
             </div>
-            <div class="atomic-data">
-                <strong>II. Low-Latency FM Transmission</strong>
-                Audio processed via BaseWish 0.5W FM Transmitter. 100ft+ signal radius enables guest vehicle audio integration for a "Private Cinema" soundscape.
+            <div class="data-text">
+                <span class="label-tech">⚡ FM Broadcast Path:</span><br>
+                0.5W Transmission via BaseWish System. 100ft+ signal radius allows guest vehicle audio integration, creating a "Silent Cinema" environment for the community.
             </div>
         </div>
     </div>
 
-    <div class="glass-panel">
-        <div class="section-label">Precision Event Chronology</div>
-        
+    <div class="intel-section">
+        <h2>II. PRODUCTION CHRONOLOGY (T-MINUS LOGIC)</h2>
         <div class="timeline-row">
             <div class="time-stamp">T-24 HOURS</div>
-            <div class="time-desc"><strong>COMMISSARY PREP:</strong> Bulk baking of pretzels and brownies. Moisture-seal tagging applied at peak freshness for locked-in texture.</div>
+            <div class="data-text"><span class="label-tech">Supply Chain:</span> Bulk baking of pretzels and brownies. Moisture-seal tagging applied at peak freshness to lock in textures.</div>
         </div>
-
         <div class="timeline-row">
             <div class="time-stamp">T-3 HOURS</div>
-            <div class="time-desc"><strong>DEPLOYMENT:</strong> 20ft Screen inflation. AV calibration and clear-channel scan for FM integration.</div>
+            <div class="data-text"><span class="label-tech">Site Logistics:</span> 20ft Screen inflation and 600D industrial tethering. AV calibration and frequency scan for clear-channel sync.</div>
         </div>
-
-        <div class="timeline-row">
-            <div class="time-stamp">T-1 HOUR</div>
-            <div class="time-desc"><strong>WARM-UP:</strong> Popcorn kettles engaged (375°F). Chafing sets activated for protein holding. Heat lamps engaged for "Flash-Fry" station.</div>
-        </div>
-
         <div class="timeline-row" style="border:none;">
             <div class="time-stamp">SHOWTIME</div>
-            <div class="time-desc"><strong>ACTIVE SERVICE:</strong> Zero-wait logic. Pre-sealed bakery inventory and 45-second flash-fry turnaround times ensure maximum throughput.</div>
+            <div class="data-text"><span class="label-tech">Active Ops:</span> Popcorn kettles engaged (375°F). Chafing sets active (140°F+). Heat lamps engaged for 45-second service turnaround.</div>
         </div>
     </div>
 
-    <div class="glass-panel">
-        <div class="section-label">Power Distribution Architecture</div>
-        <div class="atomic-data" style="columns: 2; column-gap: 20px;">
-            High-wattage assets (Fryer, Cotton Candy, Slushie units) are phased across dedicated 20A circuits. This prevents thermal spikes and ensures "Clean Power" for AV systems. All cabling is 12/3 gauge with safety ramps deployed in high-traffic zones.
+    <div class="intel-section">
+        <h2>III. POWER PHASE DISTRIBUTION</h2>
+        <div class="data-text" style="columns: 2; column-gap: 20px;">
+            <span class="label-tech">Thermal Load Management:</span> High-wattage assets (Fryers, Cotton Candy, Slushie units) are phased across dedicated 20A circuits. <br><br>
+            <span class="label-tech">AV Rack Isolation:</span> Isolated on "Clean Power" lines to prevent ground-loop audio interference. All cabling is outdoor-rated 12/3 gauge with safety ramps.
         </div>
     </div>
 
-    <div class="footer-right">
-        <p>URBAN CINEMATIC MEDIA</p>
-        <p style="color:rgba(255,255,255,0.4); font-size: 5pt;">STRATEGIC ARCHITECTURE · PAGE 08</p>
+    <div class="footer">
+        Urban Cinematic Drive-In · Strategic Architecture · Page 08
     </div>
 </div>
 
