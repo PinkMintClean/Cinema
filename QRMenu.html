@@ -1,213 +1,524 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grand Cinema Treats | Master Menu & Ingredients</title>
-    <style>
-        :root {
-            --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.6);
-            --midnight: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
-        }
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Cinematic Media - Drive-In Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Oswald:wght@400;600;700&amp;family=Raleway:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            background: var(--midnight);
-            color: #ffffff;
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.5;
-        }
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+    .font-oswald { font-family: 'Oswald', sans-serif; }
+    .font-raleway { font-family: 'Raleway', sans-serif; }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    .cinema-bg {
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a0a14 50%, #0a0a0a 100%);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .header {
-            text-align: center;
-            padding: 30px 0;
-        }
+    .cinema-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(219, 39, 119, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(157, 23, 77, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
 
-        .header h1 {
-            color: var(--gold);
-            text-shadow: 0 0 15px var(--gold-glow);
-            letter-spacing: 3px;
-            margin: 0;
-            font-size: 2.2rem;
-        }
+    .spotlight {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(219, 39, 119, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: spotlight-move 20s infinite ease-in-out;
+      pointer-events: none;
+    }
 
-        .section-title {
-            color: var(--gold);
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 5px;
-            margin: 30px 0 15px 0;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    @keyframes spotlight-move {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(100px, -50px); }
+      50% { transform: translate(-50px, 100px); }
+      75% { transform: translate(80px, 50px); }
+    }
 
-        .item-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
+    .film-grain {
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.5;
+      z-index: 1;
+    }
 
-        .item-card.active {
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
+    .neon-text {
+      text-shadow: 
+        0 0 10px rgba(236, 72, 153, 0.8),
+        0 0 20px rgba(236, 72, 153, 0.6),
+        0 0 30px rgba(236, 72, 153, 0.4),
+        0 0 40px rgba(236, 72, 153, 0.2);
+      animation: neon-flicker 3s infinite alternate;
+    }
 
-        .item-header {
-            padding: 18px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
+    @keyframes neon-flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.95; }
+    }
 
-        .item-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            font-size: 0.95rem;
-            background: rgba(0, 0, 0, 0.2);
-        }
+    .menu-card {
+      background: linear-gradient(145deg, rgba(30, 20, 30, 0.9), rgba(20, 10, 20, 0.9));
+      border: 2px solid rgba(236, 72, 153, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .inner {
-            padding: 0 18px 18px 18px;
-            color: #ddd;
-        }
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(236, 72, 153, 0.1) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
 
-        .allergen-label {
-            display: inline-block;
-            margin-top: 10px;
-            color: #ff4d4d;
-            font-weight: bold;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
+    .menu-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(236, 72, 153, 0.6);
+      box-shadow: 
+        0 20px 40px rgba(236, 72, 153, 0.3),
+        0 0 60px rgba(236, 72, 153, 0.2);
+    }
 
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #777;
-            border-top: 1px solid #333;
-        }
+    .menu-card:hover::before {
+      opacity: 1;
+    }
 
-        .arrow { transition: transform 0.3s; color: var(--gold); }
-        .item-card.active .arrow { transform: rotate(180deg); }
-        .item-card.active .item-content { max-height: 600px; }
-    </style>
-</head>
-<body>
+    .category-badge {
+      background: linear-gradient(135deg, #db2777, #be185d);
+      box-shadow: 0 4px 15px rgba(219, 39, 119, 0.4);
+      animation: pulse-glow 2s infinite;
+    }
 
-<div class="container">
-    <div class="header">
-        <h1>GRAND CINEMA TREATS</h1>
-        <p style="color: #aaa;">Ingredients, Allergens & Quality Standards</p>
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 4px 15px rgba(219, 39, 119, 0.4); }
+      50% { box-shadow: 0 4px 25px rgba(219, 39, 119, 0.7); }
+    }
+
+    .allergen-badge {
+      background: rgba(239, 68, 68, 0.9);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      animation: warning-pulse 2s infinite;
+    }
+
+    @keyframes warning-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .marquee {
+      background: linear-gradient(90deg, #db2777, #be185d, #db2777);
+      background-size: 200% 100%;
+      animation: marquee-shine 3s linear infinite;
+    }
+
+    @keyframes marquee-shine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .filter-btn {
+      background: rgba(30, 20, 30, 0.6);
+      border: 2px solid rgba(236, 72, 153, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(135deg, #db2777, #be185d);
+      border-color: #ec4899;
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+    }
+
+    .scroll-indicator {
+      animation: bounce-arrow 2s infinite;
+    }
+
+    @keyframes bounce-arrow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    .theater-curtain {
+      background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 50%, #7f1d1d 100%);
+      position: relative;
+    }
+
+    .theater-curtain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 50px,
+        rgba(0, 0, 0, 0.1) 50px,
+        rgba(0, 0, 0, 0.1) 60px
+      );
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full cinema-bg overflow-auto">
+  <div class="film-grain"></div>
+  <div class="spotlight" style="top: 10%; left: 20%;"></div>
+  <div class="spotlight" style="top: 60%; left: 70%; animation-delay: -10s;"></div>
+  <div class="min-h-full w-full content-wrapper"><!-- Theater Curtain Header -->
+   <div class="theater-curtain py-2">
+    <div class="max-w-7xl mx-auto px-4">
+     <p class="font-raleway text-center text-yellow-200 text-sm tracking-widest">★ NOW SHOWING ★</p>
     </div>
-
-    <div class="section-title">📽️ From-Scratch Bakery</div>
-    
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🍟 Funnel Cake Fries</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: All-purpose flour, water, unsalted butter, eggs, granulated sugar, salt, cinnamon, vegetable oil.<br>
-            <span class="allergen-label">Allergens: Wheat, Egg, Dairy</span>
-        </div></div>
+   </div><!-- Hero Header -->
+   <header class="text-center py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+     <div class="mb-6">
+      <h1 class="font-bebas text-7xl md:text-9xl text-pink-500 neon-text tracking-wider mb-2" id="theaterName">URBAN CINEMATIC MEDIA</h1>
+      <div class="marquee h-1 w-64 mx-auto rounded-full"></div>
+     </div>
+     <p class="font-oswald text-2xl md:text-3xl text-pink-300 tracking-widest mb-4" id="eventTagline">DRIVE-IN CINEMA EXPERIENCE</p>
+     <p class="font-raleway text-pink-200 text-lg italic">🎬 Complete Ingredients &amp; Allergen Information 🎬</p><!-- Scroll Indicator -->
+     <div class="mt-8 scroll-indicator">
+      <svg class="w-8 h-8 mx-auto text-pink-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+     </div>
     </div>
-
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🥨 Soft Baked Pretzels</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: All-purpose flour, yeast, water, organic brown sugar, butter, kosher salt, baking soda bath.<br>
-            <span class="allergen-label">Allergens: Wheat, Dairy</span>
-        </div></div>
+   </header><!-- Filter Buttons -->
+   <div class="max-w-7xl mx-auto px-4 mb-12">
+    <div class="flex flex-wrap justify-center gap-4"><button onclick="filterCategory('all')" class="filter-btn active font-oswald px-6 py-3 rounded-lg text-white uppercase tracking-wider transition-all" id="filter-all"> 🎥 All Items </button> <button onclick="filterCategory('savory')" class="filter-btn font-oswald px-6 py-3 rounded-lg text-white uppercase tracking-wider transition-all" id="filter-savory"> 🍗 Savory </button> <button onclick="filterCategory('bakery')" class="filter-btn font-oswald px-6 py-3 rounded-lg text-white uppercase tracking-wider transition-all" id="filter-bakery"> 🥨 Bakery </button> <button onclick="filterCategory('cinema')" class="filter-btn font-oswald px-6 py-3 rounded-lg text-white uppercase tracking-wider transition-all" id="filter-cinema"> 🍿 Cinema Classics </button> <button onclick="filterCategory('drinks')" class="filter-btn font-oswald px-6 py-3 rounded-lg text-white uppercase tracking-wider transition-all" id="filter-drinks"> 🥤 Drinks </button>
     </div>
-
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🍫 Brownies & Cakes</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Cocoa powder, flour, sugar, butter, eggs, vanilla extract, baking powder, salt.<br>
-            <span class="allergen-label">Allergens: Wheat, Egg, Dairy, Traces of Nuts</span>
-        </div></div>
+   </div><!-- Menu Grid -->
+   <main class="max-w-7xl mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- SAVORY SELECTIONS --> <!-- CRISPY CHICKEN WINGS -->
+     <div class="menu-card rounded-2xl p-6" data-category="savory">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍗 SAVORY SELECTION
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">CRISPY CHICKEN WINGS</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Fresh &amp; Crispy</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Perfectly fried to golden-brown perfection with a crispy skin that crackles with every bite. Fresh chicken wings seasoned with sea salt and black pepper, then tossed in your choice of signature sauces—from tangy buffalo heat to sweet and sticky BBQ glaze.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Fresh chicken wings, vegetable oil (frying), sea salt, black pepper, sauce ingredients (Frank's RedHot or Sweet Baby Ray's BBQ)</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ GLUTEN-FREE (Verify oil cross-contact)
+        </div>
+       </div>
+      </div>
+     </div><!-- ALL-BEEF HOT DOGS -->
+     <div class="menu-card rounded-2xl p-6" data-category="savory">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍗 SAVORY SELECTION
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">CLASSIC HOT DOGS</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">All-Beef Franks</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Premium all-beef franks with a satisfying snap, nestled in a soft, pillowy brioche or potato bun. These classic hot dogs are perfectly grilled with a smoky char, delivering authentic ballpark flavor with every bite. Simple, delicious, and undeniably satisfying.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">All-beef franks (beef, water, salt, spices, sodium erythorbate, sodium nitrite), brioche or potato bun</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ WHEAT • DAIRY
+        </div>
+       </div>
+      </div>
+     </div><!-- STREET CORN -->
+     <div class="menu-card rounded-2xl p-6" data-category="savory">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍗 SAVORY SELECTION
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">STREET CORN</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Cob or Kernel Style</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Sweet, juicy corn grilled to perfection and slathered in a creamy blend of butter, mayo, and crumbly cotija cheese. Dusted with smoky chili powder and finished with a bright squeeze of fresh lime and fragrant cilantro. Every bite is a fiesta of bold, satisfying flavors.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Sweet corn, butter, mayonnaise, cotija cheese, chili powder, lime, cilantro</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ DAIRY • EGG (Mayo)
+        </div>
+       </div>
+      </div>
+     </div><!-- FROM-SCRATCH BAKERY --> <!-- SOFT PRETZELS -->
+     <div class="menu-card rounded-2xl p-6" data-category="bakery">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🥨 HAND-TWISTED
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">SOFT BAKED PRETZELS</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Bavarian Style</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Traditional Bavarian-style soft pretzels with a perfectly golden, slightly crisp exterior that gives way to an impossibly fluffy, cloud-like interior. Each pretzel is lovingly hand-twisted and bathed in a classic baking soda solution before baking, creating that signature deep brown color and distinctive flavor. Topped with coarse kosher salt crystals and a rich, buttery finish.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">All-purpose flour, yeast, water, brown sugar, butter, kosher salt, baking soda (water bath)</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ WHEAT • DAIRY
+        </div>
+       </div>
+      </div>
+     </div><!-- FUNNEL CAKE FRIES -->
+     <div class="menu-card rounded-2xl p-6" data-category="bakery">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍩 CLASSIC TREAT
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">FUNNEL CAKE FRIES</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Crispy &amp; Sweet</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Golden, crispy perfection dusted with cinnamon sugar. Each bite delivers a satisfying crunch giving way to a tender, pillowy interior. The warm cinnamon embraces your senses while delicate notes of butter and vanilla dance on your palate. Served piping hot, these irresistible fries are the perfect companion to your cinematic adventure.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">All-purpose flour, water, unsalted butter, eggs, granulated sugar, salt, cinnamon, vegetable oil</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ WHEAT • EGGS • DAIRY
+        </div>
+       </div>
+      </div>
+     </div><!-- GOURMET BROWNIES -->
+     <div class="menu-card rounded-2xl p-6" data-category="bakery">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍫 DECADENT
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">GOURMET BROWNIES</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Fudgy &amp; Rich</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Decadently rich, fudgy brownies crafted from premium Dutch-process cocoa powder. These luxurious treats boast an intensely chocolatey flavor with deep, complex notes that satisfy even the most discerning chocolate lovers. The texture is pure velvet—dense and fudgy yet impossibly tender. Each bite melts on your tongue, releasing waves of pure chocolate bliss enhanced by hints of vanilla and the richness of real butter.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Cocoa powder, flour, sugar, butter, eggs, vanilla extract, baking powder</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ WHEAT • EGGS • DAIRY • (MAY CONTAIN TRACES OF NUTS)
+        </div>
+       </div>
+      </div>
+     </div><!-- CINEMA CLASSICS --> <!-- SAVORY POPCORN -->
+     <div class="menu-card rounded-2xl p-6" data-category="cinema">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍿 CINEMA CLASSIC
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">SAVORY POPCORN</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Buttery Classic</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Light, fluffy, and impossibly fresh popcorn made from premium non-GMO kernels. Popped to perfection in coconut oil and seasoned with Flavacol—the secret ingredient that gives movie theater popcorn its iconic golden color and irresistible savory flavor. Every handful is pure nostalgia.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Non-GMO corn, coconut oil, Flavacol (salt, Yellow #5 &amp; #6)</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ VEGAN • DAIRY-FREE
+        </div>
+       </div>
+      </div>
+     </div><!-- SWEET CARAMEL POPCORN -->
+     <div class="menu-card rounded-2xl p-6" data-category="cinema">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍿 CINEMA CLASSIC
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">CARAMEL POPCORN</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Sweet &amp; Sticky</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Crunchy, sweet popcorn enrobed in a luscious caramel coating made from rich brown sugar, butter, and corn syrup. Each kernel is perfectly coated with a glossy, golden caramel shell that delivers a satisfying snap followed by waves of buttery sweetness with subtle vanilla undertones. An addictive treat that disappears fast.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Non-GMO corn, brown sugar, butter, corn syrup, vanilla extract</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ DAIRY
+        </div>
+       </div>
+      </div>
+     </div><!-- COTTON CANDY -->
+     <div class="menu-card rounded-2xl p-6" data-category="cinema">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🍿 CINEMA CLASSIC
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">COTTON CANDY</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Fluffy &amp; Sweet</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Spun sugar clouds in vibrant colors that melt instantly on your tongue. This classic carnival favorite delivers pure sweetness and nostalgia with every fluffy, feather-light bite. Available in a rainbow of fruit flavors that bring back memories of summer fairs and childhood joy.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Floss sugar (sucrose), artificial fruit flavors, food coloring</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ GLUTEN-FREE • VEGAN
+        </div>
+       </div>
+      </div>
+     </div><!-- REFRESHMENTS --> <!-- SIGNATURE SLUSHIES -->
+     <div class="menu-card rounded-2xl p-6" data-category="drinks">
+      <div class="relative">
+       <div class="category-badge inline-block px-4 py-1 rounded-full text-white font-oswald text-sm tracking-wider mb-4">
+        🥤 REFRESHMENT
+       </div>
+       <h3 class="font-bebas text-4xl text-pink-400 mb-2 tracking-wide">SIGNATURE SLUSHIES</h3>
+       <p class="font-raleway text-pink-300 text-sm italic mb-4">Ice Cold &amp; Fruity</p>
+       <div class="mb-6">
+        <p class="font-raleway text-gray-300 text-base leading-relaxed mb-3">Icy, refreshing slushies in a rainbow of vibrant fruit flavors. Made with filtered water, pure cane sugar, and natural fruit extracts, each sip delivers an icy burst of fruity sweetness that cools you down on a warm evening. The perfect companion to a blockbuster under the stars. Available in Small and Medium sizes.</p>
+       </div>
+       <div class="space-y-3 mb-4">
+        <div>
+         <p class="font-oswald text-xs text-pink-400 uppercase tracking-wider mb-1">Ingredients:</p>
+         <p class="font-raleway text-gray-400 text-xs leading-relaxed">Filtered water, cane sugar, fruit extracts, citric acid, food coloring</p>
+        </div>
+       </div>
+       <div class="mt-6 w-full">
+        <div class="allergen-badge px-4 py-3 rounded-lg text-white text-xs font-oswald tracking-wide text-center w-full">
+         ⚠️ GLUTEN-FREE • VEGAN
+        </div>
+       </div>
+      </div>
+     </div>
     </div>
-
-    <div class="section-title">🍗 Savory Bites</div>
-
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🍗 Crispy Chicken Wings</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Fresh chicken wings, vegetable oil, sea salt, black pepper. Served with choice of Buffalo or BBQ sauce.<br>
-            <span class="allergen-label">Allergens: Gluten-Free (verify sauce selection)</span>
-        </div></div>
+   </main><!-- Safety Footer -->
+   <footer class="max-w-7xl mx-auto px-4 pb-12 text-center">
+    <div class="bg-gradient-to-r from-transparent via-pink-900/30 to-transparent h-px mb-6"></div>
+    <div class="inline-block bg-red-900/50 border border-red-700 rounded-xl px-6 py-4 backdrop-blur-sm">
+     <p class="font-oswald text-red-300 text-sm uppercase tracking-wider mb-2">⚠️ Safety Disclaimer</p>
+     <p class="font-raleway text-red-200 text-xs max-w-2xl">All items are prepared in a kitchen that handles nuts, dairy, and wheat. Please inform staff of any allergies before ordering.</p>
     </div>
-
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🌭 All-Beef Hot Dogs</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: 100% Beef Frank (Beef, Water, Salt, Spices, Sodium Nitrite), Brioche Bun (Flour, Milk, Egg).<br>
-            <span class="allergen-label">Allergens: Wheat, Dairy, Egg (Bun)</span>
-        </div></div>
+    <div class="mt-8">
+     <p class="font-raleway text-pink-400 text-sm">✨ Thank you for choosing Urban Cinematic Media ✨</p>
+     <p class="font-raleway text-pink-500 text-xs mt-2">Enjoy the show! 🎬</p>
     </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      theater_name: "URBAN CINEMATIC MEDIA",
+      event_tagline: "DRIVE-IN CINEMA EXPERIENCE"
+    };
 
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🌽 Street Corn (Elote)</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Sweet corn, salted butter, mayonnaise, cotija cheese, chili lime seasoning, cilantro.<br>
-            <span class="allergen-label">Allergens: Dairy, Egg (Mayo)</span>
-        </div></div>
-    </div>
+    let config = { ...defaultConfig };
 
-    <div class="section-title">🍿 Cinema Classics</div>
+    async function onConfigChange(newConfig) {
+      config = { ...config, ...newConfig };
+      
+      const theaterName = document.getElementById('theaterName');
+      const eventTagline = document.getElementById('eventTagline');
+      
+      if (theaterName) {
+        theaterName.textContent = config.theater_name || defaultConfig.theater_name;
+      }
+      
+      if (eventTagline) {
+        eventTagline.textContent = config.event_tagline || defaultConfig.event_tagline;
+      }
+    }
 
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🍿 Savory Movie Popcorn</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Non-GMO corn kernels, coconut oil, Flavacol (Salt, Yellow 5 & 6).<br>
-            <span class="allergen-label">Allergens: Vegan / Gluten-Free</span>
-        </div></div>
-    </div>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('[data-category]');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`filter-${category}`).classList.add('active');
+      
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
 
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>🍯 Sweet/Caramel Popcorn</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Non-GMO corn, brown sugar, butter, corn syrup, vanilla extract.<br>
-            <span class="allergen-label">Allergens: Dairy</span>
-        </div></div>
-    </div>
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
 
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>☁️ Cotton Candy</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Sucrose, natural & artificial fruit flavors, food coloring (Red 40, Blue 1).<br>
-            <span class="allergen-label">Allergens: Vegan / Gluten-Free</span>
-        </div></div>
-    </div>
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["theater_name", config.theater_name || defaultConfig.theater_name],
+        ["event_tagline", config.event_tagline || defaultConfig.event_tagline]
+      ]);
+    }
 
-    <div class="section-title">🥤 Refreshments</div>
-
-    <div class="item-card" onclick="this.classList.toggle('active')">
-        <div class="item-header"><span>❄️ Signature Slushies</span><span class="arrow">▼</span></div>
-        <div class="item-content"><div class="inner">
-            Ingredients: Filtered water, cane sugar, citric acid, fruit extracts, food coloring.<br>
-            <span class="allergen-label">Allergens: Vegan / Gluten-Free</span>
-        </div></div>
-    </div>
-
-    <div class="footer">
-        <p style="color: var(--gold); font-weight: bold;">PREPARED IN OUR KITCHEN WITH CARE</p>
-        <p>Notice: All items are prepared in a unified environment. While we practice strict sanitation, cross-contact with allergens is possible. For severe allergies, please notify staff.</p>
-        <p>&copy; 2026 Grand Cinema Treats</p>
-    </div>
-</div>
-
-</body>
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bcfd1edc17a240a',t:'MTc2ODI1NDEwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
