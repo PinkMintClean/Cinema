@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Cinema Treats | Master Menu & Ingredients</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.6);
+            --midnight: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: var(--midnight);
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            color: var(--gold);
+            text-shadow: 0 0 15px var(--gold-glow);
+            letter-spacing: 3px;
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .section-title {
+            color: var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
+            margin: 30px 0 15px 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .item-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .item-card.active {
+            border: 1px solid var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .item-header {
+            padding: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .item-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            font-size: 0.95rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .inner {
+            padding: 0 18px 18px 18px;
+            color: #ddd;
+        }
+
+        .allergen-label {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff4d4d;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #333;
+        }
+
+        .arrow { transition: transform 0.3s; color: var(--gold); }
+        .item-card.active .arrow { transform: rotate(180deg); }
+        .item-card.active .item-content { max-height: 600px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>GRAND CINEMA TREATS</h1>
+        <p style="color: #aaa;">Ingredients, Allergens & Quality Standards</p>
+    </div>
+
+    <div class="section-title">📽️ From-Scratch Bakery</div>
+    
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🍟 Funnel Cake Fries</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: All-purpose flour, water, unsalted butter, eggs, granulated sugar, salt, cinnamon, vegetable oil.<br>
+            <span class="allergen-label">Allergens: Wheat, Egg, Dairy</span>
+        </div></div>
+    </div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🥨 Soft Baked Pretzels</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: All-purpose flour, yeast, water, organic brown sugar, butter, kosher salt, baking soda bath.<br>
+            <span class="allergen-label">Allergens: Wheat, Dairy</span>
+        </div></div>
+    </div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🍫 Brownies & Cakes</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Cocoa powder, flour, sugar, butter, eggs, vanilla extract, baking powder, salt.<br>
+            <span class="allergen-label">Allergens: Wheat, Egg, Dairy, Traces of Nuts</span>
+        </div></div>
+    </div>
+
+    <div class="section-title">🍗 Savory Bites</div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🍗 Crispy Chicken Wings</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Fresh chicken wings, vegetable oil, sea salt, black pepper. Served with choice of Buffalo or BBQ sauce.<br>
+            <span class="allergen-label">Allergens: Gluten-Free (verify sauce selection)</span>
+        </div></div>
+    </div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🌭 All-Beef Hot Dogs</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: 100% Beef Frank (Beef, Water, Salt, Spices, Sodium Nitrite), Brioche Bun (Flour, Milk, Egg).<br>
+            <span class="allergen-label">Allergens: Wheat, Dairy, Egg (Bun)</span>
+        </div></div>
+    </div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🌽 Street Corn (Elote)</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Sweet corn, salted butter, mayonnaise, cotija cheese, chili lime seasoning, cilantro.<br>
+            <span class="allergen-label">Allergens: Dairy, Egg (Mayo)</span>
+        </div></div>
+    </div>
+
+    <div class="section-title">🍿 Cinema Classics</div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🍿 Savory Movie Popcorn</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Non-GMO corn kernels, coconut oil, Flavacol (Salt, Yellow 5 & 6).<br>
+            <span class="allergen-label">Allergens: Vegan / Gluten-Free</span>
+        </div></div>
+    </div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>🍯 Sweet/Caramel Popcorn</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Non-GMO corn, brown sugar, butter, corn syrup, vanilla extract.<br>
+            <span class="allergen-label">Allergens: Dairy</span>
+        </div></div>
+    </div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>☁️ Cotton Candy</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Sucrose, natural & artificial fruit flavors, food coloring (Red 40, Blue 1).<br>
+            <span class="allergen-label">Allergens: Vegan / Gluten-Free</span>
+        </div></div>
+    </div>
+
+    <div class="section-title">🥤 Refreshments</div>
+
+    <div class="item-card" onclick="this.classList.toggle('active')">
+        <div class="item-header"><span>❄️ Signature Slushies</span><span class="arrow">▼</span></div>
+        <div class="item-content"><div class="inner">
+            Ingredients: Filtered water, cane sugar, citric acid, fruit extracts, food coloring.<br>
+            <span class="allergen-label">Allergens: Vegan / Gluten-Free</span>
+        </div></div>
+    </div>
+
+    <div class="footer">
+        <p style="color: var(--gold); font-weight: bold;">PREPARED IN OUR KITCHEN WITH CARE</p>
+        <p>Notice: All items are prepared in a unified environment. While we practice strict sanitation, cross-contact with allergens is possible. For severe allergies, please notify staff.</p>
+        <p>&copy; 2026 Grand Cinema Treats</p>
+    </div>
+</div>
+
+</body>
+</html>
