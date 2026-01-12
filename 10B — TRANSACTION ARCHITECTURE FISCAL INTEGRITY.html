@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@page { margin: 0; size: letter; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body { 
+    margin: 0; padding: 0; 
+    background: #020412 linear-gradient(180deg, #020412 0%, #1A0B2E 40%, #05071A 100%) no-repeat;
+    background-size: 100% 100%; height: 11in; width: 8.5in; overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page { 
+    width: 8.5in; height: 11in; margin: auto; padding: 0.3in 0.4in; 
+    display: flex; flex-direction: column; color: #F5F5F5;
+}
+
+.header { text-align: center; margin-bottom: 12px; }
+.header h1 {
+    font-family: 'Playfair Display', serif; font-size: 20px; color: #C5A400;
+    text-shadow: 0 0 14px rgba(197,164,0,.65); margin: 0; text-transform: uppercase;
+}
+.gold-rule {
+    height: 3px; background: linear-gradient(to right, transparent, #C5A400, transparent);
+    margin: 8px 0;
+}
+
+.glass-panel { 
+    background: rgba(15, 15, 35, 0.88); backdrop-filter: blur(20px);
+    border: 1px solid rgba(197, 164, 0, 0.3); border-left: 6px solid #C5A400;
+    padding: 18px; border-radius: 4px; margin-bottom: 10px;
+}
+
+.section-h {
+    font-family: 'Playfair Display', serif; font-size: 13px;
+    color: #C5A400; border-bottom: 1px solid rgba(197, 164, 0, 0.4);
+    padding-bottom: 6px; margin-bottom: 10px; text-transform: uppercase;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.data-text { font-size: 9.2pt; line-height: 1.5; color: #E0E0E0; }
+.bold-gold { color: #D6B85A; font-weight: 800; text-transform: uppercase; font-size: 8.5pt; }
+.tech-blue { color: #0096FF; font-weight: 800; }
+
+.footer {
+    margin-top: auto; text-align: right; font-size: 10px;
+    color: #FFF; border-top: 1px solid rgba(197, 164, 0, 0.5);
+    padding-top: 10px; font-weight: 700;
+    text-shadow: 0 0 8px rgba(197, 164, 0, 0.5);
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <h1>PAGE 10B — TRANSACTION ARCHITECTURE & FISCAL INTEGRITY</h1>
+        <div class="gold-rule"></div>
+    </div>
+
+    <div class="glass-panel">
+        <h2 class="section-h">I. Staff-Directed Operational Layout</h2>
+        <div class="grid-2">
+            <div class="data-text">
+                <span class="bold-gold">The "No-Touch" Policy:</span><br>
+                For hardware longevity and hygiene safety, all primary devices (iPads/Tablets) are **Staff-Facing Only**. Customers have zero physical contact with the main operational interfaces.
+            </div>
+            <div class="data-text">
+                <span class="bold-gold">Streamlined Food Entry:</span><br>
+                A single centralized POS at the end of the culinary line. Staff perform rapid "Item Selection" (Small/Med/Large) based on the guest's tray, ensuring a 20-second finalization.
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel" style="border-left-color: #0096FF;">
+        <h2 class="section-h" style="color: #0096FF;">II. Secure Encryption & External Terminals</h2>
+        <div class="data-text">
+            Urban Cinematic Media utilizes a **Divided-Interface POS System** (Square/iPad Integration) to maintain professional distance:
+            <br><br>
+            • <span class="tech-blue">External Readers:</span> Card transactions are processed via mounted, Bluetooth-linked terminals. Guests utilize "Tap or Dip" functionality on the external reader, keeping the primary iPad secure behind a barrier.<br>
+            • <span class="tech-blue">Integrated Audit Trail:</span> On-site Bluetooth thermal printers generate dual receipts. One for guest verification; one for the "Nightly Master Folder" to ensure 100% fiscal accountability.<br>
+            • <span class="tech-blue">Institutional Security:</span> All data is bank-level encrypted. We strictly avoid unprofessional P2P apps (CashApp/Venmo) to maintain lender-grade financial standards.
+        </div>
+    </div>
+
+    <div class="glass-panel">
+        <h2 class="section-h">III. Cash Handling & Denomination Control</h2>
+        <div class="data-text">
+            <span class="bold-gold">Lockbox Integrity:</span> Cash payments are instantly moved to an on-site steel-reinforced lockbox. 
+            <br><br>
+            <span class="bold-gold">Fraud & Safety Mitigation:</span> To protect staff and maintain site security, a **"No $100 Bill"** policy is enforced for all on-site transactions. This reduces the risk of counterfeit loss and ensures a high level of site-wide safety.
+        </div>
+    </div>
+
+    <div class="glass-panel">
+        <h2 class="section-h">IV. Phase 2 Scaling: Automated Reporting</h2>
+        <div class="data-text">
+            This digital infrastructure allows for **Real-Time Revenue Sync**. By the conclusion of the 3-hour window, we have a fully reconciled digital and physical audit trail, ready for immediate district compliance reporting.
+        </div>
+    </div>
+
+    <div class="footer">
+        Urban Cinematic Drive-In · Fiscal Architecture · Page 10B
+    </div>
+</div>
+
+</body>
+</html>
