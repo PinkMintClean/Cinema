@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@page { margin: 0; size: letter; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body { 
+    margin: 0; padding: 0; 
+    background: #020412 radial-gradient(circle at center, #1A0B2E 0%, #020412 100%) no-repeat;
+    background-size: 100% 100%; height: 11in; width: 8.5in; overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page { 
+    width: 8.5in; height: 11in; margin: auto; padding: 0.2in 0.3in; 
+    display: flex; flex-direction: column; color: #FFFFFF;
+}
+
+.header { text-align: center; margin-bottom: 5px; }
+.header h1 {
+    font-family: 'Playfair Display', serif; font-size: 19px; color: #C5A400;
+    text-shadow: 0 0 12px rgba(197,164,0,0.7); margin: 0; text-transform: uppercase; letter-spacing: 1.5px;
+}
+.gold-rule { height: 2px; background: linear-gradient(to right, transparent, #C5A400, transparent); margin: 4px 0; }
+
+.table-container {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(0, 150, 255, 0.4);
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.1);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 7pt; }
+th { 
+    background: #0096FF; color: #FFFFFF; text-transform: uppercase; 
+    padding: 6px 8px; text-align: left; font-weight: 800;
+}
+td { padding: 4px 8px; border-bottom: 1px solid rgba(0, 150, 255, 0.15); vertical-align: middle; }
+tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+
+.item-name { color: #D6B85A; font-weight: 800; text-transform: uppercase; display: block; }
+.source-tag { color: #0096FF; font-weight: 700; font-size: 6.5pt; text-transform: uppercase; }
+.detail-text { color: #E0E0E0; font-size: 6.5pt; display: block; margin-top: 1px; }
+.price-text { font-weight: 800; color: #FFF; text-align: right; font-size: 8pt; }
+
+.total-footer-bar {
+    margin-top: auto; background: linear-gradient(90deg, #0096FF 0%, #005691 100%);
+    color: #FFFFFF; padding: 12px 20px; display: flex; justify-content: space-between;
+    align-items: center; border-radius: 4px; font-weight: 900; font-size: 12pt;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
+}
+
+.footer {
+    margin-top: 8px; text-align: right; font-size: 8px; color: #0096FF;
+    border-top: 1px solid #0096FF; padding-top: 4px; font-weight: 800;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <h1>PAGE 12 — LOGISTICS & PACKAGING MANIFEST</h1>
+        <div class="gold-rule"></div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">Item / Source Vendor</th>
+                    <th style="width:50%;">Technical detail & Operational Purpose</th>
+                    <th style="text-align:right; width:15%;">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="item-name">Custom 3" Seals</span><span class="source-tag">Amazon / Vista</span></td><td class="detail-text">500ct Logo + Ingredient/Allergen Disclaimer Branding</td><td class="price-text">$75.00</td></tr>
+                <tr><td><span class="item-name">Clear Gusset Bag (XL)</span><span class="source-tag">Amazon</span></td><td class="detail-text">50ct Family Size Sweet Popcorn/Pretzel Packaging</td><td class="price-text">$14.00</td></tr>
+                <tr><td><span class="item-name">Clear Gusset Bag (L)</span><span class="source-tag">Amazon</span></td><td class="detail-text">100ct Large Sweet Popcorn/Pretzel Packaging</td><td class="price-text">$16.00</td></tr>
+                <tr><td><span class="item-name">Clear Gusset Bag (M)</span><span class="source-tag">Amazon</span></td><td class="detail-text">100ct Medium Sweet Popcorn/Pretzel Packaging</td><td class="price-text">$12.00</td></tr>
+                <tr><td><span class="item-name">Clear Gusset Bag (S)</span><span class="source-tag">Amazon</span></td><td class="detail-text">100ct Small Sweet Popcorn/Pretzel Packaging</td><td class="price-text">$8.00</td></tr>
+                <tr><td><span class="item-name">Duro Brown Bags (#2-#12)</span><span class="source-tag">Amazon / Duro</span></td><td class="detail-text">1,750ct Total Kraft (Savory Portioning Levels)</td><td class="price-text">$99.50</td></tr>
+                <tr><td><span class="item-name">Silicone Fry Trays</span><span class="source-tag">Amazon</span></td><td class="detail-text">3 Sets (10-count 2-packs) Funnel Fry Molding</td><td class="price-text">$75.00</td></tr>
+                <tr><td><span class="item-name">Ziploc Bulk (Gallon)</span><span class="source-tag">Amazon / Ziploc</span></td><td class="detail-text">250ct Double Zipper: Pre-Prep Dough & Protein Storage</td><td class="price-text">$51.99</td></tr>
+                <tr><td><span class="item-name">Ziploc Bulk (Quart)</span><span class="source-tag">Amazon / Ziploc</span></td><td class="detail-text">500ct Double Zipper: Sauce & Small Batch Prep</td><td class="price-text">$55.99</td></tr>
+                <tr><td><span class="item-name">1 lb Food Boats</span><span class="source-tag">Amazon / Kraft</span></td><td class="detail-text">250ct Individual Wing & Fry Servings</td><td class="price-text">$22.00</td></tr>
+                <tr><td><span class="item-name">2 lb Food Boats</span><span class="source-tag">Amazon / Kraft</span></td><td class="detail-text">250ct Combo Platter & Family Size Wings</td><td class="price-text">$28.00</td></tr>
+                <tr><td><span class="item-name">Slushie Cup/Lid Bundle</span><span class="source-tag">Amazon</span></td><td class="detail-text">100ct Mixed (12/16oz) Cups, Lids & Straws</td><td class="price-text">$48.00</td></tr>
+                <tr><td><span class="item-name">2oz Dip Cups w/ Lids</span><span class="source-tag">Amazon</span></td><td class="detail-text">100ct Side Sauces & Condiment Portions</td><td class="price-text">$12.00</td></tr>
+                <tr><td><span class="item-name">Aluminum Foil Rolls</span><span class="source-tag">WebstaurantStore</span></td><td class="detail-text">2pk Heavy Duty: Heat Retention for Proteins</td><td class="price-text">$18.50</td></tr>
+                <tr><td><span class="item-name">Parchment Sheets</span><span class="source-tag">Amazon</span></td><td class="detail-text">500ct Pre-Cut: Wrapping Gourmet Dogs & Sandwiches</td><td class="price-text">$14.99</td></tr>
+                <tr><td><span class="item-name">Squeeze Bottles</span><span class="source-tag">Amazon</span></td><td class="detail-text">6pk (16oz) Precision Sauce & Glaze Application</td><td class="price-text">$9.99</td></tr>
+                <tr><td><span class="item-name">Stainless Steel Shakers</span><span class="source-tag">Amazon / Lallisa</span></td><td class="detail-text">12pcs Adjustable Seasoning/Sugar Distribution</td><td class="price-text">$24.99</td></tr>
+                <tr><td><span class="item-name">Disposable Napkin Bulk</span><span class="source-tag">WebstaurantStore</span></td><td class="detail-text">2000ct Low-Fold High-Volume Service Consumption</td><td class="price-text">$18.25</td></tr>
+                <tr><td><span class="item-name">Jumbo Wrapped Straws</span><span class="source-tag">Amazon</span></td><td class="detail-text">500ct Hygienic Beverage Service</td><td class="price-text">$12.50</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="total-footer-bar">
+        <span>TOTAL ITEMIZED LOGISTICS & PACKAGING</span>
+        <span>$691.70</span>
+    </div>
+
+    <div class="footer">
+        Urban Cinematic Drive-In · Reconciled Logistics Ledger · Page 12
+    </div>
+</div>
+
+</body>
+</html>
