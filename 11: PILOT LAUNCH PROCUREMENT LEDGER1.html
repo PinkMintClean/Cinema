@@ -3,123 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 @page { margin: 0; size: letter; }
 * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
+html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
+
 body { 
-    margin: 0; padding: 0; 
-    background: #020412 radial-gradient(circle at center, #1A0B2E 0%, #020412 100%) no-repeat;
-    background-size: 100% 100%; height: 11in; width: 8.5in; overflow: hidden;
+    background: #05080f radial-gradient(circle at 20% 20%, #101a30 0%, #05080f 100%) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 11in; width: 8.5in;
     font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
 }
 
 .page { 
-    width: 8.5in; height: 11in; margin: auto; padding: 0.25in 0.3in; 
-    display: flex; flex-direction: column; color: #FFFFFF;
-}
-
-.header { text-align: center; margin-bottom: 8px; }
-.header h1 {
-    font-family: 'Playfair Display', serif; font-size: 20px; color: #C5A400;
-    text-shadow: 0 0 15px rgba(197,164,0,0.8); margin: 0; text-transform: uppercase; letter-spacing: 2px;
-}
-.gold-rule { height: 2px; background: linear-gradient(to right, transparent, #C5A400, transparent); margin: 6px 0; }
-
-.ledger-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 12px; margin-top: 5px; flex-grow: 1; }
-
-.table-container {
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(197, 164, 0, 0.4);
-    box-shadow: 0 0 20px rgba(197,164,0,0.1);
-    border-radius: 4px;
+    width: 8.5in; min-height: 11in; margin: auto; padding: 0.25in 0.4in; 
     display: flex; flex-direction: column;
 }
 
-table { width: 100%; border-collapse: collapse; font-size: 6.8pt; }
-th { 
-    background: #C5A400; color: #000; text-transform: uppercase; 
-    padding: 8px; text-align: left; font-weight: 800;
+.header { text-align: center; margin-bottom: 8px; }
+.header h1 { 
+    font-family: 'Playfair Display', serif; font-size: 19px; color: #FFD700; 
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.5); margin: 0; 
+    text-transform: uppercase; letter-spacing: 5px; 
 }
-td { padding: 5px 8px; border-bottom: 1px solid rgba(197, 164, 0, 0.15); vertical-align: top; line-height: 1.2; }
-tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
-
-.brand-text { color: #D6B85A; font-weight: 800; text-transform: uppercase; display: block; font-size: 7pt; }
-.source-tag { color: #0096FF; font-weight: 700; font-size: 6pt; text-transform: uppercase; display: block; margin-bottom: 2px; }
-.detail-text { color: #B0B0B0; font-size: 6pt; font-style: italic; display: block; }
-.price-text { font-weight: 800; color: #FFF; text-align: right; font-size: 8pt; }
-
-.total-footer-bar {
-    margin-top: 10px; background: linear-gradient(90deg, #C5A400 0%, #947A00 100%);
-    color: #000; padding: 12px 20px; display: flex; justify-content: space-between;
-    align-items: center; border-radius: 4px; font-weight: 900; font-size: 14pt;
-    box-shadow: 0 0 20px rgba(197,164,0,0.4);
+.scope-tag { font-size: 7.5pt; color: #00f2ff; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
+.gold-rule { 
+    height: 2px; background: linear-gradient(90deg, transparent, #FFD700, #00f2ff, #FFD700, transparent); 
+    margin: 4px 0; opacity: 0.8;
 }
 
-.footer {
-    margin-top: 10px; text-align: right; font-size: 9px; color: #C5A400;
-    border-top: 1px solid #C5A400; padding-top: 5px; font-weight: 800;
+.audit-container { display: flex; flex-direction: column; gap: 3px; flex-grow: 1; }
+
+/* DYNAMIC GOLD SIDEBARS */
+.audit-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 4px solid #C5A400; /* Standard Satin Gold */
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
 }
+
+/* HIGH-IMPORTANCE ELECTRIC GOLD HUE */
+.priority-glow {
+    border-left: 4px solid #FFD700 !important; /* Brighter Electric Gold */
+    background: rgba(0, 242, 255, 0.08);
+    box-shadow: inset 4px 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.item-info { width: 80%; }
+.item-title { color: #FFFFFF; font-weight: 800; font-size: 7.5pt; text-transform: uppercase; margin: 0; }
+.details-row { font-size: 6.5pt; color: #bbb; font-weight: 600; display: flex; gap: 10px; margin-top: 1px; text-transform: uppercase; }
+.spec-highlight { color: #FFD700; font-weight: 700; }
+.sku-tag { font-size: 5.5pt; color: #00f2ff; font-weight: 900; background: rgba(0, 242, 255, 0.15); padding: 0px 4px; border-radius: 2px; margin-left: 5px;}
+
+.item-finance { width: 18%; text-align: right; border-left: 1px solid rgba(255, 215, 0, 0.2); padding-left: 8px; }
+.investment-total { color: #00f2ff; font-size: 9pt; font-weight: 900; }
+
+/* THE BRUSHED GOLDEN TICKET LEDGER HUB */
+.golden-ticket-hub {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C); /* Brushed Gold Effect */
+    border: 1px solid #5d4000;
+    border-radius: 4px;
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.math-text {
+    color: #05080f; /* High contrast Dark Navy */
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    margin: 2px 0;
+}
+
+.remaining-text {
+    font-size: 16pt;
+    color: #1a0b2e;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+.subtraction-text { color: #b00000; } /* Clear Red for subtraction */
+
+.continuity-bridge {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 10pt;
+    color: #FFD700;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+/* PAGE 5 PILOT CONSISTENT FOOTER */
+.footer-pilot-style {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 7pt;
+    font-weight: 800;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+.sep { margin: 0 10px; color: #00f2ff; }
 </style>
 </head>
 <body>
 
 <div class="page">
     <div class="header">
-        <h1>PAGE 11 — THE INFRASTRUCTURE & LEGAL BIBLE</h1>
+        <h1>PAGE 11: THE INFRASTRUCTURE & LEGAL BIBLE</h1>
+        <div class="scope-tag">URBAN CINEMATIC DRIVE-IN | MISSION-CRITICAL PROCUREMENT</div>
         <div class="gold-rule"></div>
     </div>
 
-    <div class="ledger-grid">
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr><th>Culinary Assets / Source</th><th style="text-align:right;">Cost</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><span class="brand-text">Stand Mixer (VEVOR)</span><span class="source-tag">VEVOR Direct</span><span class="detail-text">7QT 350W: Scratch dough production</span></td><td class="price-text">$100.99</td></tr>
-                    <tr><td><span class="brand-text">Slushie Machine (KEENSTAR)</span><span class="source-tag">Amazon</span></td><td class="price-text">$159.99</td></tr>
-                    <tr><td><span class="brand-text">Popcorn Machine (8oz)</span><span class="source-tag">Amazon</span><span class="detail-text">Old Tyme Style: High-volume output</span></td><td class="price-text">$145.00</td></tr>
-                    <tr><td><span class="brand-text">Cotton Candy (1000W)</span><span class="source-tag">Amazon</span><span class="detail-text">Commercial high-yield heat element</span></td><td class="price-text">$99.99</td></tr>
-                    <tr><td><span class="brand-text">Dual Deep Fryer (ROVSUN)</span><span class="source-tag">Amazon</span><span class="detail-text">2500W: Funnel fries & chicken wings</span></td><td class="price-text">$89.99</td></tr>
-                    <tr><td><span class="brand-text">Juice Dispenser (VEVOR x2)</span><span class="source-tag">VEVOR Direct</span><span class="detail-text">Twin cold beverage circulation units</span></td><td class="price-text">$71.90</td></tr>
-                    <tr><td><span class="brand-text">Food Heat Lamp</span><span class="source-tag">Amazon / Skyshalo</span><span class="detail-text">2-Bulb: Passive protein temp retention</span></td><td class="price-text">$60.00</td></tr>
-                    <tr><td><span class="brand-text">Chafing Dishes (2pk)</span><span class="source-tag">Amazon</span><span class="detail-text">Full-size pans w/ fuel holders</span></td><td class="price-text">$119.98</td></tr>
-                    <tr><td><span class="brand-text">Trash Receptacles (2pk)</span><span class="source-tag">Dollar General</span><span class="detail-text">Event waste management hardware</span></td><td class="price-text">$17.00</td></tr>
-                    <tr><td><span class="brand-text">Prep Tables (6ft x2)</span><span class="source-tag">Amazon</span><span class="detail-text">Heavy-duty folding stainless/poly</span></td><td class="price-text">$95.00</td></tr>
-                </tbody>
-            </table>
+    <div class="audit-container">
+        <div class="audit-card priority-glow">
+            <div class="item-info">
+                <span class="item-title">Movie License (PPR) <span class="sku-tag">SWANK-REF</span></span>
+                <div class="details-row"><span>Source: Swank Motion Pictures</span><span class="spec-highlight">Universal Public Exhibition Right</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$350.00</span></div>
         </div>
 
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr><th>Licensing & Logistics / Source</th><th style="text-align:right;">Cost</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><span class="brand-text">Cinema Screen (20ft)</span><span class="source-tag">Amazon</span><span class="detail-text">Inflatable 16:9 ratio high-gain theater</span></td><td class="price-text">$114.00</td></tr>
-                    <tr><td><span class="brand-text">FM Transmitter (BaseWish)</span><span class="source-tag">Amazon</span><span class="detail-text">Long-range in-car audio transmission</span></td><td class="price-text">$79.99</td></tr>
-                    <tr><td><span class="brand-text">Movie License (PPR)</span><span class="source-tag">Swank Motion Pictures</span><span class="detail-text">Legal public exhibition certification</span></td><td class="price-text">$350.00</td></tr>
-                    <tr><td><span class="brand-text">Liability Insurance</span><span class="source-tag">Thimble Agency</span><span class="detail-text">Policy coverage for event operations</span></td><td class="price-text">$180.00</td></tr>
-                    <tr><td><span class="brand-text">Sanitation Unit (GoBox)</span><span class="source-tag">GoBox Rentals</span><span class="detail-text">ADA Portable toilet & wash station</span></td><td class="price-text">$175.00</td></tr>
-                    <tr><td><span class="brand-text">Health Permit (MS State)</span><span class="source-tag">MS Dept of Health</span><span class="detail-text">Temporary food service permit</span></td><td class="price-text">$50.00</td></tr>
-                    <tr><td><span class="brand-text">Menu Board (A-Frame)</span><span class="source-tag">Amazon</span><span class="detail-text">Point-of-sale visual marketing</span></td><td class="price-text">$45.59</td></tr>
-                    <tr><td><span class="brand-text">Projector Stand (VEVOR)</span><span class="source-tag">Amazon</span><span class="detail-text">Heavy-duty height adjustable rack</span></td><td class="price-text">$34.99</td></tr>
-                    <tr><td><span class="brand-text">Audio Mixer (PUPGSIS)</span><span class="source-tag">Amazon</span><span class="detail-text">Live sound/mic control for announcements</span></td><td class="price-text">$29.86</td></tr>
-                    <tr><td><span class="brand-text">Solar LED Strips (200ft)</span><span class="source-tag">Amazon</span><span class="detail-text">Site safety perimeter lighting</span></td><td class="price-text">$75.00</td></tr>
-                </tbody>
-            </table>
+        <div class="audit-card priority-glow">
+            <div class="item-info">
+                <span class="item-title">Liability Insurance Policy <span class="sku-tag">THIMBLE-01</span></span>
+                <div class="details-row"><span>Source: Thimble Agency</span><span class="spec-highlight">Full Event Operation Coverage</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$180.00</span></div>
+        </div>
+
+        <div class="audit-card priority-glow">
+            <div class="item-info">
+                <span class="item-title">GoBox Sanitation Unit <span class="sku-tag">ADA-UNIT</span></span>
+                <div class="details-row"><span>Source: GoBox Rentals</span><span class="spec-highlight">ADA Compliant Wash/Toilet Unit</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$175.00</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">KEENSTAR Slushie Machine <span class="sku-tag">B07P-M1</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Dual-Tank Cold Circulation</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$159.99</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">VEVOR Stand Mixer <span class="sku-tag">7QT-350W</span></span>
+                <div class="details-row"><span>Source: VEVOR</span><span class="spec-highlight">High-Torque Dough Production</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$100.99</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">Old Tyme 8oz Popcorn Machine <span class="sku-tag">6010-OLD-T</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Theatrical Volume Production</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$145.00</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">20ft Inflatable Theater Screen <span class="sku-tag">AIR-16-9</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">16:9 High-Gain Surface</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$114.00</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">1000W Cotton Candy Maker <span class="sku-tag">AMZ-CANDY-1</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Commercial Heat Element</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$99.99</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">ROVSUN Dual Deep Fryer <span class="sku-tag">2500W-X2</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Funnel Fry & Protein Station</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$89.99</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">Long-Range FM Transmitter <span class="sku-tag">BW-FM-01</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">In-Car Audio Broadcasting</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$79.99</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">Solar LED Perimeter Strips <span class="sku-tag">200FT-GLOW</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Safety Pathway Illumination</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$75.00</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">VEVOR Twin Juice Dispensers <span class="sku-tag">VEV-2026-T</span></span>
+                <div class="details-row"><span>Source: VEVOR</span><span class="spec-highlight">Twin Cold Beverage Circulation</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$71.90</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">6ft Folding Prep Tables (2pk) <span class="sku-tag">HD-POLY-95</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Sanitary Workspace Foundation</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$95.00</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">2-Bulb Food Heat Lamp <span class="sku-tag">SKY-HALO-1</span></span>
+                <div class="details-row"><span>Source: Amazon/Skyshalo</span><span class="spec-highlight">Protein Temp Retention</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$60.00</span></div>
+        </div>
+
+        <div class="audit-card">
+            <div class="item-info">
+                <span class="item-title">Full Size Chafing Dishes (2pk) <span class="sku-tag">B001-CHAFE</span></span>
+                <div class="details-row"><span>Source: Amazon</span><span class="spec-highlight">Buffet Thermal Presentation</span></div>
+            </div>
+            <div class="item-finance"><span class="investment-total">$119.98</span></div>
         </div>
     </div>
 
-    <div class="total-footer-bar">
-        <span>TOTAL INFRASTRUCTURE & LEGAL CARRY</span>
-        <span>$2,095.27</span>
+    <div class="golden-ticket-hub">
+        <div class="math-text">MASTER PILOT BUDGET: $3,000.00</div>
+        <div class="math-text">PAGE 11 ITEM TOTALS: <span class="subtraction-text">- $2,001.82</span></div>
+        <div class="remaining-text">REMAINING ALLOTMENT: $998.18</div>
     </div>
 
-    <div class="footer">
-        Urban Cinematic Drive-In · Infrastructure Ledger · Page 11
+    <div class="continuity-bridge">The Math Continues on the Next Page...</div>
+
+    <div class="footer-pilot-style">
+        URBAN CINEMATIC MEDIA LLC <span class="sep">•</span> PAGE 11 <span class="sep">•</span> INFRASTRUCTURE BIBLE
     </div>
 </div>
 
