@@ -2,386 +2,219 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Page 5A — Pilot Food & Beverage Menu</title>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
-body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-color:#F5F5F5;
-background:linear-gradient(180deg,#0B0D2B 0%,#2A0B3F 55%,#4B1648 85%,#FF1493 100%);
-}
+@page { size: 8.5in 11in; margin: 0; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-.page{
-width:8.5in;
-min-height:11in;
-margin:auto;
-padding:.4in .5in;
-box-sizing:border-box;
-display: flex;
-flex-direction: column;
+body { 
+    background: #05080f radial-gradient(circle at 50% 50%, #7e1e58 0%, #2a083d 45%, #05080f 100%) no-repeat fixed;
+    background-size: cover; width: 8.5in; height: 11in; margin: 0; padding: 0;
+    font-family: 'Montserrat', sans-serif; color: #FFFFFF;
 }
 
-/* HEADER */
-.header{text-align:center;margin-bottom:.15in}
-.header h1{
-font-family:'Playfair Display',serif;
-font-size:32px;
-color:#C5A400;
-text-shadow:0 0 14px rgba(197,164,0,.65);
-margin:0
+.page-container { width: 8.5in; height: 11in; padding: 0.2in 0.25in; display: flex; flex-direction: column; }
+
+.header { text-align: center; margin-bottom: 5px; }
+.header h1 { 
+    font-family: 'Playfair Display', serif; font-size: 19pt; color: #FFD700; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); margin: 0; text-transform: uppercase; letter-spacing: 3px; 
 }
-.gold-rule{
-height:3px;
-background:linear-gradient(to right,transparent,#C5A400,transparent);
-box-shadow:0 0 12px rgba(197,164,0,.6);
-margin:.12in 0
+.gold-rule { height: 2px; background: linear-gradient(90deg, transparent, #FFD700, #00f2ff, #FFD700, transparent); margin: 4px auto; width: 85%; }
+
+.glass-table {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex-grow: 1;
+    background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; padding: 8px;
 }
 
-/* COLUMNS */
-.columns{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:.25in;
-position:relative;
-flex-grow: 1;
-}
-.columns:after{
-content:'';
-position:absolute;
-left:50%;
-top:0;
-bottom:0;
-width:2px;
-background:rgba(197,164,0,.6);
-box-shadow:0 0 10px rgba(197,164,0,.5)
+.column { display: flex; flex-direction: column; gap: 5px; }
+
+.station { 
+    border-left: 4px solid #FFD700; background: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px; border-radius: 0 6px 6px 0;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 
-/* SECTION */
-.section{
-padding-left:.18in;
-margin-bottom:.16in;
-position:relative
-}
-.section:before{
-content:'';
-position:absolute;
-left:0;top:0;
-width:4px;height:100%;
-background:#C5A400;
-box-shadow:0 0 8px rgba(197,164,0,.6)
-}
-.section h2{
-font-family:'Playfair Display',serif;
-font-size:18px;
-color:#FFD700;
-margin:0 0 6px;
-text-shadow:0 0 6px rgba(255,215,0,.6)
+/* REDEFINED HEADERS: BOLD & DISTINCT */
+.station h2 { 
+    font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #FFD700; 
+    margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 1.5px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.9); font-weight: 700;
 }
 
-/* ITEM */
-.item{font-size:10px;line-height:1.3;margin-bottom:.08in}
-.item-name{font-size:11px;color:#FFF;font-weight:600}
-.sizes{color:#D6B85A;font-weight:600}
-.price{color:#7CFF9B;font-weight:600}
+.price-line { font-weight: 800; font-size: 7.8pt; margin-bottom: 1px; color: #FFFFFF; }
+.sz { color: #00f2ff; }
+.pr { color: #FFD700; }
 
-.label{
-color:#E6C86E;
-font-weight:600;
-text-shadow:0 0 3px rgba(230,200,110,.4)
-}
+.details { font-size: 6.2pt; color: #ddd; font-weight: 500; display: block; line-height: 1.1; }
 
-.hr{height:1px;background:rgba(255,255,255,.12);margin:3px 0}
-
-/* WHITE SEPARATOR (New Request) */
-.white-sep {
-height: 1px;
-background: rgba(255, 255, 255, 0.25);
-margin: .15in 0;
-box-shadow: 0 0 5px rgba(255,255,255,0.2);
+/* REDEFINED UPSELLS: SUBTLE & NON-BOLD */
+.upsell { 
+    color: #B8860B; font-weight: 400; text-transform: uppercase; font-size: 5.6pt; 
+    border-top: 1px solid rgba(255, 215, 0, 0.15); margin-top: 4px; padding-top: 2px; 
+    display: block; font-style: italic; letter-spacing: 0.5px;
 }
 
-/* PRESIDENTIAL SWEET BOX (Modified) */
-.sweet-box{
-border:2px solid #FFD700;
-box-shadow:0 0 15px rgba(255,215,0,.3);
-padding:.1in;
-margin:.1in 0 0 0;
-background:rgba(20, 10, 40, 0.7);
-font-size:9.5px;
-line-height:1.2;
-text-align: center;
+.value-menu {
+    background: rgba(0, 242, 255, 0.06); border: 1.5px solid #00f2ff;
+    border-radius: 6px; padding: 6px;
 }
-.sweet-box h3{
-text-align:center;
-font-family:'Playfair Display',serif;
-color:#FFD700;
-font-size:11px; /* Smaller to fit one line */
-margin:0 0 2px 0;
-white-space: nowrap;
-letter-spacing: 0.5px;
+.value-menu h2 { 
+    color: #00f2ff; font-size: 9.5pt; margin: 0 0 4px 0; text-align: center; 
+    border-bottom: 1px solid #00f2ff; text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
-.gold-bar-illuminating {
-height: 2px;
-background: linear-gradient(90deg, transparent, #FFD700, #FFF, #FFD700, transparent);
-width: 90%;
-margin: 2px auto 6px auto;
-box-shadow: 0 0 8px #FFD700;
-border-radius: 2px;
-}
-.sweet-box-content {
-text-align: left;
-}
+.v-row { display: flex; justify-content: space-between; font-size: 6.5pt; font-weight: 800; margin-bottom: 2px; border-bottom: 1px dotted rgba(255,255,255,0.1); }
 
-/* VALUE MENU (Moved & Styled) */
-.value-menu{
-margin-top: .15in;
-padding-top: .1in;
-border-top: 1px solid rgba(255,215,0,0.4);
+.toppings-hub {
+    background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 45%, #AA771C 100%); 
+    border-radius: 8px; padding: 10px; color: #05080f; text-align: center; margin-top: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
-.value-menu h2 {
-font-family:'Playfair Display',serif;
-font-size:14px;
-color:#FFD700;
-margin:0 0 8px;
-text-shadow:0 0 6px rgba(255,215,0,.6);
-border-bottom: 1px dashed rgba(255,215,0,0.3);
-padding-bottom: 4px;
+.toppings-hub h3 { 
+    font-family: 'Playfair Display', serif; font-size: 11pt; margin: 0 0 4px 0; 
+    text-transform: uppercase; font-weight: 900; letter-spacing: 2px; border-bottom: 2px solid #05080f;
 }
-.value-item {
-font-size: 10px;
-margin-bottom: 3px;
-display: flex;
-justify-content: space-between;
-}
+.t-data { font-size: 7.5pt; font-weight: 900; line-height: 1.3; }
 
-/* FOOTER (Modified) */
-.footer{
-margin-top: auto; /* Pushes to bottom */
-padding-top: .15in;
-border-top: 1px solid rgba(197,164,0,0.5); /* Closes the page out */
-text-align:right;
-font-size:10px;
-opacity:.9;
-width: 100%;
-color: #E6C86E;
+.footer { 
+    margin-top: 10px; display: flex; justify-content: flex-end; gap: 12px;
+    font-size: 6.8pt; font-weight: 700; color: #FFD700; text-transform: uppercase; letter-spacing: 1.2px;
 }
+.footer span:not(:last-child)::after { content: "|"; margin-left: 12px; color: rgba(255, 215, 0, 0.4); }
 </style>
 </head>
-
 <body>
-<div class="page">
 
-<div class="header">
-<h1>PAGE 5A — PILOT FOOD & BEVERAGE MENU</h1>
-<div class="gold-rule"></div>
+<div class="page-container">
+    <div class="header">
+        <h1>PAGE 5A: PILOT FOOD & BEVERAGE MENU</h1>
+        <div class="gold-rule"></div>
+    </div>
+
+    <div class="glass-table">
+        <div class="column">
+            <div class="station">
+                <h2>GRILL: WINGS (WET)</h2>
+                <div class="price-line"><span class="sz">S(6)</span> <span class="pr">$4</span> | <span class="sz">M(8)</span> <span class="pr">$7</span> | <span class="sz">L(10)</span> <span class="pr">$12</span></div>
+                <span class="details">BBQ or Signature Hot Finish · Hand-Painted Glaze</span>
+                <span class="upsell">Upsell: Extra Wet Sauce Drip Cup +$1.50</span>
+            </div>
+            <div class="station">
+                <h2>GRILL: HOT DOGS</h2>
+                <div class="price-line"><span class="pr">$4.00 PER UNIT</span></div>
+                <span class="details">All-Beef · Ketchup · Mustard · Relish Synthesis</span>
+                <span class="upsell">Upsell: Loaded Chili Synthesis Topper +$1.00</span>
+            </div>
+            <div class="station">
+                <h2>CORN: BUTTERED</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$4</span> | <span class="sz">M</span> <span class="pr">$7</span> | <span class="sz">L</span> <span class="pr">$12</span></div>
+                <span class="details">Steam Bath · Pure Butter Synthesis · Salted</span>
+                <span class="upsell">Upsell: Double Butter Dip Bath +$1.00</span>
+            </div>
+            <div class="station">
+                <h2>CORN: ELOTE</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$6</span> | <span class="sz">M</span> <span class="pr">$9</span> | <span class="sz">L</span> <span class="pr">$12</span></div>
+                <span class="details">Cotija · Lime · Garlic Mayo · Chili Dusting</span>
+                <span class="upsell">Upsell: Extra Cotija Dusting +$0.75</span>
+            </div>
+            <div class="station">
+                <h2>SAVORY POPCORN</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$3</span> | <span class="sz">M</span> <span class="pr">$6</span> | <span class="sz">L</span> <span class="pr">$10</span></div>
+                <span class="details">Ranch · Cayenne · Paprika · Paper Bag Service</span>
+                <span class="upsell">Upsell: Melted Butter Drizzle +$1.00</span>
+            </div>
+            <div class="station">
+                <h2>FRYER: WINGS (DRY)</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$9</span> | <span class="sz">M</span> <span class="pr">$12</span> | <span class="sz">L</span> <span class="pr">$15</span></div>
+                <span class="details">Lemon Pepper · Garlic Herb · Truffle Dust</span>
+                <span class="upsell">Upsell: Double Dry-Toss Intensity +$1.00</span>
+            </div>
+            <div class="station">
+                <h2>FRYER: FRENCH FRIES</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$4</span> | <span class="sz">M</span> <span class="pr">$7</span> | <span class="sz">L</span> <span class="pr">$10</span></div>
+                <span class="upsell">Upsell: Cheese Sauce Dip Cup +$1.25</span>
+            </div>
+            <div class="station">
+                <h2>FRYER: PRETZELS</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$4</span> | <span class="sz">M</span> <span class="pr">$7</span> | <span class="sz">L</span> <span class="pr">$10</span></div>
+                <span class="details">Soft Pretzel Synthesis · Salted or Unsalted</span>
+                <span class="upsell">Upsell: Warm Cheese Dip Side +$1.50</span>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="station">
+                <h2>FRYER: OKRA</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$4</span> | <span class="sz">M</span> <span class="pr">$7</span> | <span class="sz">L</span> <span class="pr">$10</span></div>
+                <span class="upsell">Upsell: Spicy Ranch Dip Cup +$0.75</span>
+            </div>
+            <div class="station">
+                <h2>COTTON CANDY</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$4</span> | <span class="sz">M</span> <span class="pr">$6</span> | <span class="sz">L</span> <span class="pr">$8</span></div>
+                <span class="details">Sky Blue · Sunset Pink · Machine Spun</span>
+                <span class="upsell">Upsell: LED Glow Stick Inclusion +$2.00</span>
+            </div>
+            <div class="station">
+                <h2>SWEETERY: WAFFLES</h2>
+                <div class="price-line"><span class="pr">$6.00 PER UNIT</span></div>
+                <span class="details">Belgian Synthesis · Vanilla Creamer Enrichment</span>
+                <span class="upsell">Upsell: Triple Drizzle Platter +$2.00</span>
+            </div>
+            <div class="station">
+                <h2>SWEETERY: CHURROS</h2>
+                <div class="price-line"><span class="sz">2pc</span> <span class="pr">$5</span> | <span class="sz">4pc</span> <span class="pr">$8</span> | <span class="sz">6pc</span> <span class="pr">$11</span></div>
+                <span class="upsell">Upsell: Edible Glitter Mist +$1.00</span>
+            </div>
+            <div class="station">
+                <h2>SWEETERY: FUNNEL FRIES</h2>
+                <div class="price-line"><span class="sz">S</span> <span class="pr">$5</span> | <span class="sz">M</span> <span class="pr">$8</span> | <span class="sz">L</span> <span class="pr">$11</span></div>
+                <span class="details">10ct Tray Form · Frozen Logistics Flow</span>
+                <span class="upsell">Upsell: White Chocolate Drip +$1.50</span>
+            </div>
+            <div class="station">
+                <h2>SWEETERY: CUPCAKES</h2>
+                <div class="price-line"><span class="pr">$3.00 PER UNIT</span></div>
+                <span class="details">Oreo · Golden Oreo · S'mores · Caramel</span>
+                <span class="upsell">Upsell: Double-Peak Frosting +$0.50</span>
+            </div>
+            <div class="station">
+                <h2>BAKERY: BROWNIES & CAKES</h2>
+                <div class="price-line">Brownie <span class="pr">$3</span> | Cake Slice <span class="pr">$5</span></div>
+                <span class="upsell">Upsell: Whipped Topping Side +$1.00</span>
+            </div>
+            <div class="value-menu">
+                <h2>ACCESSIBILITY DEALS</h2>
+                <div class="v-row"><span>$3 SOLO: Small Popcorn + Water</span></div>
+                <div class="v-row"><span>$4 SNACK: Okra Handful + 16oz Drink</span></div>
+                <div class="v-row"><span>$5 CLASSIC: Hot Dog + S. Fry + Water</span></div>
+                <div class="v-row"><span>$6 TREAT: 2 Churros + S. Slushie</span></div>
+            </div>
+            <div class="station">
+                <h2>BEVERAGES & SLUSHIES</h2>
+                <div class="price-line">Mix <span class="pr">$3/$5</span> | Slushie <span class="pr">$5/$7</span></div>
+                <span class="upsell">Upsell: Gummy Worm Topper +$1.50</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="toppings-hub">
+        <h3>Universal Toppings & Drizzles</h3>
+        <div class="t-data">
+            <span style="text-decoration: underline;">CHIPS:</span> Semi-Sweet Chocolate · White Chocolate · Peanut Butter Chips | 
+            <span style="text-decoration: underline;">EXTRAS:</span> Gummy Bears/Worms · Rainbow Sprinkles · Edible Glitter | 
+            <span style="text-decoration: underline;">DRIZZLES:</span> Dark Chocolate · Caramel · French Vanilla · Raw Honey · Agave
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>Urban Cinematic Media LLC</span>
+        <span>Page 5A</span>
+        <span>Pilot Architecture</span>
+    </div>
 </div>
 
-<div class="columns">
-
-<div>
-
-    <div class="section">
-    <h2>GRILL STATION</h2>
-
-    <div class="item">
-    <div class="item-name">Grilled Wings</div>
-    <span class="sizes">S (6 pcs)</span> <span class="price">$8</span> ·
-    <span class="sizes">M (8 pcs)</span> <span class="price">$10</span> ·
-    <span class="sizes">L (10 pcs)</span> <span class="price">$12</span><br>
-    <span class="label">Prep:</span> Marinated night prior, refrigerated · Chafing dish hold<br>
-    <span class="label">Serve:</span> Food boat, napkin, sauce cup<br>
-    <span class="label">Toppings / Notes:</span> Ranch · Blue Cheese · Wet BBQ Finish · Wet Hot Sauce Finish
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="item">
-    <div class="item-name">Hot Dogs</div>
-    <span class="price">$4 each</span><br>
-    <span class="label">Prep:</span> Toppings night prior · Grill day-of · Heat lamp hold<br>
-    <span class="label">Serve:</span> Boat + napkin<br>
-    <span class="label">Toppings:</span> Ketchup · Mustard · Relish
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="item">
-    <div class="item-name">Corn on the Cob</div>
-    <strong>Buttered:</strong> ½ <span class="price">$5</span> · 1 <span class="price">$8</span> · 2 <span class="price">$12</span><br>
-    <strong>Elote:</strong> ½ <span class="price">$6</span> · 1 <span class="price">$9</span> · 2 <span class="price">$12</span><br>
-    <span class="label">Prep:</span> Boiled / grilled · Heat lamp hold<br>
-    <span class="label">Toppings:</span> Cotija · Lime · Chili · Elote seasoning
-    </div>
-
-    </div>
-
-    <div class="section">
-    <h2>SAVORY POPCORN STATION</h2>
-
-    <div class="item">
-    <div class="item-name">Savory Popcorn</div>
-    <span class="sizes">S</span> <span class="price">$4</span> ·
-    <span class="sizes">M</span> <span class="price">$6</span> ·
-    <span class="sizes">L</span> <span class="price">$8</span><br>
-    <span class="label">Prep:</span> Butterfly kernels · Popped on-site · Scooped to order · Seasoned<br>
-    <span class="label">Serve:</span> Brown paper bags<br>
-    <span class="label">Flavors:</span> Ranch · Cayenne · Paprika
-    </div>
-
-    </div>
-
-    <div class="white-sep"></div>
-
-    <div class="section">
-    <h2>FRYER STATION — SAVORY</h2>
-
-    <div class="item">
-    <div class="item-name">Fried Wings (Dry Toss)</div>
-    <span class="sizes">S</span> <span class="price">$9</span> ·
-    <span class="sizes">M</span> <span class="price">$12</span> ·
-    <span class="sizes">L</span> <span class="price">$15</span><br>
-    <span class="label">Prep:</span> Breaded & frozen pre-event · Fried day-of<br>
-    <span class="label">Flavors:</span> Ranch · Cayenne · Cheddar · Lemon Pepper · Garlic Herb · Truffle
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="item">
-    <div class="item-name">French Fries</div>
-    <span class="sizes">S</span> <span class="price">$3</span> ·
-    <span class="sizes">M</span> <span class="price">$5</span> ·
-    <span class="sizes">L</span> <span class="price">$7</span><br>
-    <span class="label">Prep:</span> Bulk frozen · Fried day-of · Salted
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="item">
-    <div class="item-name">Fried Okra</div>
-    <span class="sizes">S</span> <span class="price">$4</span> ·
-    <span class="sizes">M</span> <span class="price">$6</span> ·
-    <span class="sizes">L</span> <span class="price">$8</span><br>
-    <span class="label">Prep:</span> Pre-breaded bulk · Fry day-of · Boat service
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="item">
-    <div class="item-name">Pretzels (Plain / Cheese / Cream Cheese)</div>
-    <span class="sizes">S</span> <span class="price">$5</span> ·
-    <span class="sizes">M</span> <span class="price">$8</span> ·
-    <span class="sizes">L</span> <span class="price">$11</span><br>
-    <span class="label">Prep:</span> Dough frozen 3 days prior · Fried day-of · Warming trays · Cheese dip cups
-    </div>
-
-    <div class="value-menu">
-        <h2>VALUE MENU — $2–$5</h2>
-        <div class="value-item"><span>$5 Wings (6) + Small Fry + Small Drink</span></div>
-        <div class="value-item"><span>$4 Hot Dog + Small Fry + Bottled Water</span></div>
-        <div class="value-item"><span>$5 Churros (2) + Lemonade</span></div>
-        <div class="value-item"><span>$3 Fries + Fruit Punch</span></div>
-        <div class="value-item"><span>$5 Sweet Popcorn + Slushie (M)</span></div>
-        <div class="value-item"><span>$4 Funnel Cake Fries (S)</span></div>
-        <div class="value-item"><span>$3 Cookie + Drink</span></div>
-        <div class="value-item"><span>$5 Cotton Candy (S) + Drink</span></div>
-        <div class="value-item"><span>$2 Popcorn (S)</span></div>
-        <div class="value-item"><span>$5 Slushie (M) + Cookie</span></div>
-        <div class="value-item"><span>$5 Elote Cup + Small Drink</span></div>
-        <div class="value-item"><span>$5 Pretzel + Small Drink</span></div>
-    </div>
-
-    </div>
-
-</div>
-
-<div>
-
-    <div class="section">
-    <h2>COTTON CANDY STATION</h2>
-    <div class="item">
-    <span class="sizes">Small</span> <span class="price">$4</span> ·
-    <span class="sizes">Medium</span> <span class="price">$6</span> ·
-    <span class="sizes">Large</span> <span class="price">$8</span> ·
-    <span class="sizes">Family</span> <span class="price">$12</span><br>
-    <span class="label">Prep:</span> Spun & bagged night-before · Clear gusset bags<br>
-    <span class="label">Flavors:</span> Sky Blue · Sunset Pink
-    </div>
-    </div> <div class="section">
-    <h2>FRYER STATION — SWEET</h2>
-    <div class="item">
-    <div class="item-name">Churros</div>
-    2 <span class="price">$5</span> · 4 <span class="price">$8</span> · 6 <span class="price">$11</span><br>
-    <span class="label">Prep:</span> Scratch dough · Pre-piped & frozen · Fried day-of<br>
-    <span class="label">Toppings:</span> Powdered sugar · Chocolate · Caramel · Vanilla · Sprinkles · Edible Glitter
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="item">
-    <div class="item-name">Funnel Cake Fries</div>
-    S <span class="price">$5</span> · M <span class="price">$8</span> · L <span class="price">$11</span><br>
-    <span class="label">Prep:</span> Scratch batter · Pre-piped & frozen · Fried day-of
-    </div>
-    
-    </div>
-
-    <div class="white-sep"></div>
-
-    <div class="section">
-    <h2>SWEETERY & BAKERY</h2>
-    <div class="item">Belgian Waffles — $6<br><span class="label">Prep:</span> Bulk mix · Vanilla creamer enhancement · Syrup included · Paid drizzles: Chocolate · Caramel · Vanilla</div>
-    <div class="item">Cupcakes — $3<br><span class="label">Prep:</span> Box mix baked night-before · Scratch frostings<br>Flavors: Oreo · Golden Oreo · S’mores · Soft-Launch Caramel</div>
-    <div class="item">Cake Slices — $5<br><span class="label">Prep:</span> Wrapped night-before · Clear seal + branded sticker</div>
-    <div class="item">Cookies (Individually Wrapped) — $2–$3<br><span class="label">Prep:</span> Scratch baked · Sugar · Vanilla · Chocolate Chip</div>
-    <div class="item">Brownies (Individually Wrapped) — $3<br><span class="label">Prep:</span> Scratch baked · Wrapped night-before</div>
-    </div>
-
-    <div class="white-sep"></div>
-
-    <div class="section">
-    <h2>SWEET POPCORN STATION</h2>
-    <div class="item">
-    <span class="sizes">S</span> <span class="price">$4</span> ·
-    <span class="sizes">M</span> <span class="price">$6</span> ·
-    <span class="sizes">L</span> <span class="price">$8</span> ·
-    <span class="sizes">Family</span> <span class="price">$12</span><br>
-    <span class="label">Prep:</span> Pre-made & bagged night-before<br>
-    <span class="label">Flavors:</span> Blue Raspberry · Cherry · Candy Toss Variants<br>
-    <span class="label">Kernels:</span> Mushroom & Butterfly
-    </div>
-    </div>
-
-    <div class="white-sep"></div>
-
-    <div class="section">
-    <h2>SLUSHIE STATION</h2>
-    <div class="item">
-    M <span class="price">$5</span> · L <span class="price">$7</span><br>
-    <span class="label">Prep:</span> Concentrated juice + regular juice<br>
-    <span class="label">Upsell Toppings:</span> 2–3 Gummy Worms · Waffle Platter · Cotton Candy Bottle
-    </div>
-    </div>
-
-    <div class="sweet-box">
-    <h3>Universal Sweet Toppings & Drizzles</h3>
-    <div class="gold-bar-illuminating"></div>
-    <div class="sweet-box-content">
-    <span class="label">Toppings:</span> Chocolate chips · Gummy bears · Gummy worms · Rainbow sprinkles · Edible Glitter<br>
-    <span class="label">Drizzles:</span> Chocolate · Caramel · Vanilla · Honey · Agave
-    </div>
-    </div>
-
-</div>
-
-</div>
-
-<div class="footer">
-Urban Cinematic Drive-In · Page 5A · Pilot Launch Menu Architecture
-</div>
-
-</div>
 </body>
 </html>
